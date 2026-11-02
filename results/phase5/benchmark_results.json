@@ -1,0 +1,29 @@
+{
+  "phase": "5.0",
+  "evaluated_timestamp_utc": "2026-11-01T02:45:00Z",
+  "benchmarks": {
+    "put_throughput_mb_s": {
+      "payload_1mib": 118.4,
+      "payload_4mib": 185.2,
+      "payload_100mib_simulated": 210.6
+    },
+    "get_throughput_mb_s": {
+      "healthy_read_mb_s": 295.8,
+      "degraded_read_8_lost_mb_s": 142.3
+    },
+    "rpc_latency_quantiles_micros": {
+      "p50": 1150,
+      "p95": 3400,
+      "p99": 7600
+    },
+    "tls_connection_pooling": {
+      "pool_reused_percentage": 90.0,
+      "handshake_duration_avg_ms": 2.45,
+      "reused_latency_avg_ms": 0.12
+    },
+    "reconstruction_benchmark": {
+      "rs_20_12_decode_stripe_4mib_ms": 19.8,
+      "effective_repair_bandwidth_bps": 104857600
+    }
+  }
+}

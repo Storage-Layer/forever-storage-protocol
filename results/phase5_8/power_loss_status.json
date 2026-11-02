@@ -1,0 +1,26 @@
+{
+  "milestone": "Phase 5.8",
+  "audit_timestamp": "2026-11-02T04:00:00Z",
+  "failure_classes": {
+    "class_a_process_sigkill": {
+      "description": "Immediate OS process termination via SIGKILL, pidfd kill, or crash",
+      "execution_status": "EXECUTED_AND_VERIFIED",
+      "evidence_suite": "tests/phase5_8_validation.rs",
+      "durability_mechanism": "write_and_sync_file (O_SYNC / fsync) and directory fsync before ACK",
+      "outcome": "Zero uncommitted data leaks; container indices fully reconstructed upon restart"
+    },
+    "class_b_os_kernel_panic": {
+      "description": "Operating system kernel panic or forced reboot (/proc/sysrq-trigger)",
+      "execution_status": "NOT EXECUTED",
+      "reason": "Host is an active engineering workstation; automated reboot would destroy running test harness and agent session without IPMI/BMC controller.",
+      "prerequisites_needed": "Dedicated bare-metal host with IPMI/iLO remote serial console"
+    },
+    "class_c_hardware_power_cut": {
+      "description": "Sudden physical power disconnection without shutdown signaling",
+      "execution_status": "NOT EXECUTED",
+      "reason": "Requires switched networked power distribution unit (ePDU) or hardware power interrupter.",
+      "prerequisites_needed": "Networked PDU with automated power cycle API"
+    }
+  },
+  "overall_verdict": "Class A durability verified locally; Class B and C NOT EXECUTED due to hardware testbed constraints."
+}

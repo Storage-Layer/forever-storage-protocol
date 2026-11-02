@@ -1,0 +1,24 @@
+{
+  "phase": "5.0",
+  "evaluated_timestamp_utc": "2026-11-01T02:45:00Z",
+  "repair_metrics": {
+    "total_repairs_evaluated": 25,
+    "successful_repairs": 25,
+    "failed_repairs": 0,
+    "corrupt_shards_safely_excluded": 25,
+    "unverified_recovery_source_admissions": 0,
+    "capacity_blocked_repairs_handled_safely": 5
+  },
+  "placement_audit": {
+    "target_scheme": "RS(20,12)",
+    "failure_domain_violations": 0,
+    "max_shards_per_host_enforced": 4,
+    "max_shards_per_rack_enforced": 10
+  },
+  "scrubber_metrics": {
+    "bitrot_injections_tested": 15,
+    "bitrot_detected_by_sha256": 15,
+    "detection_accuracy": 1.0,
+    "self_healing_trigger_rate": 1.0
+  }
+}

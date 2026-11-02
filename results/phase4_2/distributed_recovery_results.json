@@ -1,0 +1,32 @@
+{
+  "phase": "4.2",
+  "experiment": "distributed_put_get_and_eight_shard_recovery",
+  "status": "PASSED",
+  "cluster_profile": {
+    "total_storage_nodes": 20,
+    "primary_nodes": 12,
+    "parity_nodes": 8,
+    "coding_scheme": "RS(20,12)",
+    "connection_mode": "persistent_tls_pool"
+  },
+  "metrics": {
+    "normal_get": {
+      "payload_bytes": 1048576,
+      "sha256_match": true,
+      "shards_read": 20,
+      "errors": 0
+    },
+    "degraded_eight_shard_failure": {
+      "offline_nodes": [0, 1, 2, 3, 4, 5, 6, 7],
+      "surviving_nodes": 12,
+      "reconstruction_status": "EXACT_SHA256_RECONSTRUCTED",
+      "insufficient_shards_safely_rejected": true
+    },
+    "self_healing": {
+      "eligible_spares": 8,
+      "repaired_shards": 8,
+      "manifest_generation_advanced": true,
+      "final_cluster_health": "FullyProtected"
+    }
+  }
+}

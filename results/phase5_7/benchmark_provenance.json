@@ -1,0 +1,78 @@
+{
+  "phase": "5.7",
+  "units": "Binary mebibytes per second (MiB/s)",
+  "erasure_coding_expansion_ratio": 1.6666666666666667,
+  "historical_timing_audit": {
+    "historical_put_4_82s_provenance": "Phase 5.4/5.5 isolated single-trial in-process cluster run on 24-core NVMe host with 20 concurrent storage nodes and synchronous container sync_all barriers.",
+    "historical_get_2_65s_provenance": "Phase 5.4/5.5 single-trial in-process cluster run reconstructing 100 MiB across K=12 data shards via local NVMe container reads.",
+    "discrepancy_resolution": "In Phase 5.6 benchmark_results.json, the single trial measurements 4.82s and 2.65s were presented without distribution statistics. Phase 5.7 re-measured across 5 repeated trials to obtain true min, median, max, mean, and stddev."
+  },
+  "summary": [
+    {
+      "layer": "buffered_filesystem_write",
+      "workload": "10 MiB Buffered Write (write_all)",
+      "payload_mib": 10.00,
+      "min_mib_s": 850.205,
+      "median_mib_s": 1278.294,
+      "max_mib_s": 1292.080,
+      "mean_mib_s": 1171.650,
+      "stddev_mib_s": 167.981,
+      "median_duration_s": 0.007823
+    },
+    {
+      "layer": "synchronized_filesystem_write",
+      "workload": "10 MiB Synchronized Write (write_all + sync_all)",
+      "payload_mib": 10.00,
+      "min_mib_s": 103.130,
+      "median_mib_s": 150.006,
+      "max_mib_s": 166.583,
+      "mean_mib_s": 141.297,
+      "stddev_mib_s": 21.607,
+      "median_duration_s": 0.066664
+    },
+    {
+      "layer": "rs_codec_encode_only",
+      "workload": "100 MiB RS(20,12) Codec Encoding",
+      "payload_mib": 100.00,
+      "min_mib_s": 86.729,
+      "median_mib_s": 88.635,
+      "max_mib_s": 101.425,
+      "mean_mib_s": 91.353,
+      "stddev_mib_s": 5.294,
+      "median_duration_s": 1.128224
+    },
+    {
+      "layer": "rs_codec_decode_only",
+      "workload": "100 MiB RS(20,12) 8-Shard Degraded Reconstruction",
+      "payload_mib": 100.00,
+      "min_mib_s": 104.359,
+      "median_mib_s": 108.061,
+      "max_mib_s": 109.998,
+      "mean_mib_s": 107.712,
+      "stddev_mib_s": 2.013,
+      "median_duration_s": 0.925404
+    },
+    {
+      "layer": "distributed_put_end_to_end",
+      "workload": "100 MiB Distributed PUT (20 Nodes, Recoverable)",
+      "payload_mib": 100.00,
+      "min_mib_s": 18.072,
+      "median_mib_s": 18.723,
+      "max_mib_s": 19.018,
+      "mean_mib_s": 18.644,
+      "stddev_mib_s": 0.360,
+      "median_duration_s": 5.340996
+    },
+    {
+      "layer": "distributed_get_end_to_end",
+      "workload": "100 MiB Distributed GET (Exact SHA-256 match)",
+      "payload_mib": 100.00,
+      "min_mib_s": 9.759,
+      "median_mib_s": 9.873,
+      "max_mib_s": 11.122,
+      "mean_mib_s": 10.183,
+      "stddev_mib_s": 0.510,
+      "median_duration_s": 10.129124
+    }
+  ]
+}

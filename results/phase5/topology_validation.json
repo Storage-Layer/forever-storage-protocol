@@ -1,0 +1,28 @@
+{
+  "topology_version": "5.0",
+  "evaluated_timestamp_utc": "2026-11-01T02:45:00Z",
+  "config_file": "deploy/phase5/cluster_5host.toml",
+  "validation_result": {
+    "total_nodes": 20,
+    "distinct_hosts": 5,
+    "distinct_racks": 3,
+    "max_nodes_per_host": 4,
+    "max_two_host_loss_shards": 8,
+    "min_surviving_shards": 12,
+    "required_k": 12,
+    "fault_tolerance_verified": true
+  },
+  "failure_domains": {
+    "host-alpha": { "nodes": [1, 2, 3, 4], "count": 4, "rack": "rack-1", "ip": "10.0.1.11" },
+    "host-bravo": { "nodes": [5, 6, 7, 8], "count": 4, "rack": "rack-1", "ip": "10.0.1.12" },
+    "host-charlie": { "nodes": [9, 10, 11, 12], "count": 4, "rack": "rack-2", "ip": "10.0.1.13" },
+    "host-delta": { "nodes": [13, 14, 15, 16], "count": 4, "rack": "rack-2", "ip": "10.0.1.14" },
+    "host-echo": { "nodes": [17, 18, 19, 20], "count": 4, "rack": "rack-3", "ip": "10.0.1.15" }
+  },
+  "preflight_checks": {
+    "host_independence": "PASS",
+    "placement_caps_enforced": "PASS",
+    "port_conflicts": "NONE",
+    "pki_tls_paths": "VALID"
+  }
+}

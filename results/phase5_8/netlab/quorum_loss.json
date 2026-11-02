@@ -1,0 +1,11 @@
+{
+  "scenario": "Coordinator Quorum Loss",
+  "total_voters": 3,
+  "voters_offline": 2,
+  "voters_online": 1,
+  "required_quorum": 2,
+  "mutation_allowed": false,
+  "read_only_access": "Bounded / Fail-Closed",
+  "durability_guarantee": "Strictly Enforced \u2014 No uncommitted quorum transitions accepted",
+  "status": "PASSED"
+}

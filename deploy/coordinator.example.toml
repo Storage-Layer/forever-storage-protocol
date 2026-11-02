@@ -1,0 +1,43 @@
+# FSP Phase 4 — Example Multi-Host Coordinator Configuration
+# Copy to /etc/fsp/coordinator.toml and customize IP addresses and PKI paths.
+
+[coordinator]
+coordinator_id = "coordinator-primary-01"
+metadata_root = "/var/lib/fsp/coordinator"
+placement_policy = "MultiHostDistinctMachines"
+max_shards_per_host = 1
+max_shards_per_rack = 5
+default_coding_scheme = "RS(20,12)"
+default_stripe_size_bytes = 65536
+degraded_commit_policy = "StrictAllShards"
+
+[security]
+trust_environment_mode = "ProductionStrict"
+ca_cert_pem = "/etc/fsp/pki/ca.crt"
+coordinator_cert_pem = "/etc/fsp/pki/coordinator-primary-01.crt"
+coordinator_key_pem = "/etc/fsp/pki/coordinator-primary-01.key"
+ed25519_manifest_signer_key_file = "/etc/fsp/keys/manifest_signer_ed25519.key"
+
+[repair_and_scrub]
+heartbeat_interval_secs = 30
+scrub_max_verifications_per_cycle = 40
+effective_repair_bandwidth_bps = 104857600
+
+# Example 20-node multi-host storage cluster across 4 racks and 20 distinct physical machines
+[[nodes]]
+node_id = 0
+identity_id = "node-00"
+listen_addr = "10.24.0.10:19400"
+host_domain = "host-r0-m00.dc1.internal"
+disk_domain = "nvme-serial-00"
+rack_domain = "rack-00"
+region_domain = "region-eu-central-1"
+
+[[nodes]]
+node_id = 1
+identity_id = "node-01"
+listen_addr = "10.24.0.11:19400"
+host_domain = "host-r0-m01.dc1.internal"
+disk_domain = "nvme-serial-01"
+rack_domain = "rack-00"
+region_domain = "region-eu-central-1"

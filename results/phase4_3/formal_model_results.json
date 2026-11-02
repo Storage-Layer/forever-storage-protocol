@@ -1,0 +1,47 @@
+{
+  "phase": "4.3",
+  "model_checker": "BoundedModelChecker (Rust In-Tree BFS Explorer)",
+  "exploration_bounds": {
+    "max_depth": 8,
+    "max_states": 2500,
+    "quorum_cluster_size": 3,
+    "storage_nodes_modeled": 3
+  },
+  "exploration_statistics": {
+    "states_explored": 784,
+    "transitions_evaluated": 2368,
+    "max_depth_reached": 8,
+    "all_invariants_passed": true,
+    "violation_detected": null
+  },
+  "invariant_verification_status": {
+    "inv1_election_safety": {
+      "statement": "At most one coordinator can be in Leader state in any term T",
+      "verified": true
+    },
+    "inv2_leader_completeness": {
+      "statement": "If log entry is committed in term T, leaders for all terms T' > T contain that entry",
+      "verified": true
+    },
+    "inv3_log_matching": {
+      "statement": "If two logs agree on an entry at (term, index), all prefix entries are identical",
+      "verified": true
+    },
+    "inv4_storage_node_fencing": {
+      "statement": "Storage nodes never accept mutations with epoch < highest_seen_epoch",
+      "verified": true
+    },
+    "inv5_manifest_monotonicity": {
+      "statement": "Manifest generations never regress or conflict for any object",
+      "verified": true
+    },
+    "inv6_fail_closed_quorum_loss": {
+      "statement": "Partitioned leaders without majority cannot advance commit index",
+      "verified": true
+    },
+    "inv7_split_brain_mutation_prevention": {
+      "statement": "Two distinct leaders cannot concurrently mutate storage nodes",
+      "verified": true
+    }
+  }
+}

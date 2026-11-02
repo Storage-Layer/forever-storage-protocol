@@ -1,0 +1,44 @@
+{
+  "experiment_suite": "Consensus Durability Experiments (A through E)",
+  "date_utc": "2026-11-01T02:00:00Z",
+  "total_experiments": 5,
+  "passed": 5,
+  "failed": 0,
+  "experiments": [
+    {
+      "experiment_id": "EXP-A",
+      "name": "Crash Before Majority Commit",
+      "status": "VERIFIED",
+      "description": "Coordinator logs proposal at index 1, term 1, but crashes before quorum acknowledgment.",
+      "outcome": "Entry remains uncommitted; commit_index stays 0; recovered standby ignores uncommitted entry."
+    },
+    {
+      "experiment_id": "EXP-B",
+      "name": "Crash After Majority Commit",
+      "status": "VERIFIED",
+      "description": "Log entry replicated to 2 of 3 voters and committed (commit_index 1). Coordinator restarts.",
+      "outcome": "Committed entry survives restart completely intact; commit index is restored from durable WAL."
+    },
+    {
+      "experiment_id": "EXP-C",
+      "name": "Conflicting Leaders Proposal Rejection",
+      "status": "VERIFIED",
+      "description": "Deposed leader presents AppendEntries with Term 1 to replica at Term 2.",
+      "outcome": "Replica rejects proposal: request term 1 < local term 2."
+    },
+    {
+      "experiment_id": "EXP-D",
+      "name": "WAL Replay and State Machine Recovery",
+      "status": "VERIFIED",
+      "description": "ReplicatedLogManager crashes after 5 committed entries and reboots.",
+      "outcome": "Full WAL replay recovers all entries up to index 5; committed manifest generations restored."
+    },
+    {
+      "experiment_id": "EXP-E",
+      "name": "Snapshot Installation Rollback Prevention",
+      "status": "VERIFIED",
+      "description": "ReplicatedLogManager at commit index 10 receives snapshot with index 5.",
+      "outcome": "Snapshot installation strictly rejected with CorruptMetadata (snapshot rollback rejected: index 5 < commit index 10)."
+    }
+  ]
+}

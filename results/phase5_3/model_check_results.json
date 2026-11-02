@@ -1,0 +1,45 @@
+{
+  "phase": "5.3",
+  "component": "Extended Model Checking & State Space Exploration",
+  "timestamp": "2026-11-01T12:56:00Z",
+  "model_parameters": {
+    "nodes": 20,
+    "failure_domains": 5,
+    "coordinators": 3,
+    "erasure_coding": "RS(20,12)",
+    "max_concurrent_repairs": 4,
+    "max_concurrent_gc_operations": 4,
+    "tested_incarnation_transitions": 10,
+    "explored_states": 250000,
+    "depth_bound": 32
+  },
+  "verified_invariants": [
+    {
+      "invariant": "Inv_UniqueClusterAuthority",
+      "statement": "For any two accepted permits p1, p2 with same sequence, token(p1) == token(p2)",
+      "violated": false
+    },
+    {
+      "invariant": "Inv_NoSplitBrainMutations",
+      "statement": "If coexistence_warning_active == true, all mutating state transitions are disabled",
+      "violated": false
+    },
+    {
+      "invariant": "Inv_NoGCRaceWithRepair",
+      "statement": "shard_deletion_state == DeletionReserved => shard not in active_repair_reservations",
+      "violated": false
+    },
+    {
+      "invariant": "Inv_NoGCOfActiveGeneration",
+      "statement": "shard_deletion_state == PhysicallyDeleted => version < current_active_generation",
+      "violated": false
+    },
+    {
+      "invariant": "Inv_RedundancyFloorPreserved",
+      "statement": "surviving_shards >= 12 at all times across all non-corrupted failure domains",
+      "violated": false
+    }
+  ],
+  "verification_engine": "Rust bounded model checker (fsp_sim::testing::formal_model_v2)",
+  "verdict": "VERIFIED_BOUNDED"
+}

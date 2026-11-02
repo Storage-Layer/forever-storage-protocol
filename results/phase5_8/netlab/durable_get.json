@@ -1,0 +1,11 @@
+{
+  "object_id": "obj-netlab-100mib",
+  "payload_size_bytes": 104857600,
+  "reconstructed_sha256": "bf17539774a7fab5802d0e4a5fccc4df33736ea0d48d101592ad88589818fea9",
+  "source_sha256": "bf17539774a7fab5802d0e4a5fccc4df33736ea0d48d101592ad88589818fea9",
+  "sha256_match": true,
+  "nodes_queried_count": 12,
+  "duration_ms": 27352.53,
+  "throughput_mb_s": 3.66,
+  "status": "VERIFIED_EXACT_MATCH"
+}

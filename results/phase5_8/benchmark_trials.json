@@ -1,0 +1,24 @@
+{
+  "milestone": "Phase 5.8",
+  "audit_timestamp": "2026-11-02T04:00:00Z",
+  "physical_cross_host_benchmark": {
+    "status": "NOT EXECUTED",
+    "gate_reason": "BLOCKED: No authorized independent physical host available",
+    "wire_throughput_mbps": "NOT MEASURED",
+    "round_trip_latency_ms": "NOT MEASURED",
+    "actual_wire_bytes": "NOT MEASURED"
+  },
+  "local_inprocess_baseline_reference": {
+    "hardware": "Intel Xeon X5650 @ 2.67GHz (24 threads), 62 GiB RAM, ext4 on /dev/sdb3",
+    "runs": [
+      {
+        "trial_id": 1,
+        "object_size_bytes": 104857600,
+        "coding_scheme": "RS(20,12)",
+        "in_memory_encoding_time_ms": 320.4,
+        "in_memory_decoding_time_ms": 195.2,
+        "note": "Pure algorithmic Cauchy RS(20,12) throughput in memory; does not represent physical network wire transmission."
+      }
+    ]
+  }
+}

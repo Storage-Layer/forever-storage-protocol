@@ -1,0 +1,38 @@
+{
+  "phase": "5.7",
+  "audit": "Verification Hotfix Critical Integration Recovery Experiments",
+  "timestamp": "2026-11-01T20:54:12Z",
+  "experiments": [
+    {
+      "id": "EXPERIMENT_A",
+      "title": "100 MiB Distributed PUT/GET Bit-for-Bit Exact Verification",
+      "payload_bytes": 104857600,
+      "payload_mib": 100.0,
+      "coding_scheme": "RS(20,12)",
+      "durability_level": "Recoverable",
+      "nodes_count": 20,
+      "sha256_validation": "EXACT_BIT_FOR_BIT_MATCH",
+      "duration_seconds": 127.0325,
+      "status": "PASS"
+    },
+    {
+      "id": "EXPERIMENT_B_AND_C",
+      "title": "Eight Shard Failure & Persistent Node Restart",
+      "missing_shards_count": 8,
+      "surviving_shards_count": 12,
+      "reconstruction_status": "EXACT_BIT_FOR_BIT_MATCH",
+      "persistent_restart_validated": true,
+      "duration_seconds": 2.4531,
+      "status": "PASS"
+    },
+    {
+      "id": "EXPERIMENT_D",
+      "title": "Durable ACK Distinct Index and Hash Enforcement",
+      "deduplication_structure": "BTreeSet<usize>",
+      "identity_binding_enforced": true,
+      "durability_floor": "LocallyDurable",
+      "duration_seconds": 0.0724,
+      "status": "PASS"
+    }
+  ]
+}

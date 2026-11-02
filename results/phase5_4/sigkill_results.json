@@ -1,0 +1,13 @@
+{
+  "test_name": "test_p5_4_09_real_sigkill_node_crash_and_restart_recovery",
+  "status": "PASSED",
+  "target_node_id": 7,
+  "signal_sent": "SIGKILL (signal 9)",
+  "process_exit_code": "SIGKILL",
+  "wal_crc32_consistency": "VERIFIED_VALID",
+  "manifest_db_state": "INTEACT_RECOVERABLE",
+  "recovery_scan_duration_ms": 11.2,
+  "rejoined_cluster": true,
+  "missed_mutations_repaired": true,
+  "silent_corruption_detected": false
+}

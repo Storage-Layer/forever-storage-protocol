@@ -1,0 +1,13 @@
+{
+  "scheme": "LRC(20,12,4)",
+  "total_shards": 20,
+  "data_shards": 12,
+  "global_parity_shards": 4,
+  "local_parity_shards": 4,
+  "local_group_size": 4,
+  "repair_type": "LocalGroup_XOR",
+  "shards_read": 4,
+  "global_rs_equivalent_reads": 12,
+  "io_reduction_percent": 66.67,
+  "reconstructed_byte_match": true
+}

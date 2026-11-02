@@ -1,0 +1,12 @@
+{
+  "topology_version": "v1.0",
+  "total_nodes": 20,
+  "failure_domain_level": "process",
+  "zones": [
+    {"zone_id": "zone-a", "nodes": [0, 1, 2, 3]},
+    {"zone_id": "zone-b", "nodes": [4, 5, 6, 7]},
+    {"zone_id": "zone-c", "nodes": [8, 9, 10, 11]},
+    {"zone_id": "zone-d", "nodes": [12, 13, 14, 15]},
+    {"zone_id": "zone-e", "nodes": [16, 17, 18, 19]}
+  ]
+}

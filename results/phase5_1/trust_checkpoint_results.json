@@ -1,0 +1,30 @@
+{
+  "trust_model": "RecoveryTrustStore & Anti-Rollback Checkpoints",
+  "implementation": "src/security/recovery_auth.rs",
+  "freshness_classifications": [
+    {
+      "test_name": "test_11_secure_emergency_read_freshness_authentic_latest",
+      "manifest_generation": 5,
+      "checkpoint_generation": 5,
+      "classification": "AuthenticLatestCommitted",
+      "correctly_classified": true
+    },
+    {
+      "test_name": "test_12_secure_emergency_read_freshness_historical_version",
+      "manifest_generation": 3,
+      "checkpoint_generation": 7,
+      "classification": "AuthenticHistoricalVersion",
+      "reconstructed_gen": 3,
+      "known_latest_gen": 7,
+      "correctly_classified": true
+    },
+    {
+      "test_name": "test_13_secure_emergency_read_freshness_unverifiable",
+      "manifest_generation": 2,
+      "checkpoint_generation": null,
+      "classification": "UnverifiableFreshness",
+      "correctly_classified": true
+    }
+  ],
+  "anti_rollback_guarantee": "Storage nodes refuse generation downgrades and trust store detects stale manifests prior to decoding"
+}

@@ -1,0 +1,2 @@
+# FSP Metadata Backup Schedule (Every 15 minutes)
+*/15 * * * * fsp /opt/fsp/bin/backup_metadata.sh >> /var/log/fsp/backup.log 2>&1

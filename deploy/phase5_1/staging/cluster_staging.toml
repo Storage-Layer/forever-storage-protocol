@@ -1,0 +1,203 @@
+# FSP Phase 5.1 - 5-Host Physical Staging Configuration
+# Enforces RS(20,12) distributed placement with <= 4 shards per host failure domain
+
+coordinator_id = "coord-primary"
+cluster_name = "fsp-prod-staging"
+listen_addr = "127.0.0.1:18000"
+voter_quorum_size = 5
+voter_majority_threshold = 3
+data_shards_k = 12
+parity_shards_m = 8
+max_shards_per_host = 4
+max_shards_per_rack = 8
+default_coding_scheme = "RS(20,12)"
+default_stripe_size_bytes = 4194304
+degraded_commit_policy = "TolerateMaxErasures"
+ca_cert_pem = "deploy/phase5_1/certs/ca.crt"
+coordinator_cert_pem = "deploy/phase5_1/certs/coord.crt"
+coordinator_key_pem = "deploy/phase5_1/certs/coord.key"
+manifest_signer_key_file = "deploy/phase5_1/certs/manifest_signer.key"
+heartbeat_interval_secs = 2
+scrub_max_verifications_per_cycle = 100
+effective_repair_bandwidth_bps = 104857600
+
+# 20 storage nodes distributed across 5 host failure domains (4 nodes per host)
+[[nodes]]
+node_id = 1
+identity_id = "node-01"
+listen_addr = "127.0.0.1:19001"
+host_domain = "host-01"
+disk_domain = "disk-01"
+rack_domain = "rack-01"
+region_domain = "region-primary"
+
+[[nodes]]
+node_id = 2
+identity_id = "node-02"
+listen_addr = "127.0.0.1:19002"
+host_domain = "host-01"
+disk_domain = "disk-02"
+rack_domain = "rack-01"
+region_domain = "region-primary"
+
+[[nodes]]
+node_id = 3
+identity_id = "node-03"
+listen_addr = "127.0.0.1:19003"
+host_domain = "host-01"
+disk_domain = "disk-03"
+rack_domain = "rack-01"
+region_domain = "region-primary"
+
+[[nodes]]
+node_id = 4
+identity_id = "node-04"
+listen_addr = "127.0.0.1:19004"
+host_domain = "host-01"
+disk_domain = "disk-04"
+rack_domain = "rack-01"
+region_domain = "region-primary"
+
+[[nodes]]
+node_id = 5
+identity_id = "node-05"
+listen_addr = "127.0.0.1:19005"
+host_domain = "host-02"
+disk_domain = "disk-01"
+rack_domain = "rack-01"
+region_domain = "region-primary"
+
+[[nodes]]
+node_id = 6
+identity_id = "node-06"
+listen_addr = "127.0.0.1:19006"
+host_domain = "host-02"
+disk_domain = "disk-02"
+rack_domain = "rack-01"
+region_domain = "region-primary"
+
+[[nodes]]
+node_id = 7
+identity_id = "node-07"
+listen_addr = "127.0.0.1:19007"
+host_domain = "host-02"
+disk_domain = "disk-03"
+rack_domain = "rack-01"
+region_domain = "region-primary"
+
+[[nodes]]
+node_id = 8
+identity_id = "node-08"
+listen_addr = "127.0.0.1:19008"
+host_domain = "host-02"
+disk_domain = "disk-04"
+rack_domain = "rack-01"
+region_domain = "region-primary"
+
+[[nodes]]
+node_id = 9
+identity_id = "node-09"
+listen_addr = "127.0.0.1:19009"
+host_domain = "host-03"
+disk_domain = "disk-01"
+rack_domain = "rack-02"
+region_domain = "region-primary"
+
+[[nodes]]
+node_id = 10
+identity_id = "node-10"
+listen_addr = "127.0.0.1:19010"
+host_domain = "host-03"
+disk_domain = "disk-02"
+rack_domain = "rack-02"
+region_domain = "region-primary"
+
+[[nodes]]
+node_id = 11
+identity_id = "node-11"
+listen_addr = "127.0.0.1:19011"
+host_domain = "host-03"
+disk_domain = "disk-03"
+rack_domain = "rack-02"
+region_domain = "region-primary"
+
+[[nodes]]
+node_id = 12
+identity_id = "node-12"
+listen_addr = "127.0.0.1:19012"
+host_domain = "host-03"
+disk_domain = "disk-04"
+rack_domain = "rack-02"
+region_domain = "region-primary"
+
+[[nodes]]
+node_id = 13
+identity_id = "node-13"
+listen_addr = "127.0.0.1:19013"
+host_domain = "host-04"
+disk_domain = "disk-01"
+rack_domain = "rack-02"
+region_domain = "region-primary"
+
+[[nodes]]
+node_id = 14
+identity_id = "node-14"
+listen_addr = "127.0.0.1:19014"
+host_domain = "host-04"
+disk_domain = "disk-02"
+rack_domain = "rack-02"
+region_domain = "region-primary"
+
+[[nodes]]
+node_id = 15
+identity_id = "node-15"
+listen_addr = "127.0.0.1:19015"
+host_domain = "host-04"
+disk_domain = "disk-03"
+rack_domain = "rack-02"
+region_domain = "region-primary"
+
+[[nodes]]
+node_id = 16
+identity_id = "node-16"
+listen_addr = "127.0.0.1:19016"
+host_domain = "host-04"
+disk_domain = "disk-04"
+rack_domain = "rack-02"
+region_domain = "region-primary"
+
+[[nodes]]
+node_id = 17
+identity_id = "node-17"
+listen_addr = "127.0.0.1:19017"
+host_domain = "host-05"
+disk_domain = "disk-01"
+rack_domain = "rack-03"
+region_domain = "region-primary"
+
+[[nodes]]
+node_id = 18
+identity_id = "node-18"
+listen_addr = "127.0.0.1:19018"
+host_domain = "host-05"
+disk_domain = "disk-02"
+rack_domain = "rack-03"
+region_domain = "region-primary"
+
+[[nodes]]
+node_id = 19
+identity_id = "node-19"
+listen_addr = "127.0.0.1:19019"
+host_domain = "host-05"
+disk_domain = "disk-03"
+rack_domain = "rack-03"
+region_domain = "region-primary"
+
+[[nodes]]
+node_id = 20
+identity_id = "node-20"
+listen_addr = "127.0.0.1:19020"
+host_domain = "host-05"
+disk_domain = "disk-04"
+rack_domain = "rack-03"
+region_domain = "region-primary"

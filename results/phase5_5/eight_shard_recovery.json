@@ -1,0 +1,10 @@
+{
+  "test_name": "test_p5_5_16_eight_shard_recovery_after_persistent_restart",
+  "killed_nodes": [0, 2, 5, 8, 11, 14, 17, 19],
+  "killed_nodes_count": 8,
+  "surviving_nodes_count": 12,
+  "k_threshold": 12,
+  "degraded_read_status": "EXACT_BIT_MATCH",
+  "recovery_mechanism": "Inline Cauchy Reed-Solomon submatrix inversion",
+  "status": "PASS"
+}

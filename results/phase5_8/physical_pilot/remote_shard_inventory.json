@@ -1,0 +1,12 @@
+{
+  "scenario": "Host B Remote Shard Storage Inventory & Inspection",
+  "status": "BLOCKED",
+  "reason": "NO_AUTHORIZED_SECOND_PHYSICAL_HOST",
+  "actual_environment": "Linux Mint 22.3 (kernel 6.14.0-37-generic x86_64)",
+  "physical_host_count": 1,
+  "source_snapshot_sha256": "b626d226a3cba95e700e354abc2c9cd11af32e12ef1eff93f74518eca54a187d",
+  "binary_sha256": "52ff4946c3b86d6054e2ed5d8699a85957bebe9b288153d6b028f94a1b6018b6",
+  "remote_shards": [],
+  "verification_finding": "No physical storage directory inspected on Host B because Host B is not authorized or connected.",
+  "evidence_log_path": "results/phase5_8/physical_pilot/host_b_preflight.json"
+}

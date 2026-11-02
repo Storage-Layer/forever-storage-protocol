@@ -1,0 +1,9 @@
+{
+  "test_name": "test_p5_5_10_launcher_sigkill_pdeathsig_prevents_orphan_daemons",
+  "mechanism": "Linux PR_SET_PDEATHSIG with SIGKILL in CommandExt::pre_exec",
+  "pidfile_tracking": "cluster.pids",
+  "audit_orphans_implemented": true,
+  "cleanup_orphans_implemented": true,
+  "behavior_on_launcher_sigkill": "Kernel delivers SIGKILL to all spawned storage daemons when parent launcher terminates; surviving processes are audited and cleaned.",
+  "status": "PASS"
+}

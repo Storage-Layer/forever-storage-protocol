@@ -1,0 +1,35 @@
+{
+  "phase": "5.2",
+  "audit_date": "2026-11-01T12:05:00Z",
+  "findings": [
+    {
+      "finding_id": "SEC-P52-01",
+      "severity": "HIGH (Remediated)",
+      "title": "Unrestricted Force Override in Metadata Restore",
+      "status": "RESOLVED",
+      "resolution": "Replaced generic force_rollback boolean with dual-mode architecture: SafeOnline (strictly rejects rollbacks) and IsolatedRebootstrap (requires explicit signed DisasterRebootstrapAuthorization, writes recovery_provenance.rec, and advances epoch by +100 to fence stale coordinators)."
+    },
+    {
+      "finding_id": "SEC-P52-02",
+      "severity": "HIGH (Remediated)",
+      "title": "Cryptographic Key Custody & Leaked Secret Risk in Backups",
+      "status": "RESOLVED",
+      "resolution": "Enforced that metadata backups only contain public keys. Implemented DisasterRecoveryBackupBundle::scan_for_plaintext_secrets to detect and reject private key headers/markers. Implemented KeyRecoveryPackage with AES-256-GCM envelope encryption, escrow signature verification, and revocation."
+    },
+    {
+      "finding_id": "SEC-P52-03",
+      "severity": "MEDIUM (Remediated)",
+      "title": "Ambiguous Recovery Freshness Semantics",
+      "status": "RESOLVED",
+      "resolution": "Separated global consensus certainty from local checkpoints: AuthenticGlobalLatest now strictly requires a verified QuorumCertifiedCheckpoint with majority voter signatures. Otherwise classifies as AuthenticLocallyCurrent, AuthenticHistoricalVersion, or UnverifiableFreshness."
+    },
+    {
+      "finding_id": "SEC-P52-04",
+      "severity": "HIGH (Remediated)",
+      "title": "Unsafe Garbage Collection Below Erasure Coding Redundancy Threshold",
+      "status": "RESOLVED",
+      "resolution": "Implemented NodeEpochFencingTracker::audit_gc_eligibility enforcing reachability across active generation, legal holds, retained historical versions, recovery checkpoints, in-flight transactions, and minimum surviving shards (> 12)."
+    }
+  ],
+  "production_readiness_status": "NOT ESTABLISHED (Academic distributed preservation protocol; physical bare-metal and multi-day soak tests not executed)."
+}

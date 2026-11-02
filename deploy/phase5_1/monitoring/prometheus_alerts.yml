@@ -1,0 +1,47 @@
+groups:
+  - name: fsp_reliability_alerts
+    rules:
+      - alert: FspObjectDegradedRecoverable
+        expr: fsp_reliability_objects_total{health_state="DegradedButRecoverable"} > 0
+        for: 1m
+        labels:
+          severity: warning
+        annotations:
+          summary: "FSP objects in degraded state"
+          description: "{{ $value }} object(s) have lost redundancy and require adaptive repair."
+
+      - alert: FspObjectIrrecoverablyLost
+        expr: fsp_reliability_objects_total{health_state="IrrecoverablyLost"} > 0
+        for: 0s
+        labels:
+          severity: critical
+        annotations:
+          summary: "CRITICAL: FSP object permanently lost"
+          description: "Permanent data loss detected. Surviving shards < 12 for RS(20,12) encoding."
+
+      - alert: FspMetadataBackupStale
+        expr: (time() - fsp_recovery_backup_last_timestamp_seconds) > 1800
+        for: 5m
+        labels:
+          severity: critical
+        annotations:
+          summary: "FSP metadata backup stale"
+          description: "Latest metadata backup is older than 30 minutes (current age: {{ $value }}s)."
+
+      - alert: FspVoterQuorumDegraded
+        expr: fsp_consensus_healthy_voters < 3
+        for: 30s
+        labels:
+          severity: critical
+        annotations:
+          summary: "FSP metadata consensus quorum lost"
+          description: "Healthy voters dropped below majority threshold (healthy: {{ $value }})."
+
+      - alert: FspEmergencyReadFailed
+        expr: rate(fsp_recovery_emergency_reads_total{status="failed"}[5m]) > 0
+        for: 1m
+        labels:
+          severity: warning
+        annotations:
+          summary: "FSP emergency read failures detected"
+          description: "Unauthorized or unrecoverable emergency read attempts recorded."

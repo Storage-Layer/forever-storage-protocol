@@ -1,0 +1,29 @@
+{
+  "phase": "5.2",
+  "component": "Recovery Freshness & Quorum Certified Checkpoints",
+  "evaluated_at": "2026-11-01T12:00:00Z",
+  "freshness_classes": {
+    "AuthenticGlobalLatest": {
+      "requires_quorum_certified_checkpoint": true,
+      "requires_majority_voter_signatures": true,
+      "verified_in_test": "test_10_quorum_certified_current_manifest_recovery"
+    },
+    "AuthenticLocallyCurrent": {
+      "description": "Matches local checkpoint watermark but unverified global quorum proof",
+      "verified_in_test": "test_11_secure_emergency_read_freshness_authentic_latest"
+    },
+    "AuthenticHistoricalVersion": {
+      "description": "Cryptographically authentic but older than latest verified checkpoint",
+      "verified_in_test": "test_09_historical_manifest_recovery_classification"
+    },
+    "UnverifiableFreshness": {
+      "description": "Valid signature but no durability checkpoint available",
+      "verified_in_test": "test_08_unverifiable_recovery_freshness_classification"
+    }
+  },
+  "trust_store_features": {
+    "signer_revocation_support": true,
+    "revoked_signer_manifest_rejection": true,
+    "test_result": "PASSED (test_21_unauthorized_emergency_read_rejected)"
+  }
+}

@@ -1,0 +1,21 @@
+# FSP Phase 5.2 Cluster Configuration
+[cluster]
+cluster_id = "fsp-prod-cluster-01"
+datacenter = "eu-central"
+environment = "staging"
+min_quorum_size = 2
+total_coordinators = 3
+
+[coding]
+scheme = "reed-solomon"
+n = 20
+k = 12
+stripe_size_bytes = 4096
+
+[fencing]
+strict_mode = true
+fencing_epoch_delta_on_rebootstrap = 100
+
+[retention]
+enforce_reachability_audit = true
+min_surviving_shards_for_gc = 13

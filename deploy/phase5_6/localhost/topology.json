@@ -1,0 +1,17 @@
+{
+  "profile": "localhost",
+  "nodes_count": 20,
+  "coordinators_count": 3,
+  "base_storage_port": 9100,
+  "base_coordinator_port": 9000,
+  "storage_root_template": "/tmp/fsp_p55_cluster/node_{id}",
+  "coordinator_root_template": "/tmp/fsp_p55_cluster/coord_{id}",
+  "durability_mode": "LocallyDurable",
+  "erasure_coding": {
+    "scheme": "RS(20,12)",
+    "data_shards_k": 12,
+    "parity_shards_m": 8,
+    "failure_zones": 5,
+    "nodes_per_zone": 4
+  }
+}

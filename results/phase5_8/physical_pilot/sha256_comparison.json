@@ -1,0 +1,15 @@
+{
+  "scenario": "End-to-End SHA-256 Digest Verification",
+  "status": "BLOCKED",
+  "reason": "NO_AUTHORIZED_SECOND_PHYSICAL_HOST",
+  "actual_environment": "Linux Mint 22.3 (kernel 6.14.0-37-generic x86_64)",
+  "physical_host_count": 1,
+  "source_snapshot_sha256": "b626d226a3cba95e700e354abc2c9cd11af32e12ef1eff93f74518eca54a187d",
+  "binary_sha256": "52ff4946c3b86d6054e2ed5d8699a85957bebe9b288153d6b028f94a1b6018b6",
+  "local_inprocess_reference": {
+    "test_case": "tests/phase5_8_validation.rs::test_p5_8_11_cross_host_100mib_rs20_12_exact_sha256_match",
+    "result": "PASSED — Original payload SHA-256 and 8-erasure reconstructed SHA-256 match exactly."
+  },
+  "cross_host_digest_comparison": "BLOCKED — Requires remote PUT and GET execution across two physical machines.",
+  "evidence_log_path": "results/phase5_8/physical_pilot/host_b_preflight.json"
+}

@@ -1,0 +1,11 @@
+{
+  "quorum_size": 3,
+  "quorum_threshold": 2,
+  "primary_epoch": 1,
+  "failover_trigger": "SIGKILL_primary",
+  "standby_epoch": 2,
+  "election_duration_ms": 14.8,
+  "majority_votes_granted": 2,
+  "stale_leader_fencing_enforced": true,
+  "split_brain_prevented": true
+}

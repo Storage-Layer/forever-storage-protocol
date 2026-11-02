@@ -1,0 +1,26 @@
+{
+  "milestone": "Phase 5.8 Virtual Distributed Network Execution",
+  "repository": "/home/rade/Project/Jobs/fsp",
+  "commit_hash": "fsp_phase5_8_canonical_tree",
+  "toolchain": {
+    "rustc": "rustc 1.99.1",
+    "cargo": "cargo 1.99.1",
+    "host_target": "x86_64-unknown-linux-gnu"
+  },
+  "cargo_lock_sha256": "ef2335d3311e9fbec31832f592785d5127b52786d931c998690b38de3888b21f",
+  "release_binaries": {
+    "fsp-node": {
+      "path": "target/release/fsp-node",
+      "sha256": "812de638925ee97f9f9652ec52c3bfece9ac2b9ea2e2188f8f506a2de68b6b69"
+    },
+    "fsp-coordinator": {
+      "path": "target/release/fsp-coordinator",
+      "sha256": "877abf71084eb7aa6aec62ea0ab0f728a96ca78aec68b39e7b254b2c15f41b8d"
+    },
+    "fsp-sim": {
+      "path": "target/release/fsp-sim",
+      "sha256": "3e02679271d39eb15c0a423b51bff97b22f4fd573827e3853d1d2971b7461a08"
+    }
+  },
+  "verification_timestamp_utc": "2026-11-02T07:20:38.508931+00:00"
+}

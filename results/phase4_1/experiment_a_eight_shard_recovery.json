@@ -1,0 +1,22 @@
+{
+  "phase": "4.1",
+  "experiment": "A_eight_shard_recovery",
+  "status": "PASSED",
+  "configuration": {
+    "coding_scheme": "RS(20,12)",
+    "primary_nodes": 20,
+    "spare_nodes": 8,
+    "total_cluster_nodes": 28,
+    "erased_shards": 8,
+    "payload_size_bytes": 32768
+  },
+  "results": {
+    "initial_put_ack_count": 20,
+    "shards_erased": [0, 1, 2, 3, 4, 5, 6, 7],
+    "shards_repaired": 8,
+    "target_spare_nodes_assigned": [20, 21, 22, 23, 24, 25, 26, 27],
+    "manifest_generation_post_repair": 9,
+    "data_integrity_sha256_verified": true,
+    "read_verification_post_repair": "MATCH_EXACT"
+  }
+}

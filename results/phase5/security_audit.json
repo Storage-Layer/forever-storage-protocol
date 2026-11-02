@@ -1,0 +1,44 @@
+{
+  "audit_version": "5.0",
+  "audit_timestamp_utc": "2026-11-01T02:45:00Z",
+  "security_evaluator": "Antigravity Principal Consensus Security Researcher",
+  "scope": [
+    "QuorumMutationPermit semantics and cryptographic envelope",
+    "PermitOperationType distinction (StageShard vs CommitManifest vs DeleteShard vs GarbageCollectShard)",
+    "Destination node identity binding (NodeId enforcement)",
+    "Replay protection and cross-node mitigation",
+    "Delayed destructive RPC rejection"
+  ],
+  "threat_model_evaluations": [
+    {
+      "threat_id": "TM-P5-01",
+      "vector": "Cross-node permit replay",
+      "description": "An attacker intercepts a valid mutation permit issued for Node A and replays it against Node B storing shards for the same object.",
+      "mitigation_implemented": "QuorumPermitGrant and QuorumMutationPermit include target_node: NodeId under domain tag FSP-PERMIT-GRANT-V2. NodeEpochFencingTracker::verify_and_apply_mutation_permit_v2 verifies that permit.target_node == Some(self.node_id).",
+      "test_reference": "tests/phase5_validation.rs::test_p5_02_permit_replay_against_different_node_rejected",
+      "status": "VERIFIED_SECURE"
+    },
+    {
+      "threat_id": "TM-P5-02",
+      "vector": "Destructive operation privilege escalation via staging permit",
+      "description": "A stale or compromised coordinator presenting a StageShard permit to execute DeleteShard or GarbageCollectShard RPCs.",
+      "mitigation_implemented": "Explicit PermitOperationType enum (StageShard, CommitManifest, DeleteShard, GarbageCollectShard) bound into cryptographic grant signatures and validated by storage nodes prior to mutation execution.",
+      "test_reference": "tests/phase5_validation.rs::test_p5_03_stage_permit_rejected_for_destructive_deletion",
+      "status": "VERIFIED_SECURE"
+    },
+    {
+      "threat_id": "TM-P5-03",
+      "vector": "Delayed destructive RPC delivery post-failover",
+      "description": "A slow RPC initiated in term T arrives at a storage node after term T has been superseded by term T+1.",
+      "mitigation_implemented": "Storage nodes durably enforce monotonic epoch high-water marks and commit index records. Stale terms are fenced with RpcError::Fenced; stale commit indices are rejected with RpcError::Unauthorized.",
+      "test_reference": "tests/phase5_validation.rs::test_p5_25_comprehensive_security_matrix_and_adversarial_rejection",
+      "status": "VERIFIED_SECURE"
+    }
+  ],
+  "consensus_safety_invariants": {
+    "majority_voter_signatures_required": true,
+    "unilateral_coordinator_mutation_prevented": true,
+    "immutable_staging_separated_from_commit": true,
+    "destructive_reclamation_safely_fenced": true
+  }
+}

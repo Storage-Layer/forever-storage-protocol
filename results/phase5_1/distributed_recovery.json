@@ -1,0 +1,60 @@
+{
+  "experiment_series": "Phase 5.1 Distributed Recovery Experiments A through G",
+  "results": [
+    {
+      "experiment": "Exp A: Distributed PUT/GET Baseline",
+      "payload_size_bytes": 104857600,
+      "put_duration_ms": 1142,
+      "get_duration_ms": 789,
+      "data_integrity": "SHA256_MATCH",
+      "status": "PASSED"
+    },
+    {
+      "experiment": "Exp B: Concurrent Two Host Failure (8 shards lost)",
+      "failed_hosts": ["host-01", "host-02"],
+      "lost_shards_count": 8,
+      "surviving_shards_count": 12,
+      "degraded_read_status": "SUCCESSFUL_DECODED",
+      "status": "PASSED"
+    },
+    {
+      "experiment": "Exp C: Metadata Quorum Loss & Emergency Read",
+      "active_voters": 1,
+      "quorum_available": false,
+      "emergency_read_mode": "SECURE_OFFLINE",
+      "auth_token_verified": true,
+      "reconstructed_bytes": 104857600,
+      "status": "PASSED"
+    },
+    {
+      "experiment": "Exp D: Complete Coordinator Loss & Disaster Restore",
+      "coordinator_destroyed": true,
+      "restore_bundle_used": "fsp_metadata_backup.bundle",
+      "restored_commit_index": 120,
+      "state_machine_healthy": true,
+      "status": "PASSED"
+    },
+    {
+      "experiment": "Exp E: Eight-Shard Distributed Self-Healing",
+      "shards_to_repair": 8,
+      "placement_policy": "StrictHostAntiAffinity",
+      "repaired_shards": 8,
+      "post_repair_health": "FullyProtected_20_of_20",
+      "status": "PASSED"
+    },
+    {
+      "experiment": "Exp F: SIGKILL Termination During Active Recovery",
+      "crash_point": "MidRepairWritingStripe",
+      "restart_action": "IdempotentJournalReplay",
+      "corruption_detected": false,
+      "status": "PASSED"
+    },
+    {
+      "experiment": "Exp G: Multi-Stripe Streaming Reconstruction",
+      "payload_size_bytes": 104857600,
+      "stripes_processed": 25,
+      "memory_overhead_bytes": 16777216,
+      "status": "PASSED"
+    }
+  ]
+}

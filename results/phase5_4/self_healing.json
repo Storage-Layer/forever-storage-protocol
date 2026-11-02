@@ -1,0 +1,13 @@
+{
+  "test_name": "test_p5_4_08_adaptive_repair_full_cycle",
+  "status": "PASSED",
+  "missing_shards_detected": 3,
+  "degraded_object_id": "01940000-0000-7000-8000-000000005408",
+  "reconstructed_shards": 3,
+  "target_placement_nodes": [16, 17, 18],
+  "repair_journal_entries_logged": 3,
+  "repair_journal_state": "COMPLETED",
+  "target_nodes_received_payload": true,
+  "cluster_redundancy_restored": "20/20",
+  "repair_wall_time_ms": 32.5
+}

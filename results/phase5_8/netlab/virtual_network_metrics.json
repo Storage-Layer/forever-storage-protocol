@@ -1,0 +1,252 @@
+[
+  {
+    "ifname": "lo",
+    "operstate": "DOWN",
+    "rx_bytes": 0,
+    "rx_packets": 0,
+    "tx_bytes": 0,
+    "tx_packets": 0,
+    "rx_dropped": 0,
+    "tx_dropped": 0
+  },
+  {
+    "ifname": "fsp-br0",
+    "operstate": "UP",
+    "rx_bytes": 23584,
+    "rx_packets": 403,
+    "tx_bytes": 1444,
+    "tx_packets": 18,
+    "rx_dropped": 0,
+    "tx_dropped": 0
+  },
+  {
+    "ifname": "v-c01-br",
+    "operstate": "UP",
+    "rx_bytes": 1388266897,
+    "rx_packets": 2519597,
+    "tx_bytes": 2857198094,
+    "tx_packets": 2471783,
+    "rx_dropped": 0,
+    "tx_dropped": 0
+  },
+  {
+    "ifname": "v-c02-br",
+    "operstate": "UP",
+    "rx_bytes": 135726,
+    "rx_packets": 905,
+    "tx_bytes": 180136,
+    "tx_packets": 1255,
+    "rx_dropped": 0,
+    "tx_dropped": 0
+  },
+  {
+    "ifname": "v-c03-br",
+    "operstate": "UP",
+    "rx_bytes": 1146,
+    "rx_packets": 15,
+    "tx_bytes": 32148,
+    "tx_packets": 446,
+    "rx_dropped": 0,
+    "tx_dropped": 0
+  },
+  {
+    "ifname": "v-n01-br",
+    "operstate": "UP",
+    "rx_bytes": 129797552,
+    "rx_packets": 113159,
+    "tx_bytes": 68139789,
+    "tx_packets": 115467,
+    "rx_dropped": 0,
+    "tx_dropped": 0
+  },
+  {
+    "ifname": "v-n02-br",
+    "operstate": "UP",
+    "rx_bytes": 159238992,
+    "rx_packets": 137859,
+    "tx_bytes": 71103803,
+    "tx_packets": 140379,
+    "rx_dropped": 0,
+    "tx_dropped": 0
+  },
+  {
+    "ifname": "v-n03-br",
+    "operstate": "UP",
+    "rx_bytes": 159234317,
+    "rx_packets": 137879,
+    "tx_bytes": 71049128,
+    "tx_packets": 140363,
+    "rx_dropped": 0,
+    "tx_dropped": 0
+  },
+  {
+    "ifname": "v-n04-br",
+    "operstate": "UP",
+    "rx_bytes": 159229753,
+    "rx_packets": 137717,
+    "tx_bytes": 71055716,
+    "tx_packets": 140467,
+    "rx_dropped": 0,
+    "tx_dropped": 0
+  },
+  {
+    "ifname": "v-n05-br",
+    "operstate": "UP",
+    "rx_bytes": 159228968,
+    "rx_packets": 137753,
+    "tx_bytes": 71056460,
+    "tx_packets": 140503,
+    "rx_dropped": 0,
+    "tx_dropped": 0
+  },
+  {
+    "ifname": "v-n06-br",
+    "operstate": "UP",
+    "rx_bytes": 159247187,
+    "rx_packets": 137958,
+    "tx_bytes": 71035321,
+    "tx_packets": 140273,
+    "rx_dropped": 0,
+    "tx_dropped": 0
+  },
+  {
+    "ifname": "v-n07-br",
+    "operstate": "UP",
+    "rx_bytes": 159251776,
+    "rx_packets": 137953,
+    "tx_bytes": 71039219,
+    "tx_packets": 140310,
+    "rx_dropped": 0,
+    "tx_dropped": 0
+  },
+  {
+    "ifname": "v-n08-br",
+    "operstate": "UP",
+    "rx_bytes": 159249346,
+    "rx_packets": 138000,
+    "tx_bytes": 71057247,
+    "tx_packets": 140723,
+    "rx_dropped": 0,
+    "tx_dropped": 0
+  },
+  {
+    "ifname": "v-n09-br",
+    "operstate": "UP",
+    "rx_bytes": 237782467,
+    "rx_packets": 203941,
+    "tx_bytes": 78880130,
+    "tx_packets": 207961,
+    "rx_dropped": 0,
+    "tx_dropped": 0
+  },
+  {
+    "ifname": "v-n10-br",
+    "operstate": "UP",
+    "rx_bytes": 237821602,
+    "rx_packets": 203978,
+    "tx_bytes": 78844085,
+    "tx_packets": 207678,
+    "rx_dropped": 0,
+    "tx_dropped": 0
+  },
+  {
+    "ifname": "v-n11-br",
+    "operstate": "UP",
+    "rx_bytes": 237848919,
+    "rx_packets": 203804,
+    "tx_bytes": 78893453,
+    "tx_packets": 208117,
+    "rx_dropped": 0,
+    "tx_dropped": 0
+  },
+  {
+    "ifname": "v-n12-br",
+    "operstate": "UP",
+    "rx_bytes": 237832787,
+    "rx_packets": 203599,
+    "tx_bytes": 78879132,
+    "tx_packets": 207863,
+    "rx_dropped": 0,
+    "tx_dropped": 0
+  },
+  {
+    "ifname": "v-n13-br",
+    "operstate": "UP",
+    "rx_bytes": 108475289,
+    "rx_packets": 94099,
+    "tx_bytes": 66012042,
+    "tx_packets": 97075,
+    "rx_dropped": 0,
+    "tx_dropped": 0
+  },
+  {
+    "ifname": "v-n14-br",
+    "operstate": "UP",
+    "rx_bytes": 79015761,
+    "rx_packets": 69280,
+    "tx_bytes": 63065990,
+    "tx_packets": 71494,
+    "rx_dropped": 0,
+    "tx_dropped": 0
+  },
+  {
+    "ifname": "v-n15-br",
+    "operstate": "UP",
+    "rx_bytes": 79006166,
+    "rx_packets": 69131,
+    "tx_bytes": 63083627,
+    "tx_packets": 71721,
+    "rx_dropped": 0,
+    "tx_dropped": 0
+  },
+  {
+    "ifname": "v-n16-br",
+    "operstate": "UP",
+    "rx_bytes": 79024860,
+    "rx_packets": 69411,
+    "tx_bytes": 63135119,
+    "tx_packets": 71584,
+    "rx_dropped": 0,
+    "tx_dropped": 0
+  },
+  {
+    "ifname": "v-n17-br",
+    "operstate": "UP",
+    "rx_bytes": 79014422,
+    "rx_packets": 69281,
+    "tx_bytes": 63086691,
+    "tx_packets": 71749,
+    "rx_dropped": 0,
+    "tx_dropped": 0
+  },
+  {
+    "ifname": "v-n18-br",
+    "operstate": "UP",
+    "rx_bytes": 79015485,
+    "rx_packets": 69263,
+    "tx_bytes": 63075140,
+    "tx_packets": 71589,
+    "rx_dropped": 0,
+    "tx_dropped": 0
+  },
+  {
+    "ifname": "v-n19-br",
+    "operstate": "UP",
+    "rx_bytes": 79012147,
+    "rx_packets": 69205,
+    "tx_bytes": 63071030,
+    "tx_packets": 71496,
+    "rx_dropped": 0,
+    "tx_dropped": 0
+  },
+  {
+    "ifname": "v-n20-br",
+    "operstate": "UP",
+    "rx_bytes": 79019758,
+    "rx_packets": 69336,
+    "tx_bytes": 63096792,
+    "tx_packets": 71556,
+    "rx_dropped": 0,
+    "tx_dropped": 0
+  }
+]

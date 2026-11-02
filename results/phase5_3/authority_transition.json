@@ -1,0 +1,53 @@
+{
+  "phase": "5.3",
+  "component": "Cluster Incarnation & Authority Transition",
+  "timestamp": "2026-11-01T12:55:00Z",
+  "cluster_id": "fsp-cluster-main",
+  "genesis_incarnation": {
+    "cluster_id": "fsp-cluster-main",
+    "incarnation_seq": 1,
+    "incarnation_token": "cfca435b546747867086052f5ef2ff409deee6a2ffb4ac5fc48b2ddbf0355f30"
+  },
+  "evaluated_transitions": [
+    {
+      "transition_id": "T01-genesis-to-inc2",
+      "prior_seq": 1,
+      "target_seq": 2,
+      "operational_isolation_attested": true,
+      "old_quorum_fenced": true,
+      "verification_result": "ACCEPTED",
+      "node_fencing_state": "AdoptedIncarnation(seq=2)",
+      "stale_leader_fencing_outcome": "REJECTED_FENCED"
+    },
+    {
+      "transition_id": "T02-unverified-coexistence",
+      "prior_seq": 1,
+      "target_seq": 2,
+      "operational_isolation_attested": false,
+      "old_quorum_fenced": false,
+      "verification_result": "COEXISTENCE_WARNING_TRIGGERED",
+      "node_mutation_policy": "FAIL_CLOSED_REJECT_ALL",
+      "stale_mutation_outcome": "REJECTED_UNAUTHORIZED"
+    },
+    {
+      "transition_id": "T03-duplicate-conflicting-token",
+      "prior_seq": 2,
+      "target_seq": 2,
+      "conflicting_token": "divergent-fake-token-hex",
+      "verification_result": "REJECTED_CONFLICTING_AUTHORITY"
+    },
+    {
+      "transition_id": "T04-superseded-incarnation-permit",
+      "node_active_seq": 2,
+      "permit_presented_seq": 1,
+      "permit_epoch": 500,
+      "verification_result": "REJECTED_FENCED",
+      "security_invariant": "Incarnation sequence supersedes numerical epoch counter"
+    }
+  ],
+  "durability_verification": {
+    "record_file": "incarnation.rec",
+    "persisted_across_daemon_restarts": true,
+    "fsync_enforced": true
+  }
+}

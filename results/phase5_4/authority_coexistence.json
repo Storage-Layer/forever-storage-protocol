@@ -1,0 +1,15 @@
+{
+  "test_name": "test_p5_4_11_authority_coexistence_and_stale_permit_rejection",
+  "status": "PASSED",
+  "primary_coordinator_id": 0,
+  "original_incarnation": 1,
+  "split_brain_simulated_old_permit": {
+    "coordinator_id": 0,
+    "incarnation": 1,
+    "action": "GC_SWEEP"
+  },
+  "bumped_incarnation": 2,
+  "node_validation_result": "REJECTED_STALE_INCARNATION",
+  "split_brain_write_prevented": true,
+  "fencing_token_monotonically_enforced": true
+}

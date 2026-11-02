@@ -1,0 +1,40 @@
+{
+  "audit_subject": "FSP Protocol Integrity Architecture",
+  "hash_algorithms": {
+    "shard_payloads": {
+      "algorithm": "SHA-256",
+      "type": "Cryptographic",
+      "implementation": "Pure Rust NIST FIPS 180-4 (src/storage/integrity.rs)"
+    },
+    "reconstructed_objects": {
+      "algorithm": "SHA-256",
+      "type": "Cryptographic",
+      "implementation": "Pure Rust NIST FIPS 180-4"
+    },
+    "signed_manifests": {
+      "digest_algorithm": "SHA-256",
+      "signature_algorithm": "Ed25519",
+      "type": "Cryptographic Signature",
+      "implementation": "ed25519-dalek 2.2.0"
+    },
+    "wal_records": {
+      "algorithm": "SHA-256 bound per-shard records",
+      "type": "Cryptographic binding"
+    },
+    "metadata_snapshots": {
+      "algorithm": "SHA-256 canonical bundle digest",
+      "type": "Cryptographic"
+    },
+    "transfer_frames": {
+      "framing": "FSPN wire magic + 32-bit length prefix",
+      "payload_digest": "SHA-256 verified per stripe"
+    }
+  },
+  "compatibility_verification": {
+    "crc32c_in_core_codebase": "NOT PRESENT (Replaced entirely by NIST FIPS SHA-256 in Phase 3/4)",
+    "blake3_in_core_codebase": "NOT PRESENT (Explicitly standardized to NIST FIPS SHA-256)",
+    "historical_manifest_compatible": true,
+    "substitution_attack_rejected": true
+  },
+  "status": "PASS"
+}

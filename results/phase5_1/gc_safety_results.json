@@ -1,0 +1,33 @@
+{
+  "system": "Garbage Collection & Shard Deletion Safety Subsystem",
+  "implementation": "src/coordinator/fencing.rs",
+  "invariants_enforced": [
+    "DeleteShard or GarbageCollectShard cannot delete shards <= retention watermark",
+    "DeleteShard or GarbageCollectShard cannot delete shards protected by active recovery checkpoints",
+    "DeleteShard or GarbageCollectShard cannot delete active committed object generation"
+  ],
+  "validation_scenarios": [
+    {
+      "test_name": "test_20_quorum_permit_gc_protected_by_retention_watermark",
+      "target_object": "obj_retain",
+      "retention_watermark": 3,
+      "attempted_deletion_generation": 2,
+      "outcome": "REJECTED_RETENTION_WATERMARK"
+    },
+    {
+      "test_name": "test_21_quorum_permit_gc_protected_by_recovery_checkpoint",
+      "target_object": "obj_ckpt",
+      "protected_checkpoint_generation": 4,
+      "attempted_deletion_generation": 4,
+      "outcome": "REJECTED_CHECKPOINT_PROTECTED"
+    },
+    {
+      "test_name": "test_22_quorum_permit_gc_cannot_delete_active_committed_generation",
+      "target_object": "obj_active",
+      "active_committed_generation": 5,
+      "attempted_deletion_generation": 5,
+      "outcome": "REJECTED_CANNOT_DELETE_ACTIVE_GENERATION"
+    }
+  ],
+  "durability_guarantee": "Retained and checkpointed object versions remain fully decodable even under aggressive GC"
+}

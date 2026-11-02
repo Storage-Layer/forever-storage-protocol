@@ -1,0 +1,33 @@
+{
+  "milestone": "Phase 5.8",
+  "audit_timestamp": "2026-11-02T04:00:00Z",
+  "coding_scheme": "RS(20,12)",
+  "theoretical_expansion_ratio": 1.6666666666666667,
+  "payload_sizes": {
+    "1mib": {
+      "raw_payload_bytes": 1048576,
+      "theoretical_coded_bytes": 1747627,
+      "theoretical_expansion_ratio": 1.6667,
+      "actual_wire_bytes": "NOT MEASURED (PHYSICAL_PILOT_NOT_EXECUTED)"
+    },
+    "10mib": {
+      "raw_payload_bytes": 10485760,
+      "theoretical_coded_bytes": 17476267,
+      "theoretical_expansion_ratio": 1.6667,
+      "actual_wire_bytes": "NOT MEASURED (PHYSICAL_PILOT_NOT_EXECUTED)"
+    },
+    "100mib": {
+      "raw_payload_bytes": 104857600,
+      "theoretical_coded_bytes": 174762667,
+      "theoretical_expansion_ratio": 1.6667,
+      "actual_wire_bytes": "NOT MEASURED (PHYSICAL_PILOT_NOT_EXECUTED)"
+    }
+  },
+  "protocol_overhead_components": {
+    "rpc_frame_header_bytes": 37,
+    "crc32c_trailer_bytes": 4,
+    "tls_1_3_record_overhead_bytes_per_record": 22,
+    "tcp_ip_header_bytes_per_packet": 40
+  },
+  "wire_measurement_verdict": "ACTUAL_WIRE_BYTES: NOT MEASURED — Physical multi-host pilot not executed. Theoretical models verified."
+}

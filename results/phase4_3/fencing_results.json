@@ -1,0 +1,43 @@
+{
+  "phase": "4.3",
+  "component": "NodeEpochFencingTracker & FencedOperationToken",
+  "fencing_enforcement": {
+    "storage_node_strict_mode": "ENFORCED",
+    "uncertified_epoch_advances": "REJECTED (RpcError::Unauthorized)",
+    "certified_epoch_advances": "ACCEPTED via verified Ed25519 LeadershipCertificate",
+    "stale_epoch_mutations": "REJECTED (RpcError::Fenced)",
+    "tampered_payload_digest_mutations": "REJECTED (RpcError::Unauthorized)",
+    "token_wire_format": "OPTOKEN:epoch:leader:req_id:obj:shard:ver:hash:ts:sig"
+  },
+  "verification_matrix": [
+    {
+      "test": "test_p4_3_01_forged_epoch_without_quorum_cert_rejected",
+      "attempted_epoch": 999,
+      "current_epoch": 5,
+      "result": "REJECTED",
+      "error": "strict mode requires verified LeadershipCertificate"
+    },
+    {
+      "test": "test_p4_3_02_quorum_certificate_with_majority_signatures_accepted",
+      "cert_epoch": 10,
+      "voter_grants": 2,
+      "threshold": 2,
+      "result": "ACCEPTED_AND_PERSISTED",
+      "new_watermark": 10
+    },
+    {
+      "test": "test_p4_3_03_stale_leader_mutation_rejected_by_fencing_token",
+      "token_epoch": 11,
+      "node_watermark": 12,
+      "result": "REJECTED_FENCED",
+      "error": "RpcError::Fenced { current_epoch: 12, presented_epoch: 11 }"
+    },
+    {
+      "test": "test_p4_3_18_storage_node_rejects_tampered_payload_digest_binding",
+      "token_digest": "aaaa...",
+      "payload_digest": "bbbb...",
+      "result": "REJECTED_UNAUTHORIZED",
+      "error": "payload digest mismatch in fenced op token"
+    }
+  ]
+}

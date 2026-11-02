@@ -1,0 +1,26 @@
+{
+  "phase": "5.4",
+  "historical_baseline_tests": 275,
+  "phase5_4_new_tests": 25,
+  "cumulative_tests": 300,
+  "git_status": "not_a_git_repository",
+  "workspace_path": "/home/rade/Project/Jobs/fsp",
+  "toolchain": {
+    "rustc": "1.99.1",
+    "cargo": "1.99.1",
+    "target": "x86_64-unknown-linux-gnu"
+  },
+  "modules_implemented": [
+    "src/cluster/mod.rs",
+    "src/cluster/launcher.rs",
+    "src/cluster/topology.rs"
+  ],
+  "binaries_built": [
+    "target/debug/fsp-node",
+    "target/release/fsp-node",
+    "target/debug/fsp-sim",
+    "target/release/fsp-sim"
+  ],
+  "test_suites_count": 17,
+  "status": "PASSING_ALL_TESTS"
+}

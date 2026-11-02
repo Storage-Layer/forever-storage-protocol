@@ -1,0 +1,31 @@
+[Unit]
+Description=Forever Storage Protocol (FSP) Storage Node Daemon (%i)
+Documentation=https://internal.fsp.storage/docs/PHASE4_DISTRIBUTED_ARCHITECTURE.md
+After=network-online.target
+Wants=network-online.target
+
+[Service]
+Type=simple
+User=fsp
+Group=fsp
+UMask=0077
+ExecStart=/usr/local/bin/fsp-node \
+  --node-id %i \
+  --listen 0.0.0.0:19400 \
+  --storage-root /var/lib/fsp/node-%i \
+  --ca-cert /etc/fsp/pki/ca.crt \
+  --node-cert /etc/fsp/pki/node-%i.crt \
+  --node-key /etc/fsp/pki/node-%i.key \
+  --coord-cert /etc/fsp/pki/coordinator-primary.crt \
+  --capacity-bytes 1099511627776
+Restart=on-failure
+RestartSec=5s
+LimitNOFILE=65536
+NoNewPrivileges=true
+ProtectSystem=strict
+ProtectHome=true
+PrivateTmp=true
+ReadWritePaths=/var/lib/fsp/node-%i
+
+[Install]
+WantedBy=multi-user.target

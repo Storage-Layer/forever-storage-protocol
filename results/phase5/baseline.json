@@ -1,0 +1,75 @@
+{
+  "phase": "5.0",
+  "audit_timestamp_utc": "2026-11-01T02:22:00Z",
+  "toolchain": {
+    "rustc": "1.99.1 (58cf8f9c3 2026-10-13)",
+    "cargo": "1.99.1",
+    "os": "Linux Mint 22.3 (Zena) / Ubuntu 24.04 noble",
+    "kernel": "6.14.0-37-generic x86_64",
+    "cpu_cores": 24,
+    "total_memory_gib": 62.7
+  },
+  "verified_baseline_tests": {
+    "total_tests": 175,
+    "passed": 175,
+    "failed": 0,
+    "ignored": 0,
+    "test_threads": 1,
+    "breakdown": {
+      "src_lib_unit": 2,
+      "tests_determinism": 3,
+      "tests_failure_scenarios": 6,
+      "tests_phase1_validation": 16,
+      "tests_phase2_validation": 9,
+      "tests_phase3_validation": 20,
+      "tests_phase4_1_validation": 25,
+      "tests_phase4_2_validation": 25,
+      "tests_phase4_3_validation": 20,
+      "tests_phase4_4_validation": 25,
+      "tests_phase4_validation": 20,
+      "tests_recoverability": 4
+    }
+  },
+  "hygiene_status": {
+    "cargo_fmt": "clean (0 diffs)",
+    "cargo_clippy": "clean (0 warnings with -D warnings)",
+    "cargo_build_release": "clean release binary target/release/fsp-sim"
+  },
+  "critical_vulnerabilities_audited": [
+    {
+      "id": "SEC-P5-01",
+      "title": "Unbound Operation Type and Destination Node in QuorumMutationPermit",
+      "severity": "CRITICAL",
+      "affected_components": [
+        "src/coordinator/fencing.rs::QuorumMutationPermit",
+        "src/coordinator/fencing.rs::QuorumPermitGrant",
+        "src/coordinator/fencing.rs::verify_and_apply_mutation_permit"
+      ],
+      "vulnerability_analysis": "In Phase 4.4, QuorumPermitGrant binds epoch, commit_index, voter_id, request_id, object_id, shard_id, version, and payload_sha256_hex. However, it does not explicitly bind the destination target_node_id or the specific operation type (StageShard vs CommitManifest vs DeleteShard vs GarbageCollectShard). A valid permit intended for Node A could hypothetically be relayed to Node B storing the same shard identity, or a StageShard permit could be re-purposed for a destructive deletion operation.",
+      "architectural_remediation": "Extend QuorumPermitGrant and QuorumMutationPermit to include PermitOperationType and target_node: NodeId, authenticating under domain tag FSP-PERMIT-GRANT-V2 while maintaining backwards compatibility for existing Phase 4.4 tests."
+    },
+    {
+      "id": "SEC-P5-02",
+      "title": "Control Plane Quorum Loss vs Data Durability Disconnect in 5-Host RS(20,12) Topology",
+      "severity": "HIGH",
+      "affected_components": [
+        "src/coordinator/leadership.rs::QuorumState",
+        "src/coordinator/coordinator.rs",
+        "src/cli/mod.rs"
+      ],
+      "vulnerability_analysis": "Under a 5-host physical topology with 4 shards per host for RS(20,12), the loss of 2 physical hosts causes 8 shard failures. Since 12 shards survive (>= k=12), the payload data is 100% durable and mathematically reconstructable. However, if the metadata control plane uses a standard 3-voter quorum co-located on the first 3 hosts, losing hosts 1 and 2 destroys 2 out of 3 voters, causing metadata quorum loss. The control plane fails closed, preventing mutations and online reads, even though data durability is completely unharmed.",
+      "architectural_remediation": "Formalize 5-voter metadata quorum (requiring 3 of 5 voters, surviving any 2 host losses simultaneously with RS(20,12) data durability) and implement an offline emergency read tool allowing direct data reconstruction from surviving storage nodes when the coordinator control plane is completely unavailable."
+    },
+    {
+      "id": "SEC-P5-03",
+      "title": "Erasure Coding Matrix Naming Discrepancy (Cauchy vs. Vandermonde)",
+      "severity": "MEDIUM",
+      "affected_components": [
+        "src/coding/reed_solomon.rs::ReedSolomon",
+        "docs/PHASE4_4_FINAL_REPORT.md"
+      ],
+      "vulnerability_analysis": "Phase 4.4 documentation occasionally referenced Vandermonde submatrices, whereas the underlying engine in src/coding/reed_solomon.rs is systematically implemented using a Cauchy generator matrix C_{p,j} = 1 / (x_p ^ y_j) over GF(2^8). Standard Vandermonde matrices over GF(2^8) can have singular submatrices, whereas Cauchy matrices guarantee the MDS property for all submatrices. Codec interoperability must be rigorously validated and documented.",
+      "architectural_remediation": "Audit and document the exact Systematic Cauchy Reed-Solomon generator matrix construction, confirm MDS invertibility for all submatrices, and establish cross-version differential tests."
+    }
+  ]
+}

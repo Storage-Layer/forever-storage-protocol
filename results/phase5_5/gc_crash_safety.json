@@ -1,0 +1,11 @@
+{
+  "tests": [
+    "test_p5_5_18_gc_crash_safety_tombstone_recovery",
+    "test_p5_5_19_gc_crash_safety_quarantine_recovery",
+    "test_p5_5_20_gc_crash_safety_physical_deletion_recovery"
+  ],
+  "tombstone_durability": "Persisted to disk and replayed cleanly on startup",
+  "quarantine_recovery": "Orphaned quarantine shards detected and removed safely",
+  "physical_deletion": "Live shard files protected; mutual exclusion with repair enforced",
+  "status": "PASS"
+}

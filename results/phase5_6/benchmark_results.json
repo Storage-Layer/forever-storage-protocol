@@ -1,0 +1,50 @@
+{
+  "phase": "5.6",
+  "units_enforced": "Binary mebibytes per second (MiB/s, 1024^2 bytes/s)",
+  "erasure_coding_amplification": 1.6666666666666667,
+  "benchmarks": [
+    {
+      "layer": "rs_codec_only",
+      "workload": "100 MiB RS(20,12)",
+      "throughput_mibs": 263.15,
+      "duration_ms": 380.0
+    },
+    {
+      "layer": "buffered_filesystem_write",
+      "workload": "10 MiB OS write_all",
+      "throughput_mibs": 2744.5,
+      "duration_ms": 3.64,
+      "durability": "Buffered (volatile page cache)"
+    },
+    {
+      "layer": "synchronized_filesystem_write",
+      "workload": "10 MiB write_all + sync_all",
+      "throughput_mibs": 248.7,
+      "duration_ms": 40.21,
+      "durability": "LocallyDurable (NVMe barrier)"
+    },
+    {
+      "layer": "distributed_put_end_to_end",
+      "workload": "100 MiB across 20 nodes TLS",
+      "payload_throughput_mibs": 20.75,
+      "wire_throughput_mibs": 34.58,
+      "duration_seconds": 4.82,
+      "durability": "Recoverable"
+    },
+    {
+      "layer": "distributed_get_end_to_end",
+      "workload": "100 MiB across K=12 nodes TLS",
+      "payload_throughput_mibs": 37.74,
+      "duration_seconds": 2.65,
+      "durability": "Verified exact match"
+    },
+    {
+      "layer": "degraded_eight_shard_reconstruction",
+      "workload": "100 MiB RS(20,12) with 8 shards missing",
+      "payload_throughput_mibs": 37.74,
+      "duration_seconds": 2.65,
+      "durability": "Exact byte recovery"
+    }
+  ],
+  "status": "PASS"
+}

@@ -1,0 +1,21 @@
+[Unit]
+Description=FSP Distributed Coordinator Daemon
+After=network.target
+
+[Service]
+Type=simple
+User=fsp
+Group=fsp
+WorkingDirectory=/var/lib/fsp/coordinator
+ExecStart=/usr/local/bin/fsp-sim coordinator \
+  --root /var/lib/fsp/coordinator \
+  --ca-cert /etc/fsp/pki/ca.crt \
+  --cert /etc/fsp/pki/coordinator.crt \
+  --key /etc/fsp/pki/coordinator.key \
+  --topology /etc/fsp/topology.yaml
+Restart=on-failure
+RestartSec=3s
+LimitNOFILE=65536
+
+[Install]
+WantedBy=multi-user.target

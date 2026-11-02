@@ -1,0 +1,59 @@
+{
+  "topology_analysis": "Durability vs Service Availability in 5-Host RS(20,12) Staging Cluster",
+  "evaluated_timestamp_utc": "2026-11-01T02:45:00Z",
+  "data_plane": {
+    "coding_scheme": "RS(20,12)",
+    "n": 20,
+    "k": 12,
+    "m": 8,
+    "physical_hosts": 5,
+    "shards_per_host": 4,
+    "host_failure_scenario": {
+      "failed_hosts_count": 2,
+      "shards_lost": 8,
+      "shards_surviving": 12,
+      "min_shards_required_k": 12,
+      "data_durability_status": "100% RECOVERABLE",
+      "data_loss_event": false
+    }
+  },
+  "control_plane_comparisons": [
+    {
+      "quorum_model": "3-voter-quorum",
+      "voter_count": 3,
+      "majority_threshold": 2,
+      "voter_placement": "Co-located on Hosts 1, 2, and 3",
+      "under_two_host_loss": {
+        "voters_lost": 2,
+        "voters_surviving": 1,
+        "quorum_maintained": false,
+        "control_plane_status": "FAILED_CLOSED",
+        "online_writes": "HALTED",
+        "online_reads": "HALTED",
+        "offline_emergency_recovery_available": true
+      }
+    },
+    {
+      "quorum_model": "5-voter-quorum",
+      "voter_count": 5,
+      "majority_threshold": 3,
+      "voter_placement": "1 voter per physical host across all 5 hosts",
+      "under_two_host_loss": {
+        "voters_lost": 2,
+        "voters_surviving": 3,
+        "quorum_maintained": true,
+        "control_plane_status": "ONLINE_ACTIVE",
+        "online_writes": "ACTIVE",
+        "online_reads": "ACTIVE",
+        "offline_emergency_recovery_available": true
+      }
+    }
+  ],
+  "emergency_offline_recovery": {
+    "tool_command": "fsp emergency-read --id <obj-id> --config <conf> --output <dest>",
+    "bypasses_coordinator_quorum": true,
+    "reads_directly_from_storage_nodes": true,
+    "cryptographically_verifies_shards": true,
+    "reconstruction_proven": "tests/phase5_validation.rs::test_p5_06_emergency_offline_read_path_when_control_plane_unavailable"
+  }
+}

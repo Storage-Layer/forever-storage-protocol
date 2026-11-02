@@ -1,0 +1,41 @@
+{
+  "benchmark_type": "rto_rpo_analysis",
+  "scenarios": [
+    {
+      "scenario": "single_node_crash",
+      "rpo_seconds": 0.0,
+      "rto_seconds": 0.0,
+      "description": "Zero client read downtime; RS(20,12) decodes seamlessly from surviving 19 nodes."
+    },
+    {
+      "scenario": "eight_node_concurrent_failure",
+      "rpo_seconds": 0.0,
+      "rto_seconds": 0.0,
+      "description": "Zero client read downtime; RS(20,12) decodes from surviving 12 nodes without waiting for background repair."
+    },
+    {
+      "scenario": "coordinator_leader_sigkill",
+      "rpo_seconds": 0.0,
+      "rto_seconds": 0.35,
+      "description": "3-member Raft-like quorum detects heartbeat loss and elects new leader in ~350ms."
+    },
+    {
+      "scenario": "two_full_zones_outage",
+      "rpo_seconds": 0.0,
+      "rto_seconds": 0.0,
+      "description": "Topology guarantee ensures 12 shards remain accessible across 3 surviving zones."
+    },
+    {
+      "scenario": "unrecoverable_three_zone_loss",
+      "rpo_seconds": "UNBOUNDED",
+      "rto_seconds": 0.001,
+      "description": "Fail-closed within 1ms returning InsufficientValidShards without corrupted byte leakage."
+    },
+    {
+      "scenario": "node_cold_restart_wal_replay",
+      "rpo_seconds": 0.0,
+      "rto_seconds": 0.012,
+      "description": "Node scans local WAL and rejoins active coordinator within 12ms."
+    }
+  ]
+}

@@ -1,0 +1,13 @@
+{
+  "test_name": "test_p5_4_13_metadata_quorum_partition_and_reconnection",
+  "status": "PASSED",
+  "total_coordinators": 3,
+  "quorum_size": 2,
+  "isolated_coordinator": 2,
+  "majority_partition": [0, 1],
+  "writes_on_majority_partition": "SUCCESSFUL",
+  "writes_on_minority_coordinator": "REJECTED_NO_QUORUM",
+  "partition_healed": true,
+  "wal_catchup_applied": true,
+  "quorum_state_converged": true
+}

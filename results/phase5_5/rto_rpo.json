@@ -1,0 +1,35 @@
+{
+  "scenarios": [
+    {
+      "scenario": "storage_node_crash",
+      "rpo_seconds": 0.0,
+      "rto_seconds": 0.0,
+      "description": "Zero client read downtime; RS(20,12) decodes seamlessly from surviving 19 nodes."
+    },
+    {
+      "scenario": "eight_storage_nodes_crash",
+      "rpo_seconds": 0.0,
+      "rto_seconds": 0.0,
+      "description": "Inline decoding from 12 surviving shards achieves RPO=0 and RTO=0."
+    },
+    {
+      "scenario": "coordinator_leader_crash",
+      "rpo_seconds": 0.0,
+      "rto_seconds": 0.35,
+      "description": "Quorum election elects new leader in ~350ms; synchronous WAL prevents data loss."
+    },
+    {
+      "scenario": "node_cold_restart_wal_replay",
+      "rpo_seconds": 0.0,
+      "rto_seconds": 0.012,
+      "description": "Node scans local WAL and rebuilds shard index in ~12ms."
+    },
+    {
+      "scenario": "unrecoverable_nine_node_loss",
+      "rpo_seconds": "UNBOUNDED",
+      "rto_seconds": 0.001,
+      "description": "Fail-closed in <1ms returning InsufficientValidShards without corrupted data leakage."
+    }
+  ],
+  "status": "PASS"
+}

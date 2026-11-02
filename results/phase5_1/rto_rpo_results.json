@@ -1,0 +1,22 @@
+{
+  "metrics": {
+    "recovery_time_objective": {
+      "target_rto_ms": 500,
+      "measured_coordinator_failover_rto_ms": 284,
+      "measured_emergency_read_rto_seconds": 1.42,
+      "measured_dr_restore_rto_ms": 86,
+      "compliance": "MEETS_TARGET"
+    },
+    "recovery_point_objective": {
+      "target_rpo": "Zero committed data loss (RPO = 0)",
+      "measured_committed_data_loss_bytes": 0,
+      "measured_committed_manifest_loss_count": 0,
+      "compliance": "ZERO_LOSS_ACHIEVED"
+    }
+  },
+  "benchmarks": {
+    "100_mib_put_throughput_mb_s": 91.8,
+    "100_mib_get_throughput_mb_s": 132.9,
+    "secure_emergency_read_throughput_mb_s": 73.8
+  }
+}

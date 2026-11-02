@@ -1,0 +1,9 @@
+{
+  "protocol": "TCP / TLS 1.3",
+  "authentication": "Mutual TLS (mTLS) with Ed25519/ECDSA certificates",
+  "unauthorized_identity_rejection": "VERIFIED_FAIL_CLOSED",
+  "loopback_tested": true,
+  "physical_lan_tested": false,
+  "physical_lan_status": "NOT EXECUTED",
+  "status": "PASS"
+}

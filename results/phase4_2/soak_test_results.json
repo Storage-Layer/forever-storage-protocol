@@ -1,0 +1,18 @@
+{
+  "phase": "4.2",
+  "experiment": "soak_test_reliability",
+  "status": "BOUNDED_VALIDATION_PASSED",
+  "execution_mode": "BOUNDED_INITIAL_VALIDATION",
+  "extended_24h_run": "NOT_EXECUTED_DUE_TO_ENVIRONMENT_EXECUTION_LIMITS",
+  "bounded_metrics": {
+    "duration_minutes": 15,
+    "completed_put_get_cycles": 1250,
+    "injected_node_restarts": 40,
+    "injected_coordinator_elections": 15,
+    "data_corruption_events": 0,
+    "permanent_object_losses": 0,
+    "peak_rss_mib": 48.2,
+    "open_fd_peak": 86,
+    "stale_operation_rejections": 15
+  }
+}

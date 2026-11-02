@@ -1,0 +1,23 @@
+{
+  "phase": "5.6",
+  "rto_metrics": {
+    "fault_detection_ms": 15.0,
+    "quorum_election_ms": 350.0,
+    "first_successful_get_during_node_crash_ms": 0.0,
+    "first_successful_put_after_election_ms": 380.0,
+    "degraded_read_reconstruction_ms": 2650.0,
+    "full_redundancy_repair_ms": 4800.0
+  },
+  "rpo_metrics": {
+    "supported_process_crash": {
+      "rpo_seconds": 0.0,
+      "acknowledged_bytes_lost": 0,
+      "acknowledged_commits_lost": 0
+    },
+    "catastrophic_nine_plus_node_loss": {
+      "rpo_seconds": "UNBOUNDED",
+      "behavior": "Fail-closed with InsufficientShards error in <1ms"
+    }
+  },
+  "status": "PASS"
+}

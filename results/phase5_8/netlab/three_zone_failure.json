@@ -1,0 +1,40 @@
+{
+  "experiment": "Three Failure Domains Offline (Zone A, B, C)",
+  "offline_zones": [
+    "zone-a",
+    "zone-b",
+    "zone-c"
+  ],
+  "failed_nodes": [
+    0,
+    1,
+    2,
+    3,
+    4,
+    5,
+    6,
+    7,
+    8,
+    9,
+    10,
+    11
+  ],
+  "surviving_zones": [
+    "zone-d",
+    "zone-e"
+  ],
+  "surviving_nodes": [
+    12,
+    13,
+    14,
+    15,
+    16,
+    17,
+    18,
+    19
+  ],
+  "surviving_count": 8,
+  "required_k": 12,
+  "reconstruction_status": "FAILED_CLOSED_INSUFFICIENT_VALID_SHARDS",
+  "verdict": "PASSED_FAIL_CLOSED_CORRECT"
+}

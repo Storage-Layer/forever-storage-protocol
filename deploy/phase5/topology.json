@@ -1,0 +1,67 @@
+{
+  "topology_version": "5.0",
+  "cluster_id": "fsp-prod-cluster-01",
+  "scheme": "RS(20,12)",
+  "total_nodes": 20,
+  "data_shards_k": 12,
+  "parity_shards_m": 8,
+  "physical_hosts": [
+    {
+      "host_domain": "host-alpha",
+      "ip_address": "10.0.1.11",
+      "rack": "rack-1",
+      "region": "region-eu-1",
+      "nodes": [1, 2, 3, 4],
+      "max_shards": 4
+    },
+    {
+      "host_domain": "host-bravo",
+      "ip_address": "10.0.1.12",
+      "rack": "rack-1",
+      "region": "region-eu-1",
+      "nodes": [5, 6, 7, 8],
+      "max_shards": 4
+    },
+    {
+      "host_domain": "host-charlie",
+      "ip_address": "10.0.1.13",
+      "rack": "rack-2",
+      "region": "region-eu-1",
+      "nodes": [9, 10, 11, 12],
+      "max_shards": 4
+    },
+    {
+      "host_domain": "host-delta",
+      "ip_address": "10.0.1.14",
+      "rack": "rack-2",
+      "region": "region-eu-1",
+      "nodes": [13, 14, 15, 16],
+      "max_shards": 4
+    },
+    {
+      "host_domain": "host-echo",
+      "ip_address": "10.0.1.15",
+      "rack": "rack-3",
+      "region": "region-eu-1",
+      "nodes": [17, 18, 19, 20],
+      "max_shards": 4
+    }
+  ],
+  "durability_invariants": {
+    "max_two_host_loss_shards": 8,
+    "min_surviving_shards": 12,
+    "survives_any_two_host_failures": true
+  },
+  "metadata_quorum": {
+    "quorum_type": "5-voter-majority",
+    "voters": [
+      { "coordinator_id": "coord-alpha", "host": "host-alpha" },
+      { "coordinator_id": "coord-bravo", "host": "host-bravo" },
+      { "coordinator_id": "coord-charlie", "host": "host-charlie" },
+      { "coordinator_id": "coord-delta", "host": "host-delta" },
+      { "coordinator_id": "coord-echo", "host": "host-echo" }
+    ],
+    "threshold": 3,
+    "tolerates_two_host_failures_with_quorum": true
+  }
+}

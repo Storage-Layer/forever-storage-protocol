@@ -1,0 +1,20 @@
+# FSP Phase 5 Storage Node Daemon Example Configuration
+[node]
+node_id = 1
+identity_id = "node-alpha-1"
+listen_addr = "0.0.0.0:19401"
+storage_root = "/var/lib/fsp/nodes/1"
+capacity_limit_bytes = 1099511627776  # 1 TiB
+
+[topology]
+host_domain = "host-alpha"
+disk_domain = "disk-01"
+rack_domain = "rack-1"
+region_domain = "region-eu-1"
+
+[security]
+ca_cert_pem = "/etc/fsp/pki/ca.crt"
+node_cert_pem = "/etc/fsp/pki/node.crt"
+node_key_pem = "/etc/fsp/pki/node.key"
+socket_timeout_secs = 10
+max_rpc_payload_bytes = 16777216

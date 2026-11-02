@@ -1,0 +1,29 @@
+{
+  "scenarios_evaluated": [
+    {
+      "scenario": "9_node_failure",
+      "nodes_failed": 9,
+      "nodes_alive": 11,
+      "threshold_k": 12,
+      "outcome": "FAIL_CLOSED_REJECTED",
+      "error": "InsufficientValidShards { valid_shards: 11, required_shards: 12 }"
+    },
+    {
+      "scenario": "3_zone_failure",
+      "zones_failed": ["zone-a", "zone-b", "zone-c"],
+      "nodes_failed": 12,
+      "nodes_alive": 8,
+      "threshold_k": 12,
+      "outcome": "FAIL_CLOSED_REJECTED",
+      "error": "InsufficientValidShards { valid_shards: 8, required_shards: 12 }"
+    },
+    {
+      "scenario": "minority_partition_split_brain",
+      "minority_nodes": 9,
+      "majority_nodes": 11,
+      "quorum_needed": 11,
+      "outcome": "FAIL_CLOSED_REJECTED",
+      "error": "Cannot obtain majority quorum permit"
+    }
+  ]
+}

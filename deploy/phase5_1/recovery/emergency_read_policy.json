@@ -1,0 +1,24 @@
+{
+  "version": "1.0",
+  "policy_name": "fsp_disaster_recovery_emergency_read",
+  "allowed_principals": [
+    {
+      "principal_id": "recovery_admin_prod",
+      "public_key_hex": "4a5b6c7d8e9f00112233445566778899aabbccddeeff00112233445566778899",
+      "authorized_namespaces": ["*"],
+      "max_token_validity_secs": 86400
+    }
+  ],
+  "trusted_manifest_signers": [
+    {
+      "signer_id": "coord_primary_authority",
+      "public_key_hex": "112233445566778899aabbccddeeff00112233445566778899aabbccddeeff00"
+    }
+  ],
+  "durability_requirements": {
+    "min_surviving_shards": 12,
+    "require_per_shard_sha256_validation": true,
+    "reject_corrupted_shards": true,
+    "verify_object_payload_digest": true
+  }
+}

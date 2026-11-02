@@ -1,0 +1,52 @@
+# FSP Phase 5 Prometheus Scrape Configuration
+global:
+  scrape_interval: 5s
+  evaluation_interval: 5s
+
+scrape_configs:
+  - job_name: 'fsp-coordinators'
+    static_configs:
+      - targets:
+          - '10.0.1.11:19400'
+          - '10.0.1.12:19400'
+          - '10.0.1.13:19400'
+          - '10.0.1.14:19400'
+          - '10.0.1.15:19400'
+    metrics_path: '/metrics'
+    scheme: 'https'
+    tls_config:
+      ca_file: '/etc/fsp/pki/ca.crt'
+      cert_file: '/etc/fsp/pki/client.crt'
+      key_file: '/etc/fsp/pki/client.key'
+      insecure_skip_verify: false
+
+  - job_name: 'fsp-storage-nodes'
+    static_configs:
+      - targets:
+          - '10.0.1.11:19401'
+          - '10.0.1.11:19402'
+          - '10.0.1.11:19403'
+          - '10.0.1.11:19404'
+          - '10.0.1.12:19401'
+          - '10.0.1.12:19402'
+          - '10.0.1.12:19403'
+          - '10.0.1.12:19404'
+          - '10.0.1.13:19401'
+          - '10.0.1.13:19402'
+          - '10.0.1.13:19403'
+          - '10.0.1.13:19404'
+          - '10.0.1.14:19401'
+          - '10.0.1.14:19402'
+          - '10.0.1.14:19403'
+          - '10.0.1.14:19404'
+          - '10.0.1.15:19401'
+          - '10.0.1.15:19402'
+          - '10.0.1.15:19403'
+          - '10.0.1.15:19404'
+    metrics_path: '/metrics'
+    scheme: 'https'
+    tls_config:
+      ca_file: '/etc/fsp/pki/ca.crt'
+      cert_file: '/etc/fsp/pki/client.crt'
+      key_file: '/etc/fsp/pki/client.key'
+      insecure_skip_verify: false

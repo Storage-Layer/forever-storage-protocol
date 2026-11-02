@@ -1,0 +1,42 @@
+{
+  "phase": "5.3",
+  "component": "Security Findings & Vulnerability Elimination Matrix",
+  "timestamp": "2026-11-01T12:57:00Z",
+  "findings": [
+    {
+      "finding_id": "SEC-5.3-01",
+      "severity": "CRITICAL",
+      "title": "Static Numerical Epoch Offset Ineffective Against High-Epoch Split Brain",
+      "status": "RESOLVED",
+      "remediation": "Introduced ClusterIncarnationId and cryptographic ClusterAuthorityRecord. Storage nodes bind to monotonic incarnation sequence and reject older incarnations regardless of epoch counter value."
+    },
+    {
+      "finding_id": "SEC-5.3-02",
+      "severity": "HIGH",
+      "title": "Unverified Old-Quorum Coexistence Allowed Concurrent Split-Brain Mutations",
+      "status": "RESOLVED",
+      "remediation": "Storage nodes verify operational isolation and old quorum fencing assertions upon authority adoption; unverified coexistence triggers fail-closed mutation freeze."
+    },
+    {
+      "finding_id": "SEC-5.3-03",
+      "severity": "HIGH",
+      "title": "Offline Quorum Checkpoints Falsely Claimed Global Latest Freshness",
+      "status": "RESOLVED",
+      "remediation": "Counterexample demonstrated: majority checkpoint at term T does not preclude term T+1 commits. Reclassified offline checkpoints as AuthenticatedCommittedCheckpoint; AuthenticGlobalLatest strictly reserved for live cluster sync proof."
+    },
+    {
+      "finding_id": "SEC-5.3-04",
+      "severity": "CRITICAL",
+      "title": "TOCTOU Race Condition Between GC Deletion Eligibility Check and Active Repair",
+      "status": "RESOLVED",
+      "remediation": "Implemented multi-stage deletion lifecycle (Candidate -> EligibilityChecked -> DeletionReserved -> Tombstoned -> Quarantined -> PhysicallyDeleted) with pre-deletion active repair and active generation revalidation."
+    },
+    {
+      "finding_id": "SEC-5.3-05",
+      "severity": "MEDIUM",
+      "title": "String Regex Secret Scanner Permitted Raw Binary Key Inclusions",
+      "status": "RESOLVED",
+      "remediation": "Implemented StrictMetadataAllowlist type-level isolation enforcing valid 32-byte Ed25519 public keys only, eliminating private key leakage by construction."
+    }
+  ]
+}

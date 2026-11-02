@@ -1,0 +1,20 @@
+[Unit]
+Description=FSP Persistent Storage Node %i
+After=network.target local-fs.target
+Wants=network.target
+
+[Service]
+Type=simple
+User=fsp
+Group=fsp
+LimitNOFILE=65536
+LimitCORE=infinity
+EnvironmentFile=/etc/fsp/cluster.env
+ExecStart=/usr/local/bin/fsp-node --mode storage --node-id %i --bind 0.0.0.0:91%02i --storage-root /var/lib/fsp/node-%i
+Restart=on-failure
+RestartSec=3s
+KillMode=process
+TimeoutStopSec=10s
+
+[Install]
+WantedBy=multi-user.target

@@ -1,0 +1,211 @@
+{
+  "bridge": {
+    "name": "fsp-br0",
+    "ip": "10.240.58.1/24"
+  },
+  "coordinators": [
+    {
+      "namespace": "fsp-c01",
+      "ip": "10.240.58.11",
+      "veth": "veth-c01",
+      "peer": "v-c01-br",
+      "role": "primary"
+    },
+    {
+      "namespace": "fsp-c02",
+      "ip": "10.240.58.12",
+      "veth": "veth-c02",
+      "peer": "v-c02-br",
+      "role": "standby"
+    },
+    {
+      "namespace": "fsp-c03",
+      "ip": "10.240.58.13",
+      "veth": "veth-c03",
+      "peer": "v-c03-br",
+      "role": "witness"
+    }
+  ],
+  "storage_nodes": [
+    {
+      "namespace": "fsp-n01",
+      "node_id": 0,
+      "ip": "10.240.58.101",
+      "port": 9100,
+      "veth": "veth-n01",
+      "peer": "v-n01-br",
+      "zone": "zone-a"
+    },
+    {
+      "namespace": "fsp-n02",
+      "node_id": 1,
+      "ip": "10.240.58.102",
+      "port": 9100,
+      "veth": "veth-n02",
+      "peer": "v-n02-br",
+      "zone": "zone-a"
+    },
+    {
+      "namespace": "fsp-n03",
+      "node_id": 2,
+      "ip": "10.240.58.103",
+      "port": 9100,
+      "veth": "veth-n03",
+      "peer": "v-n03-br",
+      "zone": "zone-a"
+    },
+    {
+      "namespace": "fsp-n04",
+      "node_id": 3,
+      "ip": "10.240.58.104",
+      "port": 9100,
+      "veth": "veth-n04",
+      "peer": "v-n04-br",
+      "zone": "zone-a"
+    },
+    {
+      "namespace": "fsp-n05",
+      "node_id": 4,
+      "ip": "10.240.58.105",
+      "port": 9100,
+      "veth": "veth-n05",
+      "peer": "v-n05-br",
+      "zone": "zone-b"
+    },
+    {
+      "namespace": "fsp-n06",
+      "node_id": 5,
+      "ip": "10.240.58.106",
+      "port": 9100,
+      "veth": "veth-n06",
+      "peer": "v-n06-br",
+      "zone": "zone-b"
+    },
+    {
+      "namespace": "fsp-n07",
+      "node_id": 6,
+      "ip": "10.240.58.107",
+      "port": 9100,
+      "veth": "veth-n07",
+      "peer": "v-n07-br",
+      "zone": "zone-b"
+    },
+    {
+      "namespace": "fsp-n08",
+      "node_id": 7,
+      "ip": "10.240.58.108",
+      "port": 9100,
+      "veth": "veth-n08",
+      "peer": "v-n08-br",
+      "zone": "zone-b"
+    },
+    {
+      "namespace": "fsp-n09",
+      "node_id": 8,
+      "ip": "10.240.58.109",
+      "port": 9100,
+      "veth": "veth-n09",
+      "peer": "v-n09-br",
+      "zone": "zone-c"
+    },
+    {
+      "namespace": "fsp-n10",
+      "node_id": 9,
+      "ip": "10.240.58.110",
+      "port": 9100,
+      "veth": "veth-n10",
+      "peer": "v-n10-br",
+      "zone": "zone-c"
+    },
+    {
+      "namespace": "fsp-n11",
+      "node_id": 10,
+      "ip": "10.240.58.111",
+      "port": 9100,
+      "veth": "veth-n11",
+      "peer": "v-n11-br",
+      "zone": "zone-c"
+    },
+    {
+      "namespace": "fsp-n12",
+      "node_id": 11,
+      "ip": "10.240.58.112",
+      "port": 9100,
+      "veth": "veth-n12",
+      "peer": "v-n12-br",
+      "zone": "zone-c"
+    },
+    {
+      "namespace": "fsp-n13",
+      "node_id": 12,
+      "ip": "10.240.58.113",
+      "port": 9100,
+      "veth": "veth-n13",
+      "peer": "v-n13-br",
+      "zone": "zone-d"
+    },
+    {
+      "namespace": "fsp-n14",
+      "node_id": 13,
+      "ip": "10.240.58.114",
+      "port": 9100,
+      "veth": "veth-n14",
+      "peer": "v-n14-br",
+      "zone": "zone-d"
+    },
+    {
+      "namespace": "fsp-n15",
+      "node_id": 14,
+      "ip": "10.240.58.115",
+      "port": 9100,
+      "veth": "veth-n15",
+      "peer": "v-n15-br",
+      "zone": "zone-d"
+    },
+    {
+      "namespace": "fsp-n16",
+      "node_id": 15,
+      "ip": "10.240.58.116",
+      "port": 9100,
+      "veth": "veth-n16",
+      "peer": "v-n16-br",
+      "zone": "zone-d"
+    },
+    {
+      "namespace": "fsp-n17",
+      "node_id": 16,
+      "ip": "10.240.58.117",
+      "port": 9100,
+      "veth": "veth-n17",
+      "peer": "v-n17-br",
+      "zone": "zone-e"
+    },
+    {
+      "namespace": "fsp-n18",
+      "node_id": 17,
+      "ip": "10.240.58.118",
+      "port": 9100,
+      "veth": "veth-n18",
+      "peer": "v-n18-br",
+      "zone": "zone-e"
+    },
+    {
+      "namespace": "fsp-n19",
+      "node_id": 18,
+      "ip": "10.240.58.119",
+      "port": 9100,
+      "veth": "veth-n19",
+      "peer": "v-n19-br",
+      "zone": "zone-e"
+    },
+    {
+      "namespace": "fsp-n20",
+      "node_id": 19,
+      "ip": "10.240.58.120",
+      "port": 9100,
+      "veth": "veth-n20",
+      "peer": "v-n20-br",
+      "zone": "zone-e"
+    }
+  ]
+}

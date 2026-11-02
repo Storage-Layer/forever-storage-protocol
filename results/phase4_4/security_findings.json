@@ -1,0 +1,47 @@
+{
+  "audit_title": "Phase 4.4 Distributed Security and Consensus Hardening Findings",
+  "audit_date_utc": "2026-11-01T02:00:00Z",
+  "auditor": "Principal Distributed Systems Architect & Formal Verification Specialist",
+  "findings": [
+    {
+      "finding_id": "FSP-SEC-44-01",
+      "severity": "CRITICAL",
+      "status": "RESOLVED_VERIFIED",
+      "title": "Stale Leadership Certificate Partition Mutation Vulnerability",
+      "description": "Deposed leader C1 in Term 1 could sign operation tokens using its private key and mutate an lagging storage node N1 that had not yet observed Term 2.",
+      "remediation": "Replaced unilateral coordinator signing with QuorumMutationPermit requiring explicit majority quorum (>=2 of 3 voters) verification on every storage mutation. Lagging storage node N1 rejects mutations without majority voter agreement."
+    },
+    {
+      "finding_id": "FSP-SEC-44-02",
+      "severity": "HIGH",
+      "status": "RESOLVED_VERIFIED",
+      "title": "Commit Index Rollback / Delayed RPC Replay",
+      "description": "Delayed RPCs from prior terms or lower commit indices could arrive out of order and overwrite newer shard states.",
+      "remediation": "Added durable commit_index watermark tracking on storage nodes. Any mutation with commit_index < highest_seen_commit_index is rejected."
+    },
+    {
+      "finding_id": "FSP-SEC-44-03",
+      "severity": "HIGH",
+      "status": "RESOLVED_VERIFIED",
+      "title": "Metadata Snapshot Rollback Vulnerability",
+      "description": "An adversary or network partition could present an outdated snapshot, rolling back the replicated log and commit index.",
+      "remediation": "Enforced snapshot rollback rejection in ReplicatedLogManager::install_snapshot (snapshot_index < commit_index returns StorageError::CorruptMetadata)."
+    },
+    {
+      "finding_id": "FSP-SEC-44-04",
+      "severity": "MEDIUM",
+      "status": "RESOLVED_VERIFIED",
+      "title": "Storage Node Restart Idempotency Cache Loss",
+      "description": "Storage node restarts cleared the in-memory executed_requests set, allowing request replay after reboot.",
+      "remediation": "Added executed_requests.rec write-and-sync persistence and load_or_init recovery in NodeEpochFencingTracker."
+    },
+    {
+      "finding_id": "FSP-SEC-44-05",
+      "severity": "LOW",
+      "status": "DOCUMENTED_NOT_EXECUTED",
+      "title": "Lack of Multi-Datacenter Physical Hardware Staging",
+      "description": "Protocol has been thoroughly verified on multi-process local network namespaces and deterministic simulation, but physical bare-metal multi-host deployment has not been provisioned.",
+      "remediation": "Created production systemd unit templates and cluster_5host.toml configuration; marked physical staging as NOT EXECUTED in final deliverables."
+    }
+  ]
+}

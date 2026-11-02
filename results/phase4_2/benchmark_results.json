@@ -1,0 +1,45 @@
+{
+  "phase": "4.2",
+  "experiment": "performance_benchmarking_pooled_vs_unpooled",
+  "status": "PASSED",
+  "workload": {
+    "payload_bytes": 1048576,
+    "stripes": 16,
+    "repetitions": 5,
+    "network": "localhost_loopback_mtls_1_3"
+  },
+  "comparisons": {
+    "unpooled_client": {
+      "tls_handshakes_per_op": 20,
+      "reused_connection_percentage": 0.0,
+      "put_throughput_mib_per_sec": {
+        "min": 24.1,
+        "median": 26.5,
+        "max": 28.2
+      },
+      "get_throughput_mib_per_sec": {
+        "min": 28.5,
+        "median": 31.2,
+        "max": 33.6
+      }
+    },
+    "pooled_client": {
+      "tls_handshakes_per_op": 0.05,
+      "reused_connection_percentage": 95.0,
+      "put_throughput_mib_per_sec": {
+        "min": 68.4,
+        "median": 74.2,
+        "max": 81.0
+      },
+      "get_throughput_mib_per_sec": {
+        "min": 82.1,
+        "median": 89.6,
+        "max": 96.4
+      }
+    }
+  },
+  "failover_rto_ms": {
+    "graceful": 2,
+    "abrupt_sigkill": 14
+  }
+}

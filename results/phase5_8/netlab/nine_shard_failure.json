@@ -1,0 +1,34 @@
+{
+  "experiment": "Nine Storage Nodes Unavailable (Quorum Loss Fail-Closed)",
+  "failed_nodes": [
+    0,
+    1,
+    2,
+    3,
+    4,
+    5,
+    6,
+    7,
+    8
+  ],
+  "surviving_nodes": [
+    9,
+    10,
+    11,
+    12,
+    13,
+    14,
+    15,
+    16,
+    17,
+    18,
+    19
+  ],
+  "surviving_count": 11,
+  "required_k": 12,
+  "reconstruction_status": "FAILED_CLOSED_INSUFFICIENT_VALID_SHARDS",
+  "error_message": "InsufficientValidShards(11 < 12)",
+  "partial_bytes_emitted": 0,
+  "corrupted_bytes_emitted": 0,
+  "verdict": "PASSED_FAIL_CLOSED_CORRECT"
+}

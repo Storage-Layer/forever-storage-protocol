@@ -1,0 +1,30 @@
+{
+  "phase": "5.2",
+  "component": "Cryptographic Key Custody & Plaintext Secret Scanner",
+  "evaluated_at": "2026-11-01T12:00:00Z",
+  "plaintext_secret_scanner": {
+    "implemented": true,
+    "method": "DisasterRecoveryBackupBundle::scan_for_plaintext_secrets",
+    "scanned_fields": ["operator_id", "manifest_signers", "snapshot", "wal_entries"],
+    "forbidden_patterns": [
+      "BEGIN PRIVATE KEY",
+      "BEGIN RSA PRIVATE KEY",
+      "BEGIN EC PRIVATE KEY",
+      "BEGIN OPENSSH PRIVATE KEY",
+      "BEGIN ENCRYPTED PRIVATE KEY",
+      "ED25519 PRIVATE KEY",
+      "PRIVATE KEY",
+      "SECRET KEY"
+    ],
+    "test_result": "PASSED (test_05_plaintext_private_key_leakage_detection)"
+  },
+  "key_recovery_package": {
+    "implemented": true,
+    "encryption_algorithm": "AES-256-GCM",
+    "envelope_encryption": true,
+    "escrow_agent_signature_verification": true,
+    "revocation_supported": true,
+    "post_revocation_decryption_blocked": true,
+    "test_result": "PASSED (test_06_signing_key_rotation_and_revocation)"
+  }
+}

@@ -1,0 +1,36 @@
+{
+  "phase": "5.3",
+  "component": "Recovery Time Objective (RTO) & Recovery Point Objective (RPO)",
+  "timestamp": "2026-11-01T12:56:00Z",
+  "rto_measurements": [
+    {
+      "operation": "Isolated Disaster Rebootstrap",
+      "target_rto_secs": 5.0,
+      "measured_duration_ms": 32.4,
+      "status": "WITHIN_BUDGET"
+    },
+    {
+      "operation": "Storage Node Incarnation Record Reload (Restart)",
+      "target_rto_secs": 1.0,
+      "measured_duration_ms": 1.2,
+      "status": "WITHIN_BUDGET"
+    },
+    {
+      "operation": "Secure Emergency Read Reconstruction (4 MiB, 8 shards lost)",
+      "target_rto_secs": 15.0,
+      "measured_duration_ms": 2840.0,
+      "status": "WITHIN_BUDGET"
+    },
+    {
+      "operation": "Garbage Collection Shard Reservation & Audit",
+      "target_rto_secs": 0.5,
+      "measured_duration_ms": 0.45,
+      "status": "WITHIN_BUDGET"
+    }
+  ],
+  "rpo_guarantees": {
+    "committed_manifest_watermark": "Zero data loss for all committed transactions durably flushed to WAL snapshot before disaster",
+    "uncommitted_mutations": "In-flight uncommitted writes fail closed and are discarded upon incarnation transition",
+    "fencing_guarantee": "Superseded incarnations strictly prevented from mutating storage nodes, guaranteeing zero post-disaster divergence"
+  }
+}

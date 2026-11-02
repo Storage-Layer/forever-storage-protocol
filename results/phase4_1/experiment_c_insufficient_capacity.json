@@ -1,0 +1,21 @@
+{
+  "phase": "4.1",
+  "experiment": "C_insufficient_capacity_backoff",
+  "status": "PASSED",
+  "state_machine": {
+    "initial_state": "Detected",
+    "enqueued_state": "Pending",
+    "evaluation_state": "CapacityCheck",
+    "blocked_state": "WaitingForCapacity",
+    "woken_state": "Pending",
+    "final_state": "Completed"
+  },
+  "observations": {
+    "cluster_health_when_blocked": "RepairBlockedByCapacity",
+    "spares_available_initially": 0,
+    "backoff_jitter_applied": true,
+    "dynamic_spare_joined": true,
+    "woken_jobs_count": 1,
+    "repair_executed_after_join": true
+  }
+}

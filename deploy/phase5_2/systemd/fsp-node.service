@@ -1,0 +1,24 @@
+[Unit]
+Description=Forever Storage Protocol (FSP) Storage Node Daemon
+After=network.target
+Wants=network-online.target
+
+[Service]
+Type=simple
+User=fsp
+Group=fsp
+ExecStart=/opt/fsp/bin/fsp-node --config /etc/fsp/node.toml
+Restart=on-failure
+RestartSec=5s
+LimitNOFILE=65536
+StandardOutput=journal
+StandardError=journal
+
+# Hardening
+ProtectSystem=strict
+ProtectHome=true
+ReadWritePaths=/var/lib/fsp/storage /var/log/fsp
+PrivateTmp=true
+
+[Install]
+WantedBy=multi-user.target

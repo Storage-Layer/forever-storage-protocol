@@ -1,0 +1,26 @@
+version: "1.0"
+cluster_id: "fsp-cluster-prod"
+topology:
+  zones:
+    - name: "zone-a"
+      nodes: [0, 1, 2, 3]
+      racks: ["rack-a-0", "rack-a-1"]
+    - name: "zone-b"
+      nodes: [4, 5, 6, 7]
+      racks: ["rack-b-0", "rack-b-1"]
+    - name: "zone-c"
+      nodes: [8, 9, 10, 11]
+      racks: ["rack-c-0", "rack-c-1"]
+    - name: "zone-d"
+      nodes: [12, 13, 14, 15]
+      racks: ["rack-d-0", "rack-d-1"]
+    - name: "zone-e"
+      nodes: [16, 17, 18, 19]
+      racks: ["rack-e-0", "rack-e-1"]
+erasure_coding:
+  scheme: "RS(20,12)"
+  total_shards: 20
+  data_shards: 12
+  parity_shards: 8
+  max_shards_per_zone: 4
+  max_tolerable_zone_failures: 2

@@ -1,0 +1,12 @@
+# Rust build artifacts
+/target/
+
+# Virtual network experiment runtime state and temporary payloads
+/results/phase5_8/netlab/runtime/
+
+# Scratch, logs, and Python cache
+*.tmp
+*.log
+*.bk
+__pycache__/
+.DS_Store

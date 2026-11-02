@@ -1,0 +1,23 @@
+{
+  "matrix_type": "metadata_crash_consistency",
+  "scenarios": [
+    {
+      "scenario": "leader_crash_after_wal_write",
+      "mitigation": "Synchronous fsync before ACK; surviving quorum verifies monotonic epoch",
+      "test": "test_p5_5_09_coordinator_committed_wal_recovery_after_restart",
+      "status": "PASS"
+    },
+    {
+      "scenario": "partial_wal_record_corruption",
+      "mitigation": "CRC32/line parse validation; torn records safely aborted on restart",
+      "test": "test_p5_5_08_wal_partial_append_crash_reconstructed_or_rolled_back",
+      "status": "PASS"
+    },
+    {
+      "scenario": "dual_crash_coordinator_and_storage_node",
+      "mitigation": "Metadata backup restoration and independent erasure reconstruction",
+      "test": "test_p5_5_25_metadata_snapshot_restore_and_dual_crash_recovery",
+      "status": "PASS"
+    }
+  ]
+}

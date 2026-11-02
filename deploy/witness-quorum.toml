@@ -1,0 +1,16 @@
+# FSP Phase 4.2 — Quorum Witness Configuration
+[witness]
+witness_id = "witness-quorum-03"
+listen_addr = "10.24.0.30:19450"
+storage_root = "/var/lib/fsp/witness"
+
+[quorum]
+cluster_size = 3
+quorum_threshold = 2
+peers = ["coordinator-primary-01", "coordinator-standby-02"]
+
+[security]
+trust_environment_mode = "ProductionStrict"
+ca_cert_pem = "/etc/fsp/pki/ca.crt"
+witness_cert_pem = "/etc/fsp/pki/witness-quorum-03.crt"
+witness_key_pem = "/etc/fsp/pki/witness-quorum-03.key"

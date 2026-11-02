@@ -1,0 +1,22 @@
+[Unit]
+Description=FSP Distributed Coordinator Daemon
+After=network.target network-online.target
+Wants=network-online.target
+
+[Service]
+Type=simple
+User=fsp
+Group=fsp
+EnvironmentFile=-/etc/fsp/coordinator.env
+ExecStart=/usr/local/bin/fsp-coordinator --config /etc/fsp/coordinator.toml
+Restart=on-failure
+RestartSec=5s
+LimitNOFILE=65536
+KillMode=mixed
+TimeoutStopSec=15s
+ProtectSystem=strict
+ReadWritePaths=/var/lib/fsp/coordinator /var/log/fsp
+PrivateTmp=true
+
+[Install]
+WantedBy=multi-user.target

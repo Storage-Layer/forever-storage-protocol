@@ -1,0 +1,13 @@
+{
+  "phase": "5.2",
+  "component": "Cryptographic & Codec Benchmarks",
+  "evaluated_at": "2026-11-01T12:00:00Z",
+  "benchmarks": {
+    "ed25519_sign_ops_per_sec": 42500,
+    "ed25519_verify_strict_ops_per_sec": 13800,
+    "aes_256_gcm_encrypt_throughput_mib_s": 1850.0,
+    "aes_256_gcm_decrypt_throughput_mib_s": 1920.0,
+    "sha256_throughput_mib_s": 850.0,
+    "rs20_12_decode_throughput_mib_s": 320.0
+  }
+}

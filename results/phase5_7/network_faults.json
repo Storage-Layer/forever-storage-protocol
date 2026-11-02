@@ -1,0 +1,25 @@
+{
+  "phase": "5.7",
+  "audit_module": "tests/phase5_6_validation.rs",
+  "network_fault_scenarios": [
+    {
+      "test_name": "test_p5_6_03_tls_identity_and_unauthorized_node_rejection",
+      "fault_type": "Unauthorized TLS Certificate / Untrusted CA",
+      "expected_behavior": "Immediate connection termination during TLS handshake; untrusted peer rejected.",
+      "outcome": "VERIFIED_PASS"
+    },
+    {
+      "test_name": "test_p5_6_12_client_timeout_and_idempotent_transaction_replay",
+      "fault_type": "Client ACK Timeout & Network Partition Simulation",
+      "expected_behavior": "Client retries idempotent transaction ID; coordinator detects duplicate replay without double-allocating storage.",
+      "outcome": "VERIFIED_PASS"
+    },
+    {
+      "test_name": "test_p5_6_21_quorum_loss_mutation_fails_closed_safely",
+      "fault_type": "Quorum Loss via Correlated Network Disconnect",
+      "expected_behavior": "Coordinator detects surviving nodes < 12 (quorum loss); mutation fails closed without corruption.",
+      "outcome": "VERIFIED_PASS"
+    }
+  ],
+  "status": "PASS"
+}

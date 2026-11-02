@@ -1,0 +1,23 @@
+{
+  "phase": "5.6",
+  "barrier_sequence": [
+    "1. write_all to .tmp.[uuid].[shard_id]",
+    "2. sync_all on temporary file descriptor",
+    "3. atomic POSIX rename to destination shard container",
+    "4. sync_all on parent directory file descriptor"
+  ],
+  "crash_points_tested": [
+    {"point": "BeforeTempFileCreate", "result": "CLEAN_ROLLBACK"},
+    {"point": "DuringPartialShardWrite", "result": "CORRUPT_TEMP_REMOVED"},
+    {"point": "AfterBytesWrittenBeforeFsync", "result": "UNCOMMITTED_DISCARDED"},
+    {"point": "AfterFsyncBeforeRename", "result": "TEMP_DISCARDED_NO_STALE_COMMIT"},
+    {"point": "AfterRenameBeforeParentDirSync", "result": "FS_RECONCILED_ON_RESTART"},
+    {"point": "AfterParentDirSync", "result": "DURABLE_PAYLOAD_PRESERVED"},
+    {"point": "AfterWalAppendBeforeWalSync", "result": "UNCOMMITTED_ENTRY_ROLLED_BACK"},
+    {"point": "AfterWalSyncBeforeQuorumCommit", "result": "WAL_COMMITTED_RECOVERED"},
+    {"point": "AfterManifestCommitBeforeClientAck", "result": "DURABLE_COMMIT_SURVIVES"},
+    {"point": "ImmediatelyAfterClientAck", "result": "FULL_DURABILITY_PRESERVED"}
+  ],
+  "torn_page_prevention": "POSIX atomic rename guarantees directory points to complete file or old file, never partial",
+  "status": "PASS"
+}

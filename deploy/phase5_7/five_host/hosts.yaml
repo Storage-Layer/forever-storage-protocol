@@ -1,0 +1,64 @@
+# FSP Phase 5.7 Five-Host Production Topology Profile
+profile_name: five_host_datacenter
+version: "5.7"
+
+hosts:
+  host_p1:
+    hostname: fsp-dc1-p1.prod
+    ip: 10.10.1.11
+    nic: eth0
+    coordinator_role: primary
+    coordinator_port: 18000
+    zones:
+      - zone_id: rack-1
+        nodes: [0, 1, 2, 3]
+        base_port: 19000
+  host_p2:
+    hostname: fsp-dc1-p2.prod
+    ip: 10.10.1.12
+    nic: eth0
+    coordinator_role: standby
+    coordinator_port: 18000
+    zones:
+      - zone_id: rack-2
+        nodes: [4, 5, 6, 7]
+        base_port: 19004
+  host_p3:
+    hostname: fsp-dc1-p3.prod
+    ip: 10.10.1.13
+    nic: eth0
+    coordinator_role: witness
+    coordinator_port: 18000
+    zones:
+      - zone_id: rack-3
+        nodes: [8, 9, 10, 11]
+        base_port: 19008
+  host_p4:
+    hostname: fsp-dc1-p4.prod
+    ip: 10.10.1.14
+    nic: eth0
+    coordinator_role: voter
+    coordinator_port: 18000
+    zones:
+      - zone_id: rack-4
+        nodes: [12, 13, 14, 15]
+        base_port: 19012
+  host_p5:
+    hostname: fsp-dc1-p5.prod
+    ip: 10.10.1.15
+    nic: eth0
+    coordinator_role: voter
+    coordinator_port: 18000
+    zones:
+      - zone_id: rack-5
+        nodes: [16, 17, 18, 19]
+        base_port: 19016
+
+resilience_analysis:
+  coding_scheme: RS(20,12)
+  loss_of_two_hosts_shards_lost: 8
+  surviving_shards: 12
+  reconstruction_satisfied: true
+  quorum_size: 5
+  quorum_threshold: 3
+  operational_scope: "Production-grade resilience. Tolerates concurrent total destruction of 2 physical racks/machines while preserving full quorum (3/5 active) and Reed-Solomon reconstruction (12/20 surviving)."

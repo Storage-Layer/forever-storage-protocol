@@ -1,0 +1,35 @@
+[Unit]
+Description=FSP Persistent Storage Node Instance %i
+After=network-online.target local-fs.target
+Wants=network-online.target
+Documentation=https://github.com/forever-storage-protocol/fsp
+
+[Service]
+Type=simple
+User=fsp
+Group=fsp
+LimitNOFILE=65536
+LimitMEMLOCK=infinity
+TasksMax=infinity
+LimitCORE=infinity
+KillMode=control-group
+Restart=always
+RestartSec=2s
+TimeoutStopSec=15s
+
+EnvironmentFile=/etc/fsp/cluster.env
+ExecStart=/usr/local/bin/fsp-node \
+    --node-id %i \
+    --listen 0.0.0.0:190%02i \
+    --storage-root /var/lib/fsp/node-%i \
+    --ca-cert /etc/fsp/pki/ca.crt \
+    --node-cert /etc/fsp/pki/node_%i.crt \
+    --node-key /etc/fsp/pki/node_%i.key \
+    --coord-cert /etc/fsp/pki/coordinator.crt \
+    --capacity-bytes 536870912
+
+StandardOutput=journal
+StandardError=journal
+
+[Install]
+WantedBy=multi-user.target

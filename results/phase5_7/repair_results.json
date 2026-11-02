@@ -1,0 +1,14 @@
+{
+  "phase": "5.7",
+  "audit_module": "tests/phase5_6_validation.rs",
+  "repair_audit": {
+    "test_name": "test_p5_6_20_durable_full_repair_persistence_and_reconciliation",
+    "scenario": "Full online repair of missing shards across storage nodes",
+    "repaired_shards": 8,
+    "repair_journal_persisted": true,
+    "manifest_updated_and_fsynced": true,
+    "byte_exact_verification": true,
+    "outcome": "VERIFIED_PASS"
+  },
+  "status": "PASS"
+}

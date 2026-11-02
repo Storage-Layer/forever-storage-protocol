@@ -1,0 +1,30 @@
+{
+  "phase": "4.2",
+  "experiment": "adversarial_fault_injection",
+  "status": "PASSED",
+  "injected_fault_scenarios": [
+    {
+      "fault_type": "deterministic_packet_loss",
+      "probability": 1.0,
+      "client_handling": "DETECTED_AND_RETRIED",
+      "retry_policy": "exponential_backoff_max_3",
+      "recovery": "SUCCESS_AFTER_RETRY"
+    },
+    {
+      "fault_type": "connection_reset",
+      "handling": "EVICTED_FROM_CONNECTION_POOL",
+      "reconnect_successful": true
+    },
+    {
+      "fault_type": "network_partition",
+      "isolated_node_id": 3,
+      "handling": "SIMULATED_NETWORK_DROP_ENCOUNTERED",
+      "data_availability": "MAINTAINED_VIA_ERASURE_REDUNDANCY"
+    },
+    {
+      "fault_type": "disk_full_enospc",
+      "handling": "QUOTA_EXCEEDED_RETURNED_WITHOUT_PANIC",
+      "uncommitted_state_cleaned": true
+    }
+  ]
+}

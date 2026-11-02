@@ -1,0 +1,89 @@
+# FSP Five-Host Deployment Configuration (Canonical 5-Zone Model)
+cluster_name: fsp-production-5host
+replication_profile: rs-20-12
+failure_domain_guarantee: "Any 2 entire host failures (8 nodes) leaves 12 shards alive, guaranteeing 100% data recovery"
+
+hosts:
+  storage-host-01:
+    ip: 10.0.10.11
+    zone_id: 0
+    coordinator: coord-0 (port 9000)
+    nodes:
+      - id: 0
+        port: 9100
+        mount: /data/disk1
+      - id: 1
+        port: 9101
+        mount: /data/disk2
+      - id: 2
+        port: 9102
+        mount: /data/disk3
+      - id: 3
+        port: 9103
+        mount: /data/disk4
+  storage-host-02:
+    ip: 10.0.10.12
+    zone_id: 1
+    coordinator: coord-1 (port 9000)
+    nodes:
+      - id: 4
+        port: 9100
+        mount: /data/disk1
+      - id: 5
+        port: 9101
+        mount: /data/disk2
+      - id: 6
+        port: 9102
+        mount: /data/disk3
+      - id: 7
+        port: 9103
+        mount: /data/disk4
+  storage-host-03:
+    ip: 10.0.10.13
+    zone_id: 2
+    coordinator: coord-2 (port 9000)
+    nodes:
+      - id: 8
+        port: 9100
+        mount: /data/disk1
+      - id: 9
+        port: 9101
+        mount: /data/disk2
+      - id: 10
+        port: 9102
+        mount: /data/disk3
+      - id: 11
+        port: 9103
+        mount: /data/disk4
+  storage-host-04:
+    ip: 10.0.10.14
+    zone_id: 3
+    nodes:
+      - id: 12
+        port: 9100
+        mount: /data/disk1
+      - id: 13
+        port: 9101
+        mount: /data/disk2
+      - id: 14
+        port: 9102
+        mount: /data/disk3
+      - id: 15
+        port: 9103
+        mount: /data/disk4
+  storage-host-05:
+    ip: 10.0.10.15
+    zone_id: 4
+    nodes:
+      - id: 16
+        port: 9100
+        mount: /data/disk1
+      - id: 17
+        port: 9101
+        mount: /data/disk2
+      - id: 18
+        port: 9102
+        mount: /data/disk3
+      - id: 19
+        port: 9103
+        mount: /data/disk4

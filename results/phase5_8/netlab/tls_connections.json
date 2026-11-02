@@ -1,0 +1,32 @@
+{
+  "protocol": "Mutual TLS 1.3 (mTLS)",
+  "cipher_suite": "TLS_AES_256_GCM_SHA384",
+  "key_exchange": "secp256r1 (NIST P-256)",
+  "ca_subject": "CN=FSP-Netlab-Root-CA",
+  "coordinator_san": "DNS:coordinator-primary.fsp.internal, IP:10.240.58.11",
+  "node_sans": [
+    "DNS:node-00.fsp.internal, IP:10.240.58.101",
+    "DNS:node-01.fsp.internal, IP:10.240.58.102",
+    "DNS:node-02.fsp.internal, IP:10.240.58.103",
+    "DNS:node-03.fsp.internal, IP:10.240.58.104",
+    "DNS:node-04.fsp.internal, IP:10.240.58.105",
+    "DNS:node-05.fsp.internal, IP:10.240.58.106",
+    "DNS:node-06.fsp.internal, IP:10.240.58.107",
+    "DNS:node-07.fsp.internal, IP:10.240.58.108",
+    "DNS:node-08.fsp.internal, IP:10.240.58.109",
+    "DNS:node-09.fsp.internal, IP:10.240.58.110",
+    "DNS:node-10.fsp.internal, IP:10.240.58.111",
+    "DNS:node-11.fsp.internal, IP:10.240.58.112",
+    "DNS:node-12.fsp.internal, IP:10.240.58.113",
+    "DNS:node-13.fsp.internal, IP:10.240.58.114",
+    "DNS:node-14.fsp.internal, IP:10.240.58.115",
+    "DNS:node-15.fsp.internal, IP:10.240.58.116",
+    "DNS:node-16.fsp.internal, IP:10.240.58.117",
+    "DNS:node-17.fsp.internal, IP:10.240.58.118",
+    "DNS:node-18.fsp.internal, IP:10.240.58.119",
+    "DNS:node-19.fsp.internal, IP:10.240.58.120"
+  ],
+  "mutual_authentication": true,
+  "certificate_pinning": "Strict SHA-256 leaf fingerprint binding per NodeId",
+  "verification_result": "SUCCESSFUL_HANDSHAKE_ALL_NODES"
+}

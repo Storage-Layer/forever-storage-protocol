@@ -1,0 +1,40 @@
+{
+  "phase": "4.2",
+  "experiment": "distributed_epoch_fencing",
+  "status": "PASSED",
+  "storage_node_fencing_policy": {
+    "persistence_format": "epoch.rec",
+    "mutation_validation": "STRICT_GREATER_OR_EQUAL",
+    "on_stale_request": "REJECT_WITH_RPC_ERROR_FENCED"
+  },
+  "test_observations": [
+    {
+      "operation": "PutShardFenced",
+      "node_recorded_epoch": 10,
+      "presented_epoch": 9,
+      "result": "REJECTED_FENCED",
+      "state_mutated": false
+    },
+    {
+      "operation": "DeleteShardFenced",
+      "node_recorded_epoch": 15,
+      "presented_epoch": 14,
+      "result": "REJECTED_FENCED",
+      "state_mutated": false
+    },
+    {
+      "operation": "PutShardFenced",
+      "node_recorded_epoch": 10,
+      "presented_epoch": 12,
+      "result": "ACCEPTED_AND_EPOCH_ADVANCED_TO_12",
+      "state_mutated": true,
+      "fsync_confirmed": true
+    },
+    {
+      "operation": "StorageNodeRestart",
+      "pre_restart_epoch": 42,
+      "post_restart_epoch": 42,
+      "stale_request_after_restart": "REJECTED_FENCED"
+    }
+  ]
+}

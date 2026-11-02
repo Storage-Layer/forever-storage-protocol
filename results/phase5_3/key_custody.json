@@ -1,0 +1,26 @@
+{
+  "phase": "5.3",
+  "component": "Cryptographic Key Custody & Type-Level Isolation",
+  "timestamp": "2026-11-01T12:55:00Z",
+  "threat_model": {
+    "risk": "Private key leakage into unencrypted backup bundles or manifests",
+    "historical_vulnerability": "Regex string scanner bypass via raw binary keys or non-standard encodings"
+  },
+  "mitigation_architecture": {
+    "type_level_allowlist": "StrictMetadataAllowlist",
+    "guarantee": "By construction, metadata bundle types do not contain private keys",
+    "public_key_verification": "Strict 32-byte Ed25519 public key hex validation",
+    "test_reference": "test_20_raw_binary_secret_exclusion_via_strict_allowlist",
+    "result": "PASS"
+  },
+  "escrow_key_lifecycle": {
+    "encryption": "AES-256-GCM envelope encryption with unique nonce and 16-byte auth tag",
+    "tamper_detection_test": "test_19_key_package_invalid_authentication_tag_rejected",
+    "rotation_and_revocation_test": "test_21_key_rotation_and_revocation_semantics",
+    "offline_revocation_test": "test_22_offline_revocation_limitations_demonstrated",
+    "result": "PASS"
+  },
+  "operational_security_advisory": {
+    "offline_revocation_reality": "Cryptographic revocation is only enforceable when updated Trust Store / CRL is delivered to storage nodes. Offline isolated nodes cannot detect key compromise without explicit trust sync."
+  }
+}

@@ -1,0 +1,28 @@
+[package]
+name = "fsp-sim"
+version = "0.1.0"
+edition = "2021"
+description = "Forever Storage Protocol (FSP) Phase 0 Research Simulation Foundation"
+license = "MIT OR Apache-2.0"
+default-run = "fsp-sim"
+
+[[bin]]
+name = "fsp-sim"
+path = "src/main.rs"
+
+[[bin]]
+name = "fsp-node"
+path = "src/bin/fsp_node.rs"
+
+[[bin]]
+name = "fsp-coordinator"
+path = "src/bin/fsp_coordinator.rs"
+
+[dependencies]
+ed25519-dalek = { version = "=2.2.0", default-features = false, features = ["std", "fast"] }
+sha2 = "=0.10.9"
+rustls = { version = "=0.23.45", default-features = false, features = ["ring", "std", "tls12"] }
+rustls-pemfile = "=2.2.0"
+rustls-pki-types = "=1.15.1"
+ring = "=0.17.14"
+

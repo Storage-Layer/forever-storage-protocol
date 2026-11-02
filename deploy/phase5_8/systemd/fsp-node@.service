@@ -1,0 +1,22 @@
+[Unit]
+Description=FSP Storage Node Daemon (Instance %i)
+After=network.target network-online.target
+Wants=network-online.target
+
+[Service]
+Type=simple
+User=fsp
+Group=fsp
+EnvironmentFile=-/etc/fsp/node-%i.env
+ExecStart=/usr/local/bin/fsp-node --node-id %i --config /etc/fsp/node-%i.toml
+Restart=on-failure
+RestartSec=5s
+LimitNOFILE=65536
+KillMode=mixed
+TimeoutStopSec=15s
+ProtectSystem=strict
+ReadWritePaths=/var/lib/fsp/node-%i /var/log/fsp
+PrivateTmp=true
+
+[Install]
+WantedBy=multi-user.target

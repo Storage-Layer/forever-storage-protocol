@@ -1,0 +1,11 @@
+{
+  "phase": "5.2",
+  "component": "Coordinator Failover & Stale Epoch Fencing",
+  "evaluated_at": "2026-11-01T12:00:00Z",
+  "failover_safety": {
+    "epoch_advancement_on_restore": "+100 over prior watermark",
+    "stale_epoch_rejection": "STRICT (RpcError::Fenced)",
+    "zombie_leader_mutations_blocked": true,
+    "test_result": "PASSED (test_03_stale_leadership_fenced_after_restore)"
+  }
+}

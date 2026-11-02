@@ -1,0 +1,38 @@
+{
+  "audit_phase": "5.1",
+  "audit_target": "Disaster Recovery, Emergency Read & Permit Replay Security",
+  "findings": [
+    {
+      "id": "SEC-P51-01",
+      "severity": "CRITICAL",
+      "title": "Unauthenticated Offline Emergency Read Permitted Arbitrary Local Read",
+      "state_prior": "execute_emergency_read bypassed authorization checks, allowing reading any shard without principal credentials or manifest verification.",
+      "remediation": "Implemented execute_secure_emergency_read with Ed25519-signed RecoveryCapabilityToken, RecoveryTrustStore, manifest signature verification, and namespace isolation.",
+      "status": "RESOLVED"
+    },
+    {
+      "id": "SEC-P51-02",
+      "severity": "HIGH",
+      "title": "Permit Replay Vulnerability in Shard Deletion & Garbage Collection",
+      "state_prior": "Permits lacked retention watermark verification, meaning a DeleteShard or GarbageCollectShard permit could delete shards from retained or checkpointed generations.",
+      "remediation": "Added strict retention watermark and checkpoint protection checks in NodeEpochFencingTracker. Storage nodes reject deletions of generations <= retention watermark or current active generation.",
+      "status": "RESOLVED"
+    },
+    {
+      "id": "SEC-P51-03",
+      "severity": "HIGH",
+      "title": "Metadata Snapshot Rollback Risk During Catastrophic Recovery",
+      "state_prior": "Manual or unauthenticated coordinator state restore could revert metadata state machine to an earlier commit index.",
+      "remediation": "Implemented DisasterRecoveryBackupBundle with operator Ed25519 signature, SHA-256 digest validation, and automatic rollback rejection unless explicitly overridden by authorized operator.",
+      "status": "RESOLVED"
+    },
+    {
+      "id": "SEC-P51-04",
+      "severity": "MEDIUM",
+      "title": "Silent Corruption / Bitrot Risk During Emergency Reconstruction",
+      "state_prior": "Emergency reconstruction did not check individual shard SHA-256 digests against signed manifest records before decoding.",
+      "remediation": "execute_secure_emergency_read independently validates each shard's SHA-256 digest against the signed StripeManifest, discards corrupt shards, increments corrupted_shards_detected, and gathers clean surviving shards.",
+      "status": "RESOLVED"
+    }
+  ]
+}

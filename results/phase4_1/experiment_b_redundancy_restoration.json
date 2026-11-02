@@ -1,0 +1,21 @@
+{
+  "phase": "4.1",
+  "experiment": "B_full_redundancy_restoration",
+  "status": "PASSED",
+  "configuration": {
+    "coding_scheme": "RS(20,12)",
+    "initial_cluster_state": "FullyProtected",
+    "degraded_cluster_state": "DegradedButRecoverable",
+    "final_cluster_state": "FullyProtected",
+    "damaged_nodes": [0, 1]
+  },
+  "metrics": {
+    "scrub_detected_missing": 2,
+    "repair_jobs_journaled": 2,
+    "repaired_shards": 2,
+    "manifest_generation_advanced": true,
+    "post_repair_scrub_healthy_count": 20,
+    "post_repair_corrupt_count": 0,
+    "post_repair_missing_count": 0
+  }
+}

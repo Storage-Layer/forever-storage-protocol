@@ -1,0 +1,23 @@
+# FSP Phase 4 — Example Multi-Host Storage Node Daemon Configuration
+# Copy to /etc/fsp/node.toml on each storage server and set node_id, listen_addr, and failure domains.
+
+[node]
+node_id = 0
+identity_id = "node-00"
+listen_addr = "10.24.0.10:19400"
+storage_root = "/var/lib/fsp/node-00"
+capacity_limit_bytes = 1099511627776 # 1 TiB
+
+[topology]
+host_domain = "host-r0-m00.dc1.internal"
+disk_domain = "nvme-serial-00"
+rack_domain = "rack-00"
+region_domain = "region-eu-central-1"
+
+[tls]
+trust_environment_mode = "ProductionStrict"
+ca_cert_pem = "/etc/fsp/pki/ca.crt"
+node_cert_pem = "/etc/fsp/pki/node-00.crt"
+node_key_pem = "/etc/fsp/pki/node-00.key"
+socket_timeout_secs = 15
+max_rpc_payload_bytes = 33554432

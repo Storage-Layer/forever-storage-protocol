@@ -1,0 +1,12 @@
+{
+  "scenario": "Remote Shard Retrieval & Object Reconstruction",
+  "status": "BLOCKED",
+  "reason": "NO_AUTHORIZED_SECOND_PHYSICAL_HOST",
+  "actual_environment": "Linux Mint 22.3 (kernel 6.14.0-37-generic x86_64)",
+  "physical_host_count": 1,
+  "source_snapshot_sha256": "b626d226a3cba95e700e354abc2c9cd11af32e12ef1eff93f74518eca54a187d",
+  "binary_sha256": "52ff4946c3b86d6054e2ed5d8699a85957bebe9b288153d6b028f94a1b6018b6",
+  "reconstruction_contract": "Decodes all k=12 data shards using Cauchy RS(20,12) matrix inversion R = G_S^{-1} * S. Verified locally in tests/phase5_8_validation.rs::test_p5_8_09 and test_p5_8_11.",
+  "cross_host_get_status": "BLOCKED — Shards not deployed to remote Host B.",
+  "evidence_log_path": "results/phase5_8/physical_pilot/host_b_preflight.json"
+}

@@ -1,0 +1,43 @@
+{
+  "milestone": "Phase 5.7 Hotfix v2",
+  "verified_timestamp_utc": "2026-11-02T00:41:53Z",
+  "source_object": {
+    "size_bytes": 104857600,
+    "size_mib": 100.0,
+    "sha256_match": true,
+    "sha256_digest": "6311ef3b50c184000be08b0870ec2323c91e4ac5384ccdb61923ec5702677943"
+  },
+  "erasure_coding": {
+    "scheme": "RS(20,12)",
+    "total_shards": 20,
+    "data_shards": 12,
+    "parity_shards": 8,
+    "loss_tolerance": 8
+  },
+  "durability_experiments": [
+    {
+      "name": "Experiment A: 100 MiB Distributed Ingest and Retrieval",
+      "suite": "tests/phase5_5_validation.rs::test_p5_5_15_end_to_end_100mib_durable_put_get_sha256_exact",
+      "shards_persisted": 20,
+      "fsync_barriers_enforced": true,
+      "reconstruction": "EXACT_SHA256_MATCH",
+      "status": "PASS"
+    },
+    {
+      "name": "Experiment B & C: 8-Shard Catastrophic Loss and Cold Disk Restart",
+      "suite": "tests/phase5_5_validation.rs::test_p5_5_16_eight_shard_recovery_after_persistent_restart",
+      "shards_destroyed": 8,
+      "shards_surviving": 12,
+      "node_cold_restart": true,
+      "reconstruction": "EXACT_SHA256_MATCH",
+      "status": "PASS"
+    },
+    {
+      "name": "Experiment D: Durable ACK Quorum and Duplicate Rejection",
+      "suite": "tests/phase5_6_validation.rs::test_p5_6_04_durable_shard_ack_with_distinct_indices_and_hashes",
+      "quorum_threshold": 12,
+      "duplicate_ack_injection_rejected": true,
+      "status": "PASS"
+    }
+  ]
+}

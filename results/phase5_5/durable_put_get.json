@@ -1,0 +1,20 @@
+{
+  "test_name": "test_p5_5_15_end_to_end_100mib_durable_put_get_sha256_exact",
+  "payload_size_bytes": 104857600,
+  "payload_size_mib": 100.0,
+  "codec": "RS(20,12)",
+  "data_shards_k": 12,
+  "parity_shards_m": 8,
+  "total_shards_n": 20,
+  "stripe_size_bytes": 1048576,
+  "total_stripes": 100,
+  "durability_level_acknowledged": "Recoverable",
+  "acknowledged_nodes": 20,
+  "put_duration_secs": 64.2,
+  "put_throughput_mib_s": 1.56,
+  "get_duration_secs": 18.5,
+  "get_throughput_mib_s": 5.41,
+  "bit_for_bit_match": true,
+  "object_sha256_verified": true,
+  "status": "PASS"
+}

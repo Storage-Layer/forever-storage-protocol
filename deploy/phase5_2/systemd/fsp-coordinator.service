@@ -1,0 +1,25 @@
+[Unit]
+Description=Forever Storage Protocol (FSP) Coordinator Service
+After=network.target
+Wants=network-online.target
+
+[Service]
+Type=simple
+User=fsp
+Group=fsp
+ExecStart=/opt/fsp/bin/fsp-coordinator --config /etc/fsp/coordinator.toml
+Restart=on-failure
+RestartSec=5s
+LimitNOFILE=65536
+LimitMEMLOCK=infinity
+StandardOutput=journal
+StandardError=journal
+
+# Hardening
+ProtectSystem=strict
+ProtectHome=true
+ReadWritePaths=/var/lib/fsp/coordinator /var/log/fsp
+PrivateTmp=true
+
+[Install]
+WantedBy=multi-user.target

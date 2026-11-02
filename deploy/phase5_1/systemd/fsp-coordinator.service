@@ -1,0 +1,20 @@
+[Unit]
+Description=FSP Forever Storage Protocol Coordinator Service
+After=network.target
+Documentation=https://github.com/fsp-storage/fsp
+
+[Service]
+Type=simple
+User=fsp
+Group=fsp
+ExecStart=/opt/fsp/bin/fsp coordinator --config /etc/fsp/cluster_staging.toml
+Restart=on-failure
+RestartSec=3s
+LimitNOFILE=65536
+LimitMEMLOCK=infinity
+StandardOutput=journal
+StandardError=journal
+AmbientCapabilities=CAP_NET_BIND_SERVICE
+
+[Install]
+WantedBy=multi-user.target

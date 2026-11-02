@@ -1,0 +1,1325 @@
+{
+  "workspace_type": "STANDALONE_WORKSPACE (NOT_A_GIT_REPOSITORY)",
+  "source_snapshot_digest": "b626d226a3cba95e700e354abc2c9cd11af32e12ef1eff93f74518eca54a187d",
+  "total_tracked_files": 256,
+  "inclusion_rules": {
+    "root_files": [
+      "Cargo.lock",
+      "Cargo.toml"
+    ],
+    "directories": [
+      "deploy",
+      "scripts",
+      "src",
+      "tests",
+      "tools"
+    ],
+    "extensions": [
+      ".json",
+      ".lock",
+      ".py",
+      ".rs",
+      ".service",
+      ".sh",
+      ".toml"
+    ]
+  },
+  "exclusion_rules": {
+    "directories": [
+      ".gemini",
+      ".git",
+      "__pycache__",
+      "docs",
+      "results",
+      "target"
+    ],
+    "extensions": [
+      ".key",
+      ".log",
+      ".pem",
+      ".tmp"
+    ]
+  },
+  "files": [
+    {
+      "path": "Cargo.lock",
+      "size_bytes": 13053,
+      "sha256": "ef2335d3311e9fbec31832f592785d5127b52786d931c998690b38de3888b21f"
+    },
+    {
+      "path": "Cargo.toml",
+      "size_bytes": 602,
+      "sha256": "f17c89ee2f75de49d49d7847202027292712298b8b3bce92a4c3e3b4869513ac"
+    },
+    {
+      "path": "deploy/configs/cluster_5host.toml",
+      "size_bytes": 4745,
+      "sha256": "945234b1c9218abb844d298dce9075c54731c2f7a1d3396347cb7eb6a811a81c"
+    },
+    {
+      "path": "deploy/coordinator-primary.toml",
+      "size_bytes": 1409,
+      "sha256": "f14c04219a2772586a869bb422f3150d747d9b9a57d4a091bede66f4a1865996"
+    },
+    {
+      "path": "deploy/coordinator-standby.toml",
+      "size_bytes": 1409,
+      "sha256": "1f88984d472cde083b83ad998f5a4eac109d0b20b18419bcbafb74f951295cb3"
+    },
+    {
+      "path": "deploy/coordinator.example.toml",
+      "size_bytes": 1402,
+      "sha256": "53fa6a7557af101172f2c860b237e5aca240804e0f8347335d0c577d6c7e7daa"
+    },
+    {
+      "path": "deploy/fsp-coordinator.service",
+      "size_bytes": 549,
+      "sha256": "5fa44e6533abb866cd2051ebaf8a6ea9e767cd2e4aae353053ffdc57faeac714"
+    },
+    {
+      "path": "deploy/fsp-node.service",
+      "size_bytes": 789,
+      "sha256": "eeec3878d5d086057eea2f8b8bbc3eaf242fc362d84f52b981f3221e3b342546"
+    },
+    {
+      "path": "deploy/fsp-witness.service",
+      "size_bytes": 540,
+      "sha256": "0e0d39de8226dd921be42d006b8b37554e02ebd5c87c1c22fcc430e89857ced7"
+    },
+    {
+      "path": "deploy/node.example.toml",
+      "size_bytes": 710,
+      "sha256": "c9df749bf9b02b8d0ace21ad60e087baa860ed678cf4472ffe5b45cf9ef798bc"
+    },
+    {
+      "path": "deploy/phase5/cluster_5host.toml",
+      "size_bytes": 4745,
+      "sha256": "945234b1c9218abb844d298dce9075c54731c2f7a1d3396347cb7eb6a811a81c"
+    },
+    {
+      "path": "deploy/phase5/coordinator.toml",
+      "size_bytes": 4598,
+      "sha256": "1c60cba45c687443899eb315c27596d204ca13597e3b2b6e9a83748296e590fb"
+    },
+    {
+      "path": "deploy/phase5/emergency_read.sh",
+      "size_bytes": 647,
+      "sha256": "1e9fb234aad760c96c9ad6188aeb175586d4a6ff7f0d6b09eb90dcc222a9db2a"
+    },
+    {
+      "path": "deploy/phase5/monitoring_prometheus.yml",
+      "size_bytes": 1453,
+      "sha256": "55df7871bdbdca4e3b452a91afc278e894826568a53aa639e647dcb1b2b357db"
+    },
+    {
+      "path": "deploy/phase5/node.toml",
+      "size_bytes": 519,
+      "sha256": "71fe5bc8eb42d43c1e17340353816fd58a89717da6c643a73d8fb939c37f9637"
+    },
+    {
+      "path": "deploy/phase5/preflight.sh",
+      "size_bytes": 614,
+      "sha256": "4a41e04456b7b767a88ad82b36b2568a4a88aaf55d7ff7a7fd445c89c5e295e4"
+    },
+    {
+      "path": "deploy/phase5/systemd/fsp-coordinator.service",
+      "size_bytes": 546,
+      "sha256": "02af1d394ccd1f45660d7970db578c1739681b05aedf4234db9db642770a7c56"
+    },
+    {
+      "path": "deploy/phase5/systemd/fsp-node@.service",
+      "size_bytes": 566,
+      "sha256": "2dbe962d627da5e052772dbbcc67f870801ee994e50698f1c7be8320be0529df"
+    },
+    {
+      "path": "deploy/phase5/topology.json",
+      "size_bytes": 1769,
+      "sha256": "dfb2024b796ee8518b1b2d794ce869b5ca8fbb397236e9d1757f0f16de10543b"
+    },
+    {
+      "path": "deploy/phase5_1/backup/backup_metadata.sh",
+      "size_bytes": 816,
+      "sha256": "3e8b5df6f5434b993240326e9dd5375cb20fd39a13dea985c72ba2a631d030a8"
+    },
+    {
+      "path": "deploy/phase5_1/backup/backup_schedule.cron",
+      "size_bytes": 224,
+      "sha256": "2dd06bb6fe3b611a184f4e2ec7f4bface9b95d5c4a526fdbf56fcd5d56ba2baa"
+    },
+    {
+      "path": "deploy/phase5_1/monitoring/prometheus.yml",
+      "size_bytes": 875,
+      "sha256": "089634b4ceac476b196469db9474de14314281878d868a8e365c24ba112491a9"
+    },
+    {
+      "path": "deploy/phase5_1/monitoring/prometheus_alerts.yml",
+      "size_bytes": 1796,
+      "sha256": "93e6feee0bb3397cfcdcbb3346bf25204e41188d33f207fa482a14c0327d39fd"
+    },
+    {
+      "path": "deploy/phase5_1/preflight/preflight_check.sh",
+      "size_bytes": 594,
+      "sha256": "3e1028d792e48719bcbdff604f7a8919345229e63af02b8cfa07f2cac9ebf350"
+    },
+    {
+      "path": "deploy/phase5_1/recovery/disaster_recovery_restore.sh",
+      "size_bytes": 1347,
+      "sha256": "d2d2d7b4e833ebb0b9b214b8357f236a5120962d8745e2b1ff5e6c2212a98513"
+    },
+    {
+      "path": "deploy/phase5_1/recovery/emergency_read_policy.json",
+      "size_bytes": 718,
+      "sha256": "64011c134f65374ee838900e649569af86c72f27a9c1f1a6f18a2637335db914"
+    },
+    {
+      "path": "deploy/phase5_1/staging/cluster_staging.toml",
+      "size_bytes": 4608,
+      "sha256": "9009ed75755525f7298269eeeb26866218a42297711ee396a4ebc6726e72669a"
+    },
+    {
+      "path": "deploy/phase5_1/systemd/fsp-coordinator.service",
+      "size_bytes": 455,
+      "sha256": "a1321e8eb0f7979b36f04134b1d9f30e8fa9537d054cd2ad20c95a6d9e692679"
+    },
+    {
+      "path": "deploy/phase5_1/systemd/fsp-node.service",
+      "size_bytes": 408,
+      "sha256": "4e328b5ab4c10bf968d4b2e3c90d655835a4992d9220003cd6bf9474b3740d3d"
+    },
+    {
+      "path": "deploy/phase5_2/backup/backup_metadata.sh",
+      "size_bytes": 910,
+      "sha256": "5cfc6a8cbee18d56044ebfb1dd34ce307633a32f0368d63e35c714f2bf526172"
+    },
+    {
+      "path": "deploy/phase5_2/backup/backup_schedule.cron",
+      "size_bytes": 131,
+      "sha256": "b811767a44ccb703e4a25c2d995b152280dee7894e73e68d96353a52392ec877"
+    },
+    {
+      "path": "deploy/phase5_2/cluster/cluster.toml",
+      "size_bytes": 400,
+      "sha256": "e22bd4c212eb11c5c469d0c7ab733800c518a6737621a56a760e80a18dc6cd99"
+    },
+    {
+      "path": "deploy/phase5_2/monitoring/prometheus.yml",
+      "size_bytes": 355,
+      "sha256": "7cb35f3155d328cdfeaa35cea79bb68ba68139f9c9d2b0bd97b9b94577846d1e"
+    },
+    {
+      "path": "deploy/phase5_2/monitoring/prometheus_alerts.yml",
+      "size_bytes": 1586,
+      "sha256": "17192ac5e92540108096563e26c50952fa86c7fd18d372278f1abc971d8b80f6"
+    },
+    {
+      "path": "deploy/phase5_2/preflight/preflight_check.sh",
+      "size_bytes": 854,
+      "sha256": "69a7354f0036de6d0354bf3709d1ae0c5f2d0c3c0fbb678358012723befa0052"
+    },
+    {
+      "path": "deploy/phase5_2/recovery/disaster_recovery_restore.sh",
+      "size_bytes": 1126,
+      "sha256": "15d1dd22479f2d16f33c7442ad107cc963fc134dc4133db5c7e65e4d9f18c635"
+    },
+    {
+      "path": "deploy/phase5_2/recovery/rebootstrap_authorization_template.json",
+      "size_bytes": 437,
+      "sha256": "931f857f1d8e730821d97ff1c2bd849d8ae5870cb0bbc7cf1295f217f0441ff7"
+    },
+    {
+      "path": "deploy/phase5_2/systemd/fsp-coordinator.service",
+      "size_bytes": 511,
+      "sha256": "91a9e6d652631174121a08b13d61178011f04362662c422556bfd884954298cf"
+    },
+    {
+      "path": "deploy/phase5_2/systemd/fsp-node.service",
+      "size_bytes": 471,
+      "sha256": "d265b0e9fa5627c12182b34e285afdd11c6b0f076e08a347e1a796d60e5e28fd"
+    },
+    {
+      "path": "deploy/phase5_3/certificates/generate-certs.sh",
+      "size_bytes": 1630,
+      "sha256": "46f1d004e7f54a71a7f2a6bc7955fda91aa3aa3be47b7c797e32d49381e9af10"
+    },
+    {
+      "path": "deploy/phase5_3/cluster/fsp-cluster.env",
+      "size_bytes": 512,
+      "sha256": "ff8a163ede25f2d2ae06f17e2019f6b8b6be40dd69ae99d0fe49249c8285a8f1"
+    },
+    {
+      "path": "deploy/phase5_3/cluster/topology.yaml",
+      "size_bytes": 898,
+      "sha256": "6187f8bb2d6224f8088e94420e32b4b63ef7adb101ec97f162f2ba2f10f7588a"
+    },
+    {
+      "path": "deploy/phase5_3/fault_injection/partition-test.sh",
+      "size_bytes": 953,
+      "sha256": "78038ca77af35517c41b2cdf90d919a48b4c982ef67b1ebc1515443a35866844"
+    },
+    {
+      "path": "deploy/phase5_3/monitoring/alerts.yml",
+      "size_bytes": 1604,
+      "sha256": "526a4cd1040e3a2707da7a588092141eee0a6f9442b9b8a696d51446a5201e73"
+    },
+    {
+      "path": "deploy/phase5_3/monitoring/prometheus.yml",
+      "size_bytes": 916,
+      "sha256": "841ee0555641a1f855e17ba97fbb74557597c8a8974d13f005a11b3b778aeb1d"
+    },
+    {
+      "path": "deploy/phase5_3/recovery/emergency-read.sh",
+      "size_bytes": 1066,
+      "sha256": "6f2c3c035586cd04479fb181153bd583539b42e4cc099a44f5d3759ea89d19b0"
+    },
+    {
+      "path": "deploy/phase5_3/recovery/rebootstrap-auth.sh",
+      "size_bytes": 966,
+      "sha256": "8a20a0e6f85083e02a6dff09a242e9a2c312a4d35d849afa65f66d9fe9ffa60f"
+    },
+    {
+      "path": "deploy/phase5_3/systemd/fsp-coordinator.service",
+      "size_bytes": 595,
+      "sha256": "e48608715cf4ad2729d54920cb2d663f208a21fff26940fd042ee81ad83b4782"
+    },
+    {
+      "path": "deploy/phase5_3/systemd/fsp-node@.service",
+      "size_bytes": 612,
+      "sha256": "3f5e24c198cf67d6abe6aff679a5c508dde730a9b961e6638ed63d422c24df2c"
+    },
+    {
+      "path": "deploy/phase5_4/cluster/cluster.env",
+      "size_bytes": 379,
+      "sha256": "ee12415eb6d095be499105894d9d891d62870d2790191183c73674ba29a81bfb"
+    },
+    {
+      "path": "deploy/phase5_4/cluster/launch-cluster.sh",
+      "size_bytes": 993,
+      "sha256": "0f47bbb7869947561046a8afe532773d33afcaff49ff9124593921047c0b99f6"
+    },
+    {
+      "path": "deploy/phase5_4/cluster/topology.yaml",
+      "size_bytes": 652,
+      "sha256": "ab2f619b99709a9fc86af5a30a40f354c59882063d9e60c863fe878d2647ef71"
+    },
+    {
+      "path": "deploy/phase5_4/fault_injection/kill-zone.sh",
+      "size_bytes": 591,
+      "sha256": "49980365361e578c4ade09343a68e780e2a087ba3eff92c77f7c52609a6caf37"
+    },
+    {
+      "path": "deploy/phase5_4/five_host/hosts.yaml",
+      "size_bytes": 1901,
+      "sha256": "c84cb73b3cff04bf0b87052ce708e45ef597b629f2cf1921cdef7d9e5090d777"
+    },
+    {
+      "path": "deploy/phase5_4/inventory/hosts.ini",
+      "size_bytes": 880,
+      "sha256": "b68c82e2a16df68697d2c1cdc3aff3dbbe48c360458da3c13436529bb2a5e500"
+    },
+    {
+      "path": "deploy/phase5_4/localhost/cluster.env",
+      "size_bytes": 396,
+      "sha256": "8c3023a9ad6e540f0e48dcd29cb8c57215142a845a89229b6c54270bb35b583c"
+    },
+    {
+      "path": "deploy/phase5_4/localhost/topology.json",
+      "size_bytes": 925,
+      "sha256": "eca5bde5e769b7ae9c7c3a3687e8b6c1dd61170266fac0ee2cca19ce5e55def1"
+    },
+    {
+      "path": "deploy/phase5_4/monitoring/prometheus.yml",
+      "size_bytes": 825,
+      "sha256": "b00f9e246d956071ecc0f37923635336a0c95b94f40a75bc50be26ce606bdc9c"
+    },
+    {
+      "path": "deploy/phase5_4/recovery/emergency-restore.sh",
+      "size_bytes": 640,
+      "sha256": "1fedc87c88e9bba8c64f34eb9fc4ce742cb633064360a84daa6050aea4f38935"
+    },
+    {
+      "path": "deploy/phase5_4/scripts/deploy.sh",
+      "size_bytes": 780,
+      "sha256": "a4798e97bb141cdec875670ebc1b177a5225fc536c413fd56cd6528e10c9503b"
+    },
+    {
+      "path": "deploy/phase5_4/scripts/health-check.sh",
+      "size_bytes": 898,
+      "sha256": "4388ae8027c019a79b0c38a5ea10019267618c545ef8abfaa938f7201f5dbc6f"
+    },
+    {
+      "path": "deploy/phase5_4/scripts/inject-fault.sh",
+      "size_bytes": 1362,
+      "sha256": "de5b5458a0d394c4b562f3328f27041c561e6ace6eaf0b7c1cf997e84ffb34ae"
+    },
+    {
+      "path": "deploy/phase5_4/scripts/start-cluster.sh",
+      "size_bytes": 1681,
+      "sha256": "3562c5c254a3a67223bcf23b9e44e10bf57726f6332c16506e6260c7b293492d"
+    },
+    {
+      "path": "deploy/phase5_4/scripts/stop-cluster.sh",
+      "size_bytes": 610,
+      "sha256": "9f26c4b4c2ec2d5b39e79cc41956a537a2397728bd6345656043acf10216abdc"
+    },
+    {
+      "path": "deploy/phase5_4/systemd/fsp-coordinator.service",
+      "size_bytes": 480,
+      "sha256": "3714fbc8eeeddc9b80dcc5536505cf8b54ed06525286b46a382d3621dd50e396"
+    },
+    {
+      "path": "deploy/phase5_4/systemd/fsp-node@.service",
+      "size_bytes": 636,
+      "sha256": "d56fb325b050b326bacbc6525e9a6330570ca986fb08eb89d6af1555f34050d8"
+    },
+    {
+      "path": "deploy/phase5_4/three_host/hosts.yaml",
+      "size_bytes": 796,
+      "sha256": "912cc0980e1549457e0c4b25d9426060067bbdea387f5a1984eaeb7c70e0138c"
+    },
+    {
+      "path": "deploy/phase5_4/two_host/hosts.yaml",
+      "size_bytes": 831,
+      "sha256": "67a973e03268bb6daf2f9a6644cfded9f7f0c090a514406f6d59a19af31dd1e5"
+    },
+    {
+      "path": "deploy/phase5_5/fault_injection/crash_injector.sh",
+      "size_bytes": 381,
+      "sha256": "5c79b218a619f4ec112f3ffc40b2cde0fd69962c415bff4002af4ce5353e987d"
+    },
+    {
+      "path": "deploy/phase5_5/five_host/hosts.yaml",
+      "size_bytes": 766,
+      "sha256": "0d196444b23d93b9e8cee6c4a19bb2b15e78ecd71753d8850d1c1fb2822a0a5e"
+    },
+    {
+      "path": "deploy/phase5_5/inventory/hosts.ini",
+      "size_bytes": 714,
+      "sha256": "a96f1d23e3107b0cc14b8eee4c363a5fd762245af5cc8c363f41affd496af516"
+    },
+    {
+      "path": "deploy/phase5_5/localhost/cluster.env",
+      "size_bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "deploy/phase5_5/localhost/topology.json",
+      "size_bytes": 458,
+      "sha256": "087dcc42d97dc3fc18013cccb372e8f8249ac47138ed034a64e68c571ecc1632"
+    },
+    {
+      "path": "deploy/phase5_5/monitoring/prometheus.yml",
+      "size_bytes": 850,
+      "sha256": "9ab8c33b9e124964bbaa08f7d72a1e357bf22e2b67e94d2c9fb53df88081b377"
+    },
+    {
+      "path": "deploy/phase5_5/scripts/durability-check.sh",
+      "size_bytes": 794,
+      "sha256": "eeb209f71a3cd7dcec0fb558ae969288a0034418480ad22b868140d0a4088625"
+    },
+    {
+      "path": "deploy/phase5_5/scripts/health-check.sh",
+      "size_bytes": 803,
+      "sha256": "c4c9684d3a9ac2e224950def2ab81f3cff91fc1011a7e3ac0e30955e15c8da02"
+    },
+    {
+      "path": "deploy/phase5_5/scripts/preflight.sh",
+      "size_bytes": 796,
+      "sha256": "93d8fd1ba3747c7c5677157cdb9fa65a9209c226bb4c69131d72548a8fcc1ef8"
+    },
+    {
+      "path": "deploy/phase5_5/scripts/start-cluster.sh",
+      "size_bytes": 1418,
+      "sha256": "3e394ce807cee1778ad948fb4b09c35aa279ff31622564a4c4002c4912cee20d"
+    },
+    {
+      "path": "deploy/phase5_5/scripts/stop-cluster.sh",
+      "size_bytes": 478,
+      "sha256": "5b3c74ab66a2f8f04162a1ea4ca30a9ba20136aaca6ab92db28d9744c06492ac"
+    },
+    {
+      "path": "deploy/phase5_5/supervision/orphan_sweeper.sh",
+      "size_bytes": 831,
+      "sha256": "acc4c2e77378e8c958dd673d3aa7d66eebc3d69e2792d3873c7697114702015e"
+    },
+    {
+      "path": "deploy/phase5_5/systemd/fsp-coordinator.service",
+      "size_bytes": 519,
+      "sha256": "84e30f295fff90248a366b71628fb979271170eabd660aa0464a14cf1c2fbdab"
+    },
+    {
+      "path": "deploy/phase5_5/systemd/fsp-node@.service",
+      "size_bytes": 451,
+      "sha256": "b3356981e2a9b5930678d9cf58d6637538f43134161af73b1fa0ad4eaebdf650"
+    },
+    {
+      "path": "deploy/phase5_5/three_host/hosts.yaml",
+      "size_bytes": 562,
+      "sha256": "180bb8a749f2db6f7f98c3a6a3fe8f5571e04be401cf63375db6d34c9fe045e9"
+    },
+    {
+      "path": "deploy/phase5_5/two_host/hosts.yaml",
+      "size_bytes": 579,
+      "sha256": "bd4f31dd97238f14008b4d5f4417d6bf5e7b7c45c5c55c0e1c94a5cd5f39da05"
+    },
+    {
+      "path": "deploy/phase5_6/fault_injection/crash_injector.sh",
+      "size_bytes": 381,
+      "sha256": "5c79b218a619f4ec112f3ffc40b2cde0fd69962c415bff4002af4ce5353e987d"
+    },
+    {
+      "path": "deploy/phase5_6/five_host/hosts.yaml",
+      "size_bytes": 766,
+      "sha256": "0d196444b23d93b9e8cee6c4a19bb2b15e78ecd71753d8850d1c1fb2822a0a5e"
+    },
+    {
+      "path": "deploy/phase5_6/inventory/hosts.ini",
+      "size_bytes": 714,
+      "sha256": "a96f1d23e3107b0cc14b8eee4c363a5fd762245af5cc8c363f41affd496af516"
+    },
+    {
+      "path": "deploy/phase5_6/localhost/cluster.env",
+      "size_bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "deploy/phase5_6/localhost/topology.json",
+      "size_bytes": 458,
+      "sha256": "087dcc42d97dc3fc18013cccb372e8f8249ac47138ed034a64e68c571ecc1632"
+    },
+    {
+      "path": "deploy/phase5_6/monitoring/prometheus.yml",
+      "size_bytes": 850,
+      "sha256": "9ab8c33b9e124964bbaa08f7d72a1e357bf22e2b67e94d2c9fb53df88081b377"
+    },
+    {
+      "path": "deploy/phase5_6/scripts/durability-check.sh",
+      "size_bytes": 794,
+      "sha256": "eeb209f71a3cd7dcec0fb558ae969288a0034418480ad22b868140d0a4088625"
+    },
+    {
+      "path": "deploy/phase5_6/scripts/health-check.sh",
+      "size_bytes": 803,
+      "sha256": "c4c9684d3a9ac2e224950def2ab81f3cff91fc1011a7e3ac0e30955e15c8da02"
+    },
+    {
+      "path": "deploy/phase5_6/scripts/preflight.sh",
+      "size_bytes": 796,
+      "sha256": "93d8fd1ba3747c7c5677157cdb9fa65a9209c226bb4c69131d72548a8fcc1ef8"
+    },
+    {
+      "path": "deploy/phase5_6/scripts/start-cluster.sh",
+      "size_bytes": 1418,
+      "sha256": "3e394ce807cee1778ad948fb4b09c35aa279ff31622564a4c4002c4912cee20d"
+    },
+    {
+      "path": "deploy/phase5_6/scripts/stop-cluster.sh",
+      "size_bytes": 478,
+      "sha256": "5b3c74ab66a2f8f04162a1ea4ca30a9ba20136aaca6ab92db28d9744c06492ac"
+    },
+    {
+      "path": "deploy/phase5_6/supervisor/orphan_sweeper.sh",
+      "size_bytes": 2219,
+      "sha256": "ff68aae806bf6748fdd8bcea4b51f77d9eddaed722c6c5d2a5f11dca41bf9f4c"
+    },
+    {
+      "path": "deploy/phase5_6/systemd/fsp-coordinator.service",
+      "size_bytes": 519,
+      "sha256": "84e30f295fff90248a366b71628fb979271170eabd660aa0464a14cf1c2fbdab"
+    },
+    {
+      "path": "deploy/phase5_6/systemd/fsp-node@.service",
+      "size_bytes": 451,
+      "sha256": "b3356981e2a9b5930678d9cf58d6637538f43134161af73b1fa0ad4eaebdf650"
+    },
+    {
+      "path": "deploy/phase5_6/three_host/hosts.yaml",
+      "size_bytes": 562,
+      "sha256": "180bb8a749f2db6f7f98c3a6a3fe8f5571e04be401cf63375db6d34c9fe045e9"
+    },
+    {
+      "path": "deploy/phase5_6/two_host/hosts.yaml",
+      "size_bytes": 579,
+      "sha256": "bd4f31dd97238f14008b4d5f4417d6bf5e7b7c45c5c55c0e1c94a5cd5f39da05"
+    },
+    {
+      "path": "deploy/phase5_7/certificates/generate_pki.sh",
+      "size_bytes": 2487,
+      "sha256": "0b55214d4b7e2d8ffeb81f999e98a191463113240c25b5bf9c31fad0028a7144"
+    },
+    {
+      "path": "deploy/phase5_7/five_host/hosts.yaml",
+      "size_bytes": 1610,
+      "sha256": "815059ecd73abb308f7dfad9af138d9a9d9883998f0bdf09c42ed4bd8e11c7dd"
+    },
+    {
+      "path": "deploy/phase5_7/inventory/hosts.ini",
+      "size_bytes": 2458,
+      "sha256": "c5433595ec04dd2862ba29733cbcc2c8470be27f12ef0ed5456401fe92c49e63"
+    },
+    {
+      "path": "deploy/phase5_7/localhost/cluster.env",
+      "size_bytes": 235,
+      "sha256": "6e53f19c7d8e6924849fb3b3d7b64846173191081b6297d297e32a63178b324f"
+    },
+    {
+      "path": "deploy/phase5_7/localhost/topology.json",
+      "size_bytes": 443,
+      "sha256": "8466ed46adc129f3e528f017329cd908d4eee3bed23b19cf9542241569ee5500"
+    },
+    {
+      "path": "deploy/phase5_7/monitoring/prometheus.yml",
+      "size_bytes": 1700,
+      "sha256": "24fe766fe8cba79151a6ea367d6a1e1005335aeeb08fba13527e71f210d63e46"
+    },
+    {
+      "path": "deploy/phase5_7/scripts/deploy_two_host.sh",
+      "size_bytes": 2537,
+      "sha256": "8436efbd8cf3f341d66b3057f310c6885c6e1a366f2a9b541de80e01dfcf97e7"
+    },
+    {
+      "path": "deploy/phase5_7/scripts/durability_audit.sh",
+      "size_bytes": 1190,
+      "sha256": "05f2fa6e829f11c1b4eb293eb20f639321f14f7b2b112de7bcd98def91f5c153"
+    },
+    {
+      "path": "deploy/phase5_7/scripts/health_check.sh",
+      "size_bytes": 1429,
+      "sha256": "f7bcfa3762b1097f32adcc37b3430f2cfa4210cdeb521a531ceacaeb071689f2"
+    },
+    {
+      "path": "deploy/phase5_7/scripts/preflight.sh",
+      "size_bytes": 3017,
+      "sha256": "6524a599077a135d7ac21a508b13718a9d60337e0f37639da26d1dc350086387"
+    },
+    {
+      "path": "deploy/phase5_7/scripts/stop_cluster.sh",
+      "size_bytes": 1087,
+      "sha256": "8102c0923494971551004147183c9d2ac0a9e6e94c6c9d84616b4e04b1032051"
+    },
+    {
+      "path": "deploy/phase5_7/supervision/orphan_sweeper.sh",
+      "size_bytes": 3599,
+      "sha256": "c2184d74abeca54b2eafc343e52bdb6bca779bcd7ea341a3cf5b197d0679a943"
+    },
+    {
+      "path": "deploy/phase5_7/systemd/fsp-coordinator.service",
+      "size_bytes": 786,
+      "sha256": "71323134bd2e096297c4cc657b031fa7a71099e0a200a00975f764f39faf2a7d"
+    },
+    {
+      "path": "deploy/phase5_7/systemd/fsp-node@.service",
+      "size_bytes": 833,
+      "sha256": "ccf3f6b7e8f424c894b6cfe2b6641adc2139f3e785f71ff7f42e280efed016bb"
+    },
+    {
+      "path": "deploy/phase5_7/three_host/hosts.yaml",
+      "size_bytes": 1070,
+      "sha256": "fac91ebe1fa320d9e3dbbcf3febc1cf84566ed0cd8cd046a03beb737a27e76c6"
+    },
+    {
+      "path": "deploy/phase5_7/two_host/cluster.env",
+      "size_bytes": 271,
+      "sha256": "3b2653e319033179da0262bca4b5dbcfdfd64021dbc0ab85969217803e154f2d"
+    },
+    {
+      "path": "deploy/phase5_7/two_host/hosts.yaml",
+      "size_bytes": 1334,
+      "sha256": "1990f028c1c612355e4ca863d96d29335db0c1692ca38c6c7884db2b4c1470a5"
+    },
+    {
+      "path": "deploy/phase5_8/certificates/generate_pki.sh",
+      "size_bytes": 1771,
+      "sha256": "bd3305273b1f5ad5bac81eb0c7113b9b58f2611d00aaab81a667297754c84a72"
+    },
+    {
+      "path": "deploy/phase5_8/fault_injection/netem_partition.sh",
+      "size_bytes": 1142,
+      "sha256": "7d17bc2e9278c29b26bfbb198240d479403661853790f04b2313e35e86521096"
+    },
+    {
+      "path": "deploy/phase5_8/five_host/hosts.yaml",
+      "size_bytes": 1299,
+      "sha256": "6e3964431238262e9f91c97155cba2b4b5658dfe2c31d983afaaac2b75077ed7"
+    },
+    {
+      "path": "deploy/phase5_8/inventory/hosts.ini",
+      "size_bytes": 3379,
+      "sha256": "c6a6375e15bc471cb9c3e62fe7394a5e46f5373092574dc7481071a88cc3e4ea"
+    },
+    {
+      "path": "deploy/phase5_8/localhost/cluster.env",
+      "size_bytes": 331,
+      "sha256": "13831f73f0cd305e540ab647850043d060931f168e6097ec9c0dd1fc97a61ac8"
+    },
+    {
+      "path": "deploy/phase5_8/localhost/topology.json",
+      "size_bytes": 368,
+      "sha256": "83d48fa2fe5df8d72c4ae7b9719fd3927949b87fb2569e8967dc881dd231f488"
+    },
+    {
+      "path": "deploy/phase5_8/monitoring/prometheus.yml",
+      "size_bytes": 896,
+      "sha256": "d5296720bc30faef2a37229cbdf21b7c4ff54c11c0521723acbaf5e52e083791"
+    },
+    {
+      "path": "deploy/phase5_8/scripts/deploy_two_host.sh",
+      "size_bytes": 1140,
+      "sha256": "b7a518d25ae18326cabe5e84debaa96bed15975aa5054dde256fab946844d2ed"
+    },
+    {
+      "path": "deploy/phase5_8/scripts/durability_audit.sh",
+      "size_bytes": 1138,
+      "sha256": "91c129645e8fae1f32c808635b47c37350e85395270f00d291b9700c5ae2ffbf"
+    },
+    {
+      "path": "deploy/phase5_8/scripts/health_check.sh",
+      "size_bytes": 343,
+      "sha256": "f9472e3568a493947bc737b02f68e5cd60a8be1fd46387fc86e5012f1eabb126"
+    },
+    {
+      "path": "deploy/phase5_8/scripts/preflight.sh",
+      "size_bytes": 1552,
+      "sha256": "4a8d8f7a2d9c0aef8884dbb528e6dbb5a0916a384f957109cd252ddfafe5edc2"
+    },
+    {
+      "path": "deploy/phase5_8/scripts/stop_cluster.sh",
+      "size_bytes": 348,
+      "sha256": "30e397cb9efc5ef4b35b0c1d89a4bdadc4b064af59d97f5fd67de46d9626d179"
+    },
+    {
+      "path": "deploy/phase5_8/supervision/orphan_sweeper.sh",
+      "size_bytes": 954,
+      "sha256": "5dbd93860fffbfb0402631668f5a5d11f128b52c4c402c1e5ad190e05df67794"
+    },
+    {
+      "path": "deploy/phase5_8/systemd/fsp-coordinator.service",
+      "size_bytes": 498,
+      "sha256": "8ba7e88eb3f3d8098130c3f3d192c951583b535b0290a33d18c144ea3092e96b"
+    },
+    {
+      "path": "deploy/phase5_8/systemd/fsp-node@.service",
+      "size_bytes": 495,
+      "sha256": "632d8daeb688b534c117dede14201084d6bdd276a01f57ab3919cc48b832170d"
+    },
+    {
+      "path": "deploy/phase5_8/three_host/hosts.yaml",
+      "size_bytes": 1012,
+      "sha256": "91c4f0341dccd2c78742305d933660dd941a58537dd48b56a6559ce9e77578c4"
+    },
+    {
+      "path": "deploy/phase5_8/two_host/cluster.env",
+      "size_bytes": 346,
+      "sha256": "08414a7da1471314c2920b5e97e4e5a15fa557af140bc88de715b5e51851767f"
+    },
+    {
+      "path": "deploy/phase5_8/two_host/hosts.yaml",
+      "size_bytes": 1241,
+      "sha256": "311f02b64d37b324a4928b2182333dce950fce25918b880038230345ae9ee3be"
+    },
+    {
+      "path": "deploy/systemd/fsp-coordinator.service",
+      "size_bytes": 546,
+      "sha256": "02af1d394ccd1f45660d7970db578c1739681b05aedf4234db9db642770a7c56"
+    },
+    {
+      "path": "deploy/systemd/fsp-node@.service",
+      "size_bytes": 566,
+      "sha256": "2dbe962d627da5e052772dbbcc67f870801ee994e50698f1c7be8320be0529df"
+    },
+    {
+      "path": "deploy/witness-quorum.toml",
+      "size_bytes": 475,
+      "sha256": "83d9b870f6e1ee0e3346276477b002ad95b354e556a12b7d72cde3024ab456bc"
+    },
+    {
+      "path": "scripts/benchmark_runner.py",
+      "size_bytes": 2086,
+      "sha256": "591bdddb706e7aacc88e2ce550c908e1b745c23e5f1911e276655f5a1d8508aa"
+    },
+    {
+      "path": "scripts/test_reconciler.py",
+      "size_bytes": 6560,
+      "sha256": "324eca1325a855d8cde7c628d6c48be53d0439362141d87af08e45462e457143"
+    },
+    {
+      "path": "src/bin/fsp_node.rs",
+      "size_bytes": 6850,
+      "sha256": "f7678b11abe91eb26dd3cfe50a30b01a0c634a78ba51a6f5585e936c3eff28a0"
+    },
+    {
+      "path": "src/cli/mod.rs",
+      "size_bytes": 20524,
+      "sha256": "1b446678fe661e8c52da8ceda477fe9345e18bd279a04bf86fb6659d4824995a"
+    },
+    {
+      "path": "src/cluster/launcher.rs",
+      "size_bytes": 29598,
+      "sha256": "a0c72489c42617d3f138f945e04f55a54eec782a1ce3a869e972da03dbd1bc59"
+    },
+    {
+      "path": "src/cluster/mod.rs",
+      "size_bytes": 294,
+      "sha256": "856b6e3a28f42d2d1dbb5138f05a4c565f2a947a19c45a09209b251cb66523a8"
+    },
+    {
+      "path": "src/cluster/topology.rs",
+      "size_bytes": 5701,
+      "sha256": "7a3875942775bc6ff41dc7a62683e446097585eddabf43387b103559922c97e2"
+    },
+    {
+      "path": "src/coding/codec.rs",
+      "size_bytes": 5861,
+      "sha256": "8685947758e11ee69df3f976736f8590c887aa70f1a6e1c41412f887f4888602"
+    },
+    {
+      "path": "src/coding/gf256.rs",
+      "size_bytes": 9089,
+      "sha256": "167612c7ca2466ad2cae628e33892afa7d716bc925d01b80015669cda84965bc"
+    },
+    {
+      "path": "src/coding/lrc.rs",
+      "size_bytes": 15489,
+      "sha256": "975fd331025d9551fbc6119489cb404af89300764874a2926524b920b42f0caf"
+    },
+    {
+      "path": "src/coding/mod.rs",
+      "size_bytes": 10381,
+      "sha256": "d8321637763636e8094b7e492867ef15db90af872ae708251f66cfee3afb27b3"
+    },
+    {
+      "path": "src/coding/reed_solomon.rs",
+      "size_bytes": 12248,
+      "sha256": "6ce8a636ab0232bed74baf4486923650079756282deecc9d59d0f8b83e916287"
+    },
+    {
+      "path": "src/coding/stripe.rs",
+      "size_bytes": 3507,
+      "sha256": "b6e048d41f59c866ffe20b20c0710c2f92469903cc38f552473f820e5898914e"
+    },
+    {
+      "path": "src/config.rs",
+      "size_bytes": 20355,
+      "sha256": "3f2f1f42eb9eb07c93abfcdc09e8c42c4eb0e8180a1e7344630c337d697b2d41"
+    },
+    {
+      "path": "src/config/loader.rs",
+      "size_bytes": 14804,
+      "sha256": "bbaa4a97914887c06d0de228431a09b901157194a1b93bdb8c19072373273faa"
+    },
+    {
+      "path": "src/config/validation.rs",
+      "size_bytes": 9042,
+      "sha256": "567bf58bb836e61770239fbecaa1554af53c58ab9a5336587dcdedb3c737abca"
+    },
+    {
+      "path": "src/coordinator/failover.rs",
+      "size_bytes": 5850,
+      "sha256": "e427ffdc0133721fdfd743fe0314f547e0624875d07f343808efc21d4fdbed3c"
+    },
+    {
+      "path": "src/coordinator/fencing.rs",
+      "size_bytes": 58127,
+      "sha256": "6190d4ed6527c689678a2df31f1361e1099964b9ca8a07d97cfd878d6c41226d"
+    },
+    {
+      "path": "src/coordinator/incarnation.rs",
+      "size_bytes": 10873,
+      "sha256": "ca522961e86d03cb3d3ec393d06f631e831f17f84f89da03da2caadb7ae60fb5"
+    },
+    {
+      "path": "src/coordinator/leadership.rs",
+      "size_bytes": 22169,
+      "sha256": "6683c71ad0d56aabff0f2774d89e005d5077cbdd532cfb77f807e7bcea117eac"
+    },
+    {
+      "path": "src/coordinator/mod.rs",
+      "size_bytes": 492,
+      "sha256": "4526c92e3a3700a5407ca899883146252cb5dab86ec678e56a38fd1b8017dd4b"
+    },
+    {
+      "path": "src/coordinator/placement.rs",
+      "size_bytes": 14810,
+      "sha256": "40c909afeb4d5b317358ce58c73a0f5e1ef53fef87d9b22fe8630af5a4d5ab37"
+    },
+    {
+      "path": "src/coordinator/repair_journal.rs",
+      "size_bytes": 13115,
+      "sha256": "704f96f5e55af62e28cf8a1e80e6777cd24d1b312567b82a17d0590d4dc91435"
+    },
+    {
+      "path": "src/coordinator/replication.rs",
+      "size_bytes": 30517,
+      "sha256": "ba354d08ef9a54fe4b26521fc945116469e7ce51f7390c17b892d1c54e24ea70"
+    },
+    {
+      "path": "src/coordinator/scheduler.rs",
+      "size_bytes": 36768,
+      "sha256": "f3eccbfe7da078a35bf88040a7fa8b70c56a749e7e54125ed55a20178138875f"
+    },
+    {
+      "path": "src/coordinator/transactions.rs",
+      "size_bytes": 47633,
+      "sha256": "c12255a97de7db8fc832a9c5a20bfb06c64559ddcfb6045777269e28e296d8ec"
+    },
+    {
+      "path": "src/detection/mod.rs",
+      "size_bytes": 20499,
+      "sha256": "b09e810612195bd3713216dc387bd97f4b794bd50583403864235b8946bd5e29"
+    },
+    {
+      "path": "src/lib.rs",
+      "size_bytes": 694,
+      "sha256": "34723eae5b33aa5d92d73241d5c1ab60741fb13e00f32e392fc25843304ce9ba"
+    },
+    {
+      "path": "src/main.rs",
+      "size_bytes": 78165,
+      "sha256": "ec5d01fa0ad981a9c6d5648fc0ab5f2edecf70b937335a909f095861d95e1c6e"
+    },
+    {
+      "path": "src/model/failure_domain.rs",
+      "size_bytes": 818,
+      "sha256": "662a85f36b83e721f336916a1e9388d43ed93079fdd504b5d32996c5b6ae76b3"
+    },
+    {
+      "path": "src/model/mod.rs",
+      "size_bytes": 15619,
+      "sha256": "5df4a51732035a38a6f850f9b5831bb18b483009929a2e65c5944426a93214b9"
+    },
+    {
+      "path": "src/model/node.rs",
+      "size_bytes": 2442,
+      "sha256": "3599ea70cc657e680c8f834f17931e2e828b33a4052473d548f4928429c9f404"
+    },
+    {
+      "path": "src/model/shard.rs",
+      "size_bytes": 1032,
+      "sha256": "60295cd1b9ede92a974550466afc1993f0b3e1d4368f9a26372fc218103a38ad"
+    },
+    {
+      "path": "src/network/client.rs",
+      "size_bytes": 16732,
+      "sha256": "222c10c43baa07ca9ad9cd6485553d255b6478e15fba7a7c002b6a0995f5e982"
+    },
+    {
+      "path": "src/network/connection_pool.rs",
+      "size_bytes": 9715,
+      "sha256": "1220349d643b1d016df5ac57e2806e182c9dad38321a6848b9cb3f26b40d025b"
+    },
+    {
+      "path": "src/network/mod.rs",
+      "size_bytes": 537,
+      "sha256": "91c35dad4cf7e4ea1e9959f656ddb7b7a9b9270de7ca25fd0a0d9d4e14c03b62"
+    },
+    {
+      "path": "src/network/protocol.rs",
+      "size_bytes": 34448,
+      "sha256": "3fb4250c2a146aeb95ae5185021924c3d0012e7b07009be95326a53f70057d52"
+    },
+    {
+      "path": "src/network/retry.rs",
+      "size_bytes": 1456,
+      "sha256": "cbc6fe3440473fea6bb580f7834dcee7ce5b887f53b09fcc8c43a8dd99cb8a1b"
+    },
+    {
+      "path": "src/network/server.rs",
+      "size_bytes": 11777,
+      "sha256": "f7850e1b9b30453f27ab1fada993bd26559b5823bd1b09c5965f3c9acc7fe3a9"
+    },
+    {
+      "path": "src/network/transport.rs",
+      "size_bytes": 9360,
+      "sha256": "8e1ba12081b6276830800c4268a7466f570a14e3412f547e795978532a0cb00c"
+    },
+    {
+      "path": "src/node/daemon.rs",
+      "size_bytes": 32708,
+      "sha256": "2af245bfb495f5fccaa8d623a55714d6de956acdb16404a499ce0a5caf5db7aa"
+    },
+    {
+      "path": "src/node/health.rs",
+      "size_bytes": 2420,
+      "sha256": "1f350047252c9179ffd6a058532e3e6ccba954831a8e1c3b8ec769083a2b3ea7"
+    },
+    {
+      "path": "src/node/idempotency.rs",
+      "size_bytes": 13451,
+      "sha256": "0bf9028d601e0328e29f50f235d2d780b8bb1c782aac9e9f8c79e4098f644495"
+    },
+    {
+      "path": "src/node/identity.rs",
+      "size_bytes": 6053,
+      "sha256": "84761836fd12b1db799c3b587668e9327132259a6f4c92e40376e55e75e7318a"
+    },
+    {
+      "path": "src/node/mod.rs",
+      "size_bytes": 382,
+      "sha256": "91a9c42fac14627360561ba41eb64bd7b61ed2f94ef82a9ad876e5d68c4e18f4"
+    },
+    {
+      "path": "src/observability/mod.rs",
+      "size_bytes": 17822,
+      "sha256": "22a10433cf0bfc6b45a8f1ff3299c66bc8e9374eb88751774228066c0f380d5e"
+    },
+    {
+      "path": "src/phase4_bench.rs",
+      "size_bytes": 9741,
+      "sha256": "71ff7a3a527ab00f6169cfc4a88c8f0ee01727c42aa77c19c09f7be760c027c2"
+    },
+    {
+      "path": "src/phase5_bench.rs",
+      "size_bytes": 18226,
+      "sha256": "acb6950218648a1db20cc390fa5ea417e811f30e4eafc20db3632de4bdd13da0"
+    },
+    {
+      "path": "src/placement/failure_domains.rs",
+      "size_bytes": 13284,
+      "sha256": "15383a121f032394b0126d0f3f805b8b59288acfbd7abc728fba90af70da8021"
+    },
+    {
+      "path": "src/placement/mod.rs",
+      "size_bytes": 455,
+      "sha256": "9a7ca05346e6897a95f3652eba86643196ada2bed7eb94d3d4cd1aef347bae88"
+    },
+    {
+      "path": "src/recovery/disaster_recovery.rs",
+      "size_bytes": 34001,
+      "sha256": "51bc13499acf87135e42e244b39aa19de90e39f3b34e766bbcaf71e707ade934"
+    },
+    {
+      "path": "src/recovery/mod.rs",
+      "size_bytes": 169,
+      "sha256": "5ceb9fc3b241881f241abce8afe377d1e366b2845d95d193bf3e1a12b37fd07f"
+    },
+    {
+      "path": "src/recovery/reconstruct.rs",
+      "size_bytes": 14231,
+      "sha256": "a693ebc16b44263ae30de3dbf518c85cea1ea0c2060aa4c9baff5a587d80aa43"
+    },
+    {
+      "path": "src/recovery/recovery_manager.rs",
+      "size_bytes": 8732,
+      "sha256": "bc525ca9eb5f06abfe7bf52625814259f679e115078655d446900a30026ae1f3"
+    },
+    {
+      "path": "src/recovery/repair.rs",
+      "size_bytes": 28675,
+      "sha256": "9c56da9bb21bb406bcfd0463ced5c9d6d9b771f4db3b3a2d0d41d7d93a36e987"
+    },
+    {
+      "path": "src/reliability/distributions.rs",
+      "size_bytes": 6212,
+      "sha256": "29c658b50a4adac0de451be434213e6bebe0f0823b041eb62484271a0f83894f"
+    },
+    {
+      "path": "src/reliability/mod.rs",
+      "size_bytes": 284,
+      "sha256": "1895665efd0b9cef49a7845ed66b69b58acec777966de37cad12cad427138ed4"
+    },
+    {
+      "path": "src/reliability/recoverability.rs",
+      "size_bytes": 4401,
+      "sha256": "efd2bc0621e242a09b3fc2135aa60f23090c302b30cff7312df11b6978df936c"
+    },
+    {
+      "path": "src/reliability/risk.rs",
+      "size_bytes": 12322,
+      "sha256": "f70ea9fd45bef8228ade6767fcde5124813b292bcba395334d7a1cc7b65396ff"
+    },
+    {
+      "path": "src/reliability/statistics.rs",
+      "size_bytes": 14671,
+      "sha256": "fd9762d103682dbdc130a9b496ed9074f46d11f6f1c6924cb9fb88d7323169ee"
+    },
+    {
+      "path": "src/reliability/survival.rs",
+      "size_bytes": 7390,
+      "sha256": "df988922e2f7bff0620e4e48ce07043f07c69f85399b034370bcddb876243776"
+    },
+    {
+      "path": "src/security/authorization.rs",
+      "size_bytes": 26288,
+      "sha256": "a6b6dc6cc167ef64f5fe5477b67ffae098eb7154b8ac741c690fe2157bdf6183"
+    },
+    {
+      "path": "src/security/mod.rs",
+      "size_bytes": 533,
+      "sha256": "125c39958502a9c8d3a8bd74b89defc2370198c856d894cd30fcccec11fa7346"
+    },
+    {
+      "path": "src/security/recovery_auth.rs",
+      "size_bytes": 29218,
+      "sha256": "7398556adb789e0161dff3a7ea0119b908b839456731b81a2cb8b8c6a74f7c69"
+    },
+    {
+      "path": "src/security/signatures.rs",
+      "size_bytes": 30331,
+      "sha256": "0879913c655f6a873bd4aeec90b46406cb7249e306c01461ab3b8aa05661801a"
+    },
+    {
+      "path": "src/simulation/engine.rs",
+      "size_bytes": 28431,
+      "sha256": "0b6a42b55efe8a695cda33816fb724e35a40d08afd9cda53f809339c2b5adf99"
+    },
+    {
+      "path": "src/simulation/events.rs",
+      "size_bytes": 3410,
+      "sha256": "cb9dc184d4224b138672b9fc17278ea6d7c5ee46cd7ce0c0e3527de73d2646e3"
+    },
+    {
+      "path": "src/simulation/failure_generator.rs",
+      "size_bytes": 10610,
+      "sha256": "b2116f3bec835c5fb2f85a97eb75a7b5071e46aacd6cfbafec619c7edfdf59f3"
+    },
+    {
+      "path": "src/simulation/metrics.rs",
+      "size_bytes": 6581,
+      "sha256": "f678b3b78ce0560253ce34bde5a9b33d3b8d366582d9ac83307e3f289c697fef"
+    },
+    {
+      "path": "src/simulation/mod.rs",
+      "size_bytes": 282,
+      "sha256": "698081ada3177c034dce723c890cb633bee49b5db06b43c1ef9e9b773e51d0a6"
+    },
+    {
+      "path": "src/simulation/monte_carlo.rs",
+      "size_bytes": 22459,
+      "sha256": "48db8d9570a3e5b25f6b5b95c81487fd6960706033de6bf2ba68a4f3dbf6e3fe"
+    },
+    {
+      "path": "src/simulation/resource_scheduler.rs",
+      "size_bytes": 3797,
+      "sha256": "2bfeb8d9a2409ec0efbecdfcf1db90c035c35a14ceeb9dd5d059d6ffa9c8b0dd"
+    },
+    {
+      "path": "src/simulation/workloads.rs",
+      "size_bytes": 17516,
+      "sha256": "9009c650e0b6e85712dee0b34d88ba46df0f39254f12b9d0f4acb22699c58145"
+    },
+    {
+      "path": "src/storage/backend.rs",
+      "size_bytes": 8939,
+      "sha256": "8461098a6cbcb17d77723b4a0a7fdd845910d8d2082b2ffef3705ac2569d2d74"
+    },
+    {
+      "path": "src/storage/container.rs",
+      "size_bytes": 34796,
+      "sha256": "fd3cae7740e8f81f858e83e03738f783b2b72ace265738f3ca0d2e8317b3a335"
+    },
+    {
+      "path": "src/storage/crash_point.rs",
+      "size_bytes": 7130,
+      "sha256": "37853812b35e139a911e802db41c3dab8fdc3b4b5679301b276935b4666b70af"
+    },
+    {
+      "path": "src/storage/engine.rs",
+      "size_bytes": 20603,
+      "sha256": "99f17016c1ffe1dbe09d40255b0e3d5ca18c976beaa19de6136c672346b4acf6"
+    },
+    {
+      "path": "src/storage/filesystem.rs",
+      "size_bytes": 23403,
+      "sha256": "fe29d52d4bf173a57a8afa8ab2fb8faeb3bd474af71f81248e7a9851a198ab7f"
+    },
+    {
+      "path": "src/storage/integrity.rs",
+      "size_bytes": 8508,
+      "sha256": "c6f7aaceefcc9f51846eab1bde7e5c45bcd878b4ec1fe6b4b82ce4695435a45e"
+    },
+    {
+      "path": "src/storage/manifest.rs",
+      "size_bytes": 28993,
+      "sha256": "2803b6a80ff094b5906c8821674b43edb6027e948e1ba07519a0f2e3acab2734"
+    },
+    {
+      "path": "src/storage/mod.rs",
+      "size_bytes": 637,
+      "sha256": "370595f64cdd0ecc5c04a6782486899bada7302b3fe15a8aada74d9ab62f8db0"
+    },
+    {
+      "path": "src/storage/object.rs",
+      "size_bytes": 3676,
+      "sha256": "5ed74eecd304f57ba1c37bc186dbe6c95695666955437c53ddc930c7add03df2"
+    },
+    {
+      "path": "src/storage/transaction.rs",
+      "size_bytes": 18835,
+      "sha256": "ab8006a9c3ea984760208902de45c557b73cf52f977f9c0dacf14144b6080fa9"
+    },
+    {
+      "path": "src/strategies/adaptive.rs",
+      "size_bytes": 11977,
+      "sha256": "6003ad23c5f1d0f7a25d266ba4500c894841281fb7868f07415855735e2a8eba"
+    },
+    {
+      "path": "src/strategies/adaptive_v2.rs",
+      "size_bytes": 14090,
+      "sha256": "5e331e540449aa8a577b16870d363386e1fa40fe3a6ee343c7824d0fdb898737"
+    },
+    {
+      "path": "src/strategies/fixed_repair.rs",
+      "size_bytes": 2996,
+      "sha256": "6522bbd80b0d3dd2695c880eda6d5d7e59799c2527283223e433bc8b0311e5c3"
+    },
+    {
+      "path": "src/strategies/mod.rs",
+      "size_bytes": 2401,
+      "sha256": "3697f785103361d7f9907f7572413a2578718bd351f95656d4e998b5c6d1513e"
+    },
+    {
+      "path": "src/strategies/replication.rs",
+      "size_bytes": 2192,
+      "sha256": "0ce273aeed695785cea394e6dc59e05c521897a3d73ec79544df085bed743dc4"
+    },
+    {
+      "path": "src/testing/fault_injection.rs",
+      "size_bytes": 4233,
+      "sha256": "f9fcd74ceba9a2cb2a3fe54db3184762a83eba31943baa97e42c0450021dcae7"
+    },
+    {
+      "path": "src/testing/formal_model.rs",
+      "size_bytes": 27996,
+      "sha256": "ce542e14f48666eee1d3e70ffa49b5fe1a1ad309b98fa3af01a13454ad1ad375"
+    },
+    {
+      "path": "src/testing/formal_model_v2.rs",
+      "size_bytes": 36646,
+      "sha256": "bb4f06026c4f9dde8fb571ebb0c64394d637b8d7b3b6715702b25d7db8a9b941"
+    },
+    {
+      "path": "src/testing/mod.rs",
+      "size_bytes": 617,
+      "sha256": "4f53216b50ae91adfa17f11c95844faf6891cb81e86c94ed98a76258dcd9058e"
+    },
+    {
+      "path": "src/testing/soak_harness.rs",
+      "size_bytes": 4348,
+      "sha256": "2c460026e4cc5123e7b2b11998991b761cc2703fb30976ec1b93d81418755918"
+    },
+    {
+      "path": "tests/determinism.rs",
+      "size_bytes": 2601,
+      "sha256": "7ab061043dd60234a83358fe4548d069c2dd6b0f7fa21be2e3d3c0ceb34a7996"
+    },
+    {
+      "path": "tests/failure_scenarios.rs",
+      "size_bytes": 12183,
+      "sha256": "af01f486ec7e0f5ccca4b2a46a19311d82a76d168218028aa6984dad39f45c1f"
+    },
+    {
+      "path": "tests/phase1_validation.rs",
+      "size_bytes": 24318,
+      "sha256": "bc713f5242dd2fe949d91269d2eb729b88f9b40becee3cc31cdddf142cc134f0"
+    },
+    {
+      "path": "tests/phase2_validation.rs",
+      "size_bytes": 25827,
+      "sha256": "6b725972c9bf27473be303829d48be2d2edbee8d95ffc10327dc62ca2834e060"
+    },
+    {
+      "path": "tests/phase3_validation.rs",
+      "size_bytes": 43492,
+      "sha256": "a9efa69fdd36b154e4772ae57009ed7fa96139c970fd7b9d58e9981e175d1d40"
+    },
+    {
+      "path": "tests/phase4_1_validation.rs",
+      "size_bytes": 33950,
+      "sha256": "f4058043c2ed21c42aceaecbd09b21070d8608240e693c3f4eb488282f9db637"
+    },
+    {
+      "path": "tests/phase4_2_validation.rs",
+      "size_bytes": 36960,
+      "sha256": "bee7b9c15e670b5038842536a919014ac82fda1c3c01dbeaaa0c29609181e63a"
+    },
+    {
+      "path": "tests/phase4_3_validation.rs",
+      "size_bytes": 32547,
+      "sha256": "46e4e6050cd1fab3b00a087c3074eccb66090d1129f80b4a18de4337535dd68c"
+    },
+    {
+      "path": "tests/phase4_4_validation.rs",
+      "size_bytes": 43992,
+      "sha256": "d73c94ed7c7d9f90a1d647d1adf39bc99c02a003cacb99e7eabc71464a465f9f"
+    },
+    {
+      "path": "tests/phase4_validation.rs",
+      "size_bytes": 53724,
+      "sha256": "ea976cecd78290cd7b951a640a6454a4cfe8be4d77f74f5f46f53358417213e5"
+    },
+    {
+      "path": "tests/phase5_1_validation.rs",
+      "size_bytes": 55098,
+      "sha256": "398e936e0857d427d7461ff90ecb0b54f50088ce175d5cc4a1b7e216bea8cf63"
+    },
+    {
+      "path": "tests/phase5_2_validation.rs",
+      "size_bytes": 51312,
+      "sha256": "3f905b5cc256a214cb312fac2ab0a082099ae60750cab1a017310da7a08df294"
+    },
+    {
+      "path": "tests/phase5_3_validation.rs",
+      "size_bytes": 56833,
+      "sha256": "d1cdfabb1089d1f3d1a5e10e510c82becf76a6597e0089892fc90e205fc43b08"
+    },
+    {
+      "path": "tests/phase5_4_validation.rs",
+      "size_bytes": 33223,
+      "sha256": "47b2cc3b11802f3a896bb07c228985f02d1d62d3401bb1f531f19bd7dd3220b1"
+    },
+    {
+      "path": "tests/phase5_5_validation.rs",
+      "size_bytes": 39676,
+      "sha256": "b12267ab8d07a3d82320ca961eb135eb0931cea2620da0928d07beabda0d41a0"
+    },
+    {
+      "path": "tests/phase5_6_validation.rs",
+      "size_bytes": 28678,
+      "sha256": "7d1fdbba54b9491422490ee05101a4fe21c3c2412f1280a2de063749690d88fa"
+    },
+    {
+      "path": "tests/phase5_8_validation.rs",
+      "size_bytes": 22649,
+      "sha256": "0ab1ee890f2b0a228406a10e5aff8e01f52be2b0dbf84cf3457f721cf4293240"
+    },
+    {
+      "path": "tests/phase5_validation.rs",
+      "size_bytes": 52939,
+      "sha256": "12853803610cd94f223a486b452d32d16f141eda179eef854fd07708ff604278"
+    },
+    {
+      "path": "tests/recoverability.rs",
+      "size_bytes": 6394,
+      "sha256": "41d09a32719102178b7d56a41143801fe66bf51ef5dd513bc789e434e139e893"
+    },
+    {
+      "path": "tools/capture_authoritative_run.py",
+      "size_bytes": 4794,
+      "sha256": "91d70d4c822881e1a2de8d055b5bf462afe7cd785a3edfcb4a2eeaea576ef42a"
+    },
+    {
+      "path": "tools/compute_source_manifest.py",
+      "size_bytes": 3540,
+      "sha256": "898bc2c2c5d6375da7564f6d04c1981925cc4046ce3f9e0f471837ab4300c6b6"
+    },
+    {
+      "path": "tools/run_hotfix_experiments.py",
+      "size_bytes": 6221,
+      "sha256": "9dfb903a11c585bbdf8590bd42eeb2287a7e8321315cc55ca15c3aa54bf69995"
+    },
+    {
+      "path": "tools/test_evidence_validator.py",
+      "size_bytes": 29031,
+      "sha256": "9fcbd9c232f444455b012f3d75381970f194823c3337d914ea5dc7e904e0959b"
+    },
+    {
+      "path": "tools/test_reconciler.py",
+      "size_bytes": 16585,
+      "sha256": "831a4c2b0f196f7bccc7d8595528a93895ab69c82743a3663373810fa4d2d2ac"
+    },
+    {
+      "path": "tools/verify_fsp_evidence.py",
+      "size_bytes": 4981,
+      "sha256": "a259a0293decdce90a1e0cce7c433c7412580dbb2ff91908f381d5a165069f2a"
+    }
+  ]
+}

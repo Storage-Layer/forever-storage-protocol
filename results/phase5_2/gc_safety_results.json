@@ -1,0 +1,33 @@
+{
+  "phase": "5.2",
+  "component": "Garbage Collection Reachability & Erasure-Coding Redundancy Safety",
+  "evaluated_at": "2026-11-01T12:00:00Z",
+  "invariants_enforced": {
+    "active_committed_generation_protected": {
+      "enforced": true,
+      "test_result": "PASSED (test_11_gc_of_active_committed_shard_rejected)"
+    },
+    "retained_historical_versions_protected": {
+      "enforced": true,
+      "test_result": "PASSED (test_12_gc_of_retained_historical_shard_rejected)"
+    },
+    "checkpoint_protected_versions_protected": {
+      "enforced": true,
+      "test_result": "PASSED (test_13_gc_of_checkpoint_protected_shard_rejected)"
+    },
+    "legal_hold_protection": {
+      "enforced": true,
+      "test_result": "PASSED (test_14_gc_blocked_by_active_legal_hold)"
+    },
+    "redundancy_threshold_safety": {
+      "enforced": true,
+      "min_surviving_shards": 12,
+      "rejection_below_or_equal_to_k": true,
+      "test_result": "PASSED (test_15_gc_rejected_when_surviving_shards_at_or_below_twelve)"
+    },
+    "replay_and_node_binding": {
+      "enforced": true,
+      "test_result": "PASSED (test_16_stale_destructive_permit_replay_rejected)"
+    }
+  }
+}

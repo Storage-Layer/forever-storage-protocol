@@ -1,0 +1,16 @@
+{
+  "experiment": "Process SIGKILL Crash & Recovery Durability",
+  "killed_nodes": [
+    0,
+    4,
+    8,
+    12,
+    16
+  ],
+  "signal": "SIGKILL (-9)",
+  "recovery_mechanism": "Local v2 shard container index & transaction journal replay",
+  "post_restart_get_sha256": "bf17539774a7fab5802d0e4a5fccc4df33736ea0d48d101592ad88589818fea9",
+  "expected_sha256": "bf17539774a7fab5802d0e4a5fccc4df33736ea0d48d101592ad88589818fea9",
+  "data_loss_bytes": 0,
+  "verdict": "PASSED"
+}

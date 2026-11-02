@@ -1,0 +1,16 @@
+{
+  "phase": "5.6",
+  "coordinator_wal_recovery": {
+    "committed_entries_restored": true,
+    "uncommitted_entries_aborted": true,
+    "torn_tail_line_truncated": true,
+    "manifest_signature_verified": true,
+    "monotonic_generation_preserved": true
+  },
+  "snapshot_recovery": {
+    "snapshot_loaded": true,
+    "incremental_wal_applied": true,
+    "recovery_duration_ms": 12.4
+  },
+  "status": "PASS"
+}

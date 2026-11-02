@@ -1,0 +1,35 @@
+{
+  "phase": "5.7",
+  "audit_module": "src/cluster/launcher.rs",
+  "supervision_mechanisms": {
+    "kernel_pdeathsig": {
+      "syscall": "prctl(PR_SET_PDEATHSIG, SIGKILL)",
+      "location": "src/cluster/launcher.rs:471",
+      "mechanism": "Child storage daemons receive immediate kernel-directed SIGKILL upon abnormal launcher termination.",
+      "status": "ACTIVE_VERIFIED"
+    },
+    "pid_reuse_toctou_defense": {
+      "vulnerability_mitigated": "TOCTOU race hazard where a dead FSP daemon PID is recycled by the OS for an unrelated process before cleanup kill()",
+      "implementation_layers": [
+        {
+          "layer": "Process Start-Time Binding",
+          "details": "Launcher records /proc/{pid}/stat field 22 (starttime) in cluster.pids alongside PID. If PID is recycled, starttime mismatches and cleanup skips the PID."
+        },
+        {
+          "layer": "Linux pidfd Pinning",
+          "details": "cleanup_orphans invokes SYS_pidfd_open (syscall 434) to pin the exact kernel task struct, re-verifies command line, and issues SYS_pidfd_send_signal (syscall 424) with SIGKILL. Guarantees signals are never delivered to a recycled task."
+        },
+        {
+          "layer": "Command-Line Pattern Verification",
+          "details": "is_fsp_process audits /proc/{pid}/cmdline and /proc/{pid}/comm to ensure target contains 'fsp-node' or 'fsp'."
+        }
+      ],
+      "status": "HARDENED_VERIFIED"
+    }
+  },
+  "tests": [
+    "test_p5_6_14_launcher_sigkill_pdeathsig_clean_termination",
+    "test_p5_6_15_orphan_pid_reuse_safeguard_prevents_killing_unrelated"
+  ],
+  "status": "PASS"
+}

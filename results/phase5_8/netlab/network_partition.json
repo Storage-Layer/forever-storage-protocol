@@ -1,0 +1,38 @@
+{
+  "experiment": "Network Partition & Rejoin",
+  "partition_a": {
+    "size": 12,
+    "nodes": [
+      0,
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10,
+      11
+    ],
+    "can_serve_reads": true
+  },
+  "partition_b": {
+    "size": 8,
+    "nodes": [
+      12,
+      13,
+      14,
+      15,
+      16,
+      17,
+      18,
+      19
+    ],
+    "can_serve_reads": false
+  },
+  "split_brain_prevention": "Strict majority / quorum gating",
+  "rejoin_status": "All 20 nodes reconnected and reconciled",
+  "verdict": "PASSED"
+}

@@ -1,0 +1,34 @@
+{
+  "phase": "5.6",
+  "findings": [
+    {
+      "id": "SEC-5.6-01",
+      "title": "Storage Node PutShardAck Identity Mismatch",
+      "severity": "High",
+      "status": "RESOLVED",
+      "remediation": "Coordinator validates ack.node_id == target.node_id and ack.shard_id == planned_shard_id before incrementing durable counts."
+    },
+    {
+      "id": "SEC-5.6-02",
+      "title": "Orphan Process Sweeper PID Reuse Hazard",
+      "severity": "Medium",
+      "status": "RESOLVED",
+      "remediation": "Added is_fsp_process() checking /proc/{pid}/cmdline and comm before delivering SIGKILL."
+    },
+    {
+      "id": "SEC-5.6-03",
+      "title": "Distinct Shard Counting vs Node Count Ambiguity",
+      "severity": "Medium",
+      "status": "RESOLVED",
+      "remediation": "Implemented DurabilityContractReport with distinct_durable_shards and failure_domain_policy_satisfied."
+    },
+    {
+      "id": "SEC-5.6-04",
+      "title": "Process SIGKILL Conflation with Power Loss",
+      "severity": "Medium",
+      "status": "RESOLVED",
+      "remediation": "Formalized Class A (Process), Class B (OS/VM), and Class C (Power Loss) taxonomies; Class C strictly classified as NOT EXECUTED."
+    }
+  ],
+  "production_readiness": "NOT ESTABLISHED"
+}

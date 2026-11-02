@@ -1,0 +1,31 @@
+{
+  "phase": "5.7",
+  "audit_module": "tests/phase5_6_validation.rs",
+  "coordinator_recovery_scenarios": [
+    {
+      "test_name": "test_p5_6_10_coordinator_crash_before_commit_rolls_back_journal",
+      "scenario": "Coordinator crash before 2PC commit phase",
+      "behavior": "Pending uncommitted journal transactions are discarded; no partial manifest published.",
+      "outcome": "VERIFIED_PASS"
+    },
+    {
+      "test_name": "test_p5_6_11_coordinator_crash_after_commit_recovers_manifest",
+      "scenario": "Coordinator crash immediately after commit journal write",
+      "behavior": "Cold restart replays commit journal record; manifest is recovered and accessible.",
+      "outcome": "VERIFIED_PASS"
+    },
+    {
+      "test_name": "test_p5_6_17_wal_torn_tail_truncation_on_coordinator_restart",
+      "scenario": "Torn write / partial sector write at tail of WAL",
+      "behavior": "Checksum mismatch detects corrupted tail record; WAL is safely truncated to last valid transaction.",
+      "outcome": "VERIFIED_PASS"
+    },
+    {
+      "test_name": "test_p5_6_18_metadata_snapshot_and_incremental_wal_recovery",
+      "scenario": "Snapshot checkpoint restoration followed by incremental WAL replay",
+      "behavior": "Coordinator state restores to exact snapshot point then advances through WAL delta.",
+      "outcome": "VERIFIED_PASS"
+    }
+  ],
+  "status": "PASS"
+}

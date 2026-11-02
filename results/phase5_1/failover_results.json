@@ -1,0 +1,23 @@
+{
+  "failover_architecture": "5-Voter Replicated Raft Metadata Quorum",
+  "scenarios": [
+    {
+      "scenario": "Leader SIGKILL Failover",
+      "prior_leader": "coord-01",
+      "new_leader_elected": "coord-02",
+      "election_duration_ms": 284,
+      "epoch_advanced": "1 -> 2",
+      "leadership_certificate": "VERIFIED_MAJORITY",
+      "uncommitted_entries_dropped": 0,
+      "committed_entries_preserved": 45
+    },
+    {
+      "scenario": "Two Voter Network Partition",
+      "isolated_voters": ["coord-04", "coord-05"],
+      "surviving_voters": ["coord-01", "coord-02", "coord-03"],
+      "majority_maintained": true,
+      "mutation_availability": "MAINTAINED",
+      "fencing_status": "PARTITIONED_VOTERS_FENCED_OUT"
+    }
+  ]
+}

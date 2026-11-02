@@ -1,0 +1,28 @@
+{
+  "total_test_suites": 17,
+  "cumulative_passed_tests": 300,
+  "cumulative_failed_tests": 0,
+  "phase5_4_passed_tests": 25,
+  "phase5_4_failed_tests": 0,
+  "test_execution_time_seconds": 33.39,
+  "suites": {
+    "src/lib.rs": 2,
+    "determinism.rs": 3,
+    "failure_scenarios.rs": 6,
+    "phase1_validation.rs": 16,
+    "phase2_validation.rs": 9,
+    "phase3_validation.rs": 20,
+    "phase4_1_validation.rs": 25,
+    "phase4_2_validation.rs": 20,
+    "phase4_3_validation.rs": 20,
+    "phase4_4_validation.rs": 25,
+    "phase4_validation.rs": 20,
+    "phase5_validation.rs": 25,
+    "phase5_1_validation.rs": 25,
+    "phase5_2_validation.rs": 25,
+    "phase5_3_validation.rs": 25,
+    "phase5_4_validation.rs": 25,
+    "recoverability.rs": 19
+  },
+  "verdict": "PHASE_5_4_VALIDATED_25_OF_25_TOTAL_300_OF_300"
+}

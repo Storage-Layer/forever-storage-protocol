@@ -1,0 +1,29 @@
+{
+  "tests": [
+    "test_p5_4_05_eight_node_outage_reconstruction",
+    "test_p5_4_06_two_full_zones_outage_reconstruction",
+    "test_p5_4_12_lrc_local_group_repair_reduced_io"
+  ],
+  "status": "PASSED",
+  "eight_node_outage": {
+    "total_shards": 20,
+    "shards_killed": [0, 2, 5, 8, 11, 14, 17, 19],
+    "killed_count": 8,
+    "remaining_count": 12,
+    "reconstruction_status": "EXACT_MATCH",
+    "reconstruction_latency_ms": 14.8
+  },
+  "two_full_zones_outage": {
+    "zones_killed": [1, 3],
+    "nodes_killed": [4, 5, 6, 7, 12, 13, 14, 15],
+    "remaining_nodes": 12,
+    "k_threshold": 12,
+    "reconstruction_status": "EXACT_MATCH"
+  },
+  "lrc_local_repair": {
+    "single_shard_loss": "shard_0",
+    "shards_read": 4,
+    "bandwidth_reduction_pct": 66.67,
+    "global_read_fallback_required": false
+  }
+}

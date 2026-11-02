@@ -1,0 +1,42 @@
+{
+  "scheme": "Reed-Solomon RS(20,12)",
+  "data_shards_k": 12,
+  "parity_shards_m": 8,
+  "total_shards_n": 20,
+  "fault_tolerance_threshold": 8,
+  "failure_zones": {
+    "zone-a": [
+      0,
+      1,
+      2,
+      3
+    ],
+    "zone-b": [
+      4,
+      5,
+      6,
+      7
+    ],
+    "zone-c": [
+      8,
+      9,
+      10,
+      11
+    ],
+    "zone-d": [
+      12,
+      13,
+      14,
+      15
+    ],
+    "zone-e": [
+      16,
+      17,
+      18,
+      19
+    ]
+  },
+  "placement_policy": "DistinctFailureZonePerShardStripe",
+  "stripe_size_bytes": 131072,
+  "commit_policy": "StrictAllShards"
+}

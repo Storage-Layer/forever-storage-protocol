@@ -1,0 +1,63 @@
+{
+  "inventory_version": "phase5_8_v1",
+  "audit_timestamp": "2026-11-02T04:00:00Z",
+  "physical_hosts": {
+    "host_a_primary": {
+      "role": "local_primary_coordinator_and_storage",
+      "status": "ONLINE_AUDITED",
+      "hostname": "host-a.fsp.internal",
+      "os": {
+        "distro": "Linux Mint 22.3 (Zena) / Ubuntu 24.04 noble",
+        "kernel": "6.14.0-37-generic",
+        "arch": "x86_64"
+      },
+      "cpu": {
+        "model": "Intel(R) Xeon(R) CPU X5650 @ 2.67GHz",
+        "sockets": 2,
+        "cores_per_socket": 6,
+        "threads_per_core": 2,
+        "total_threads": 24
+      },
+      "memory": {
+        "total_bytes": 65191874560,
+        "human_readable": "62 GiB"
+      },
+      "storage": {
+        "filesystem": "ext4",
+        "mount_point": "/",
+        "device": "/dev/sdb3"
+      },
+      "interfaces": [
+        {
+          "name": "enp2s0",
+          "ipv4": "10.77.77.2/24",
+          "mtu": 1500,
+          "link_type": "ethernet"
+        },
+        {
+          "name": "wlx7c8bca05e8a9",
+          "ipv4": "192.168.1.103/24",
+          "mtu": 1500,
+          "link_type": "wlan"
+        },
+        {
+          "name": "lo",
+          "ipv4": "127.0.0.1/8",
+          "mtu": 65536,
+          "link_type": "loopback"
+        }
+      ],
+      "allocated_nodes": [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]
+    },
+    "host_b_secondary": {
+      "role": "designated_secondary_host",
+      "status": "NOT EXECUTED — BLOCKED: No authorized independent physical host available",
+      "hostname": "host-b.fsp.internal",
+      "templated_ipv4": "10.77.77.3",
+      "allocated_nodes": [10, 11, 12, 13, 14, 15, 16, 17, 18, 19],
+      "authorization_boundary_reason": "Operator did not designate or authorize independent secondary host or SSH credentials."
+    }
+  },
+  "deployment_gate_verdict": "BLOCKED: No authorized independent physical host available",
+  "physical_execution_status": "NOT EXECUTED"
+}

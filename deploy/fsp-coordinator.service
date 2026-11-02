@@ -1,0 +1,23 @@
+[Unit]
+Description=Forever Storage Protocol (FSP) Primary Coordinator Daemon
+Documentation=https://internal.fsp.storage/docs/PHASE4_2_COORDINATOR_HA.md
+After=network-online.target
+Wants=network-online.target
+
+[Service]
+Type=simple
+User=fsp
+Group=fsp
+UMask=0077
+ExecStart=/usr/local/bin/fsp-coordinator --config /etc/fsp/coordinator-primary.toml
+Restart=on-failure
+RestartSec=3s
+LimitNOFILE=65536
+NoNewPrivileges=true
+ProtectSystem=strict
+ProtectHome=true
+PrivateTmp=true
+ReadWritePaths=/var/lib/fsp/coordinator
+
+[Install]
+WantedBy=multi-user.target

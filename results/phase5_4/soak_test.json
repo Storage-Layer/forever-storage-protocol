@@ -1,0 +1,9 @@
+{
+  "soak_test_type": "continuous_multi_day_staging",
+  "status_24h_bare_metal": "NOT EXECUTED",
+  "status_72h_bare_metal": "NOT EXECUTED",
+  "physical_multihost_bare_metal": "NOT EXECUTED",
+  "reason": "Bounded automated loopback subprocess integration was executed; physical independent bare-metal hardware and 24h/72h continuous soaking were not provisioned in this environment.",
+  "bounded_test_status": "PASSED (all 25 bounded integration tests passed in 33.39s)",
+  "production_readiness": "NOT ESTABLISHED"
+}

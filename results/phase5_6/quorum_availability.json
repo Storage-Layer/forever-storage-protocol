@@ -1,0 +1,29 @@
+{
+  "phase": "5.6",
+  "quorum_configuration": {
+    "total_voters": 3,
+    "majority_threshold": 2
+  },
+  "scenarios": [
+    {
+      "scenario": "one_voter_down",
+      "control_plane": "AVAILABLE",
+      "put_available": true,
+      "get_available": true
+    },
+    {
+      "scenario": "two_voters_down",
+      "control_plane": "FAIL_CLOSED",
+      "put_available": false,
+      "get_available": true,
+      "emergency_offline_read": "AVAILABLE"
+    },
+    {
+      "scenario": "leader_crash_failover",
+      "failover_duration_ms": 350.0,
+      "uncommitted_mutations_aborted": true,
+      "committed_mutations_preserved": true
+    }
+  ],
+  "status": "PASS"
+}

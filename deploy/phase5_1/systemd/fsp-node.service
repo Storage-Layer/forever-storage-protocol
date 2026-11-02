@@ -1,0 +1,19 @@
+[Unit]
+Description=FSP Forever Storage Protocol Storage Node Daemon %i
+After=network.target
+Documentation=https://github.com/fsp-storage/fsp
+
+[Service]
+Type=simple
+User=fsp
+Group=fsp
+ExecStart=/opt/fsp/bin/fsp_node --config /etc/fsp/nodes/node-%i.toml
+Restart=on-failure
+RestartSec=2s
+LimitNOFILE=65536
+LimitMEMLOCK=infinity
+StandardOutput=journal
+StandardError=journal
+
+[Install]
+WantedBy=multi-user.target

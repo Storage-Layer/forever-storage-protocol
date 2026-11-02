@@ -1,0 +1,25 @@
+[Unit]
+Description=Forever Storage Protocol (FSP) Storage Node Daemon (Instance %i)
+Documentation=https://internal.fsp.storage/docs/PHASE4_4_MULTIHOST_DEPLOYMENT.md
+After=network-online.target
+Wants=network-online.target
+
+[Service]
+Type=simple
+User=fsp
+Group=fsp
+UMask=0077
+ExecStart=/usr/local/bin/fsp-node \
+  --node-id %i \
+  --config /etc/fsp/nodes/node-%i.toml
+Restart=on-failure
+RestartSec=5s
+LimitNOFILE=65536
+NoNewPrivileges=true
+ProtectSystem=strict
+ProtectHome=true
+PrivateTmp=true
+ReadWritePaths=/var/lib/fsp/node-%i
+
+[Install]
+WantedBy=multi-user.target

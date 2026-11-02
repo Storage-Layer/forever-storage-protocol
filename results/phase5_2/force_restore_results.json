@@ -1,0 +1,22 @@
+{
+  "phase": "5.2",
+  "component": "Dual-Mode Restore & Anti-Rollback Guard",
+  "evaluated_at": "2026-11-01T12:00:00Z",
+  "modes": {
+    "safe_online": {
+      "description": "Standard production restore with strict safety invariants",
+      "enforce_rollback_rejection": true,
+      "enforce_epoch_monotonicity": true,
+      "test_result": "PASSED (test_01_online_force_restore_rejection, test_07_trusted_checkpoint_rollback_rejection)"
+    },
+    "isolated_rebootstrap": {
+      "description": "Explicitly authorized recovery mode for catastrophic quorum loss",
+      "requires_operator_signature": true,
+      "requires_incarnation_id": true,
+      "fences_stale_epochs_delta": 100,
+      "records_provenance_file": "recovery_provenance.rec",
+      "test_result": "PASSED (test_02_isolated_rebootstrap_authorization_success, test_03_stale_leadership_fenced_after_restore)"
+    }
+  },
+  "security_status": "VULNERABILITY_ELIMINATED: Unrestricted force restore replaced by signed operator rebootstrap authorization and epoch advancement fencing."
+}

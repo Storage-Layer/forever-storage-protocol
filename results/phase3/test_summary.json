@@ -1,0 +1,11 @@
+{
+  "phase0_preserved_tests": 13,
+  "phase1_preserved_tests": 16,
+  "phase2_preserved_tests": 9,
+  "phase3_new_tests": 20,
+  "total_workspace_tests_passed": 58,
+  "total_workspace_tests_failed": 0,
+  "exhaustive_4shard_erasure_patterns_verified": 4845,
+  "stratified_8shard_erasure_patterns_verified": 1000,
+  "real_subprocess_kill_tests_verified": true
+}

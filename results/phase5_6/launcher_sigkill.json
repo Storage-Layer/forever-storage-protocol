@@ -1,0 +1,10 @@
+{
+  "phase": "5.6",
+  "pdeathsig_mechanism": "libc::prctl(libc::PR_SET_PDEATHSIG, libc::SIGKILL)",
+  "launcher_sigkill_delivered": true,
+  "children_terminated_by_kernel": true,
+  "child_exit_signal": "SIGKILL",
+  "lingering_daemons_detected": 0,
+  "port_binding_collisions_on_restart": 0,
+  "status": "PASS"
+}

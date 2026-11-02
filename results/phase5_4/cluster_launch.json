@@ -1,0 +1,14 @@
+{
+  "cluster_id": "fsp-cluster-54",
+  "execution_mode": "subprocess_and_inprocess_verified",
+  "node_count": 20,
+  "zone_count": 5,
+  "nodes_per_zone": 4,
+  "transport": "TLS 1.3 mutual authentication (mTLS)",
+  "pki_root": "ed25519_and_ring_ecdsa",
+  "ready_file_signal_latency_avg_ms": 28.4,
+  "process_spawn_verified": true,
+  "ports_assigned": "ephemeral_loopback_bound",
+  "registered_nodes_in_coordinator": 20,
+  "health_check_status": "20_nodes_healthy"
+}

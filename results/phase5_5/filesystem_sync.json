@@ -1,0 +1,20 @@
+{
+  "test_name": "test_p5_5_22_accurate_fsync_vs_buffered_throughput_measurement",
+  "storage_device": "NVMe SSD (ext4, rw,relatime)",
+  "benchmark_workload": "10x 1 MiB writes (10 MiB total)",
+  "buffered_write": {
+    "total_bytes": 10485760,
+    "elapsed_ms": 3.82,
+    "effective_throughput_mib_s": 2744.5,
+    "durability_level": "Buffered (OS page cache only)"
+  },
+  "fsync_synced_write": {
+    "total_bytes": 10485760,
+    "elapsed_ms": 42.15,
+    "effective_throughput_mib_s": 248.7,
+    "durability_level": "LocallyDurable (sync_all disk barrier)"
+  },
+  "overhead_ratio": 11.03,
+  "analysis": "Fsync enforces an explicit hardware barrier, resulting in an ~11x latency difference compared to buffered writes. Claims of multi-gigabyte throughput in prior phases reflected buffered OS cache writes rather than durable disk-committed I/O.",
+  "status": "PASS"
+}

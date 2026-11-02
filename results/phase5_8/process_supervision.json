@@ -1,0 +1,21 @@
+{
+  "milestone": "Phase 5.8",
+  "audit_timestamp": "2026-11-02T04:00:00Z",
+  "supervision_mechanisms": {
+    "parent_death_signaling": {
+      "mechanism": "prctl(PR_SET_PDEATHSIG, SIGKILL)",
+      "purpose": "Prevents orphaned node daemons if launcher or parent coordinator crashes abruptly",
+      "status": "VERIFIED"
+    },
+    "pidfd_management": {
+      "mechanism": "Linux pidfd_open and pidfd_send_signal (Linux 5.3+)",
+      "purpose": "Race-free process tracking and signal delivery preventing PID recycling hazards",
+      "status": "VERIFIED"
+    },
+    "graceful_shutdown": {
+      "signal_sequence": "SIGTERM -> 5s grace period -> SIGKILL",
+      "exit_guarantees": "Flushes pending write buffers and closes TCP listeners cleanly",
+      "status": "VERIFIED"
+    }
+  }
+}

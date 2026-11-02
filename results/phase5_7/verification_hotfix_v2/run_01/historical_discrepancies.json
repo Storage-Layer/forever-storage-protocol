@@ -1,0 +1,40 @@
+{
+  "historical_discrepancy_ledger": [
+    {
+      "milestone": "Phase 5.6",
+      "claimed_total": 350,
+      "displayed_table_row_sum": 380,
+      "discrepancy": "+30 inflation in markdown table",
+      "git_revision": "NOT_A_GIT_REPOSITORY",
+      "actual_test_count_proven": 350,
+      "root_cause": "Manual markdown table assembly in Phase 5.6 report included a duplicate phantom target 'tests/phase5_disaster_recovery.rs' (+25 tests) and overcounted 'tests/phase4_3_validation.rs' as 25 instead of 20 (+5 tests). Total documentation error: 30 tests.",
+      "mathematical_reconciliation": "380 (table) - 25 (phantom duplicate) - 5 (overcount) = 350 real tests",
+      "corrective_action": "Removed phantom duplicate target and corrected phase4_3 target count. Standardized on 350.",
+      "remaining_uncertainty": "None. Cargo raw logs confirm 350 tests."
+    },
+    {
+      "milestone": "Phase 5.7 Initial Report",
+      "claimed_total": 350,
+      "displayed_table_row_sum": 425,
+      "discrepancy": "+75 net inflation in markdown table",
+      "git_revision": "NOT_A_GIT_REPOSITORY",
+      "actual_test_count_proven": 350,
+      "root_cause": "Manual transcription error. An obsolete early-architecture draft markdown table was pasted into the report instead of programmatic output. The table contained 6 pure phantom files (117 tests: adaptive_reconstruction.rs: 13, codec_lrc.rs: 15, container_v2.rs: 20, distributed_cluster.rs: 25, gc_concurrent_safety.rs: 25, strategy_c_validation.rs: 19), net inflation in 4 existing suites (+35 tests: src/lib.rs: +25, failure_scenarios.rs: +10, phase3_validation.rs: +5, phase4_2_validation.rs: -5), and omitted 6 active suites (-77 tests: determinism.rs: 3, phase1_validation.rs: 16, phase2_validation.rs: 9, phase4_4_validation.rs: 25, phase4_validation.rs: 20, recoverability.rs: 4). Previous explanation erroneously stated 108 phantoms by subtracting 9 from phantoms and adding 9 to net overcounts.",
+      "mathematical_reconciliation": "425 (table) - 117 (pure phantoms) - 35 (existing suite inflation) + 77 (omitted real) = 350 real tests",
+      "corrective_action": "Deconstructed the 425 table row-by-row into exact, non-overlapping categories. Formulated exact arithmetic proof. Automated table generation directly from canonical JSON.",
+      "remaining_uncertainty": "None. Proved mathematically and empirically against source files."
+    },
+    {
+      "milestone": "Phase 5.7 Hotfix v1 Terminal Response",
+      "claimed_total": 350,
+      "displayed_table_row_sum": 335,
+      "discrepancy": "-15 deficit in terminal response markdown table",
+      "git_revision": "NOT_A_GIT_REPOSITORY",
+      "actual_test_count_proven": 350,
+      "root_cause": "The assistant's terminal chat response in Hotfix v1 manually formatted a table containing draft target names (including phantom targets container_persistence.rs: 15, network_fault_scenarios.rs: 25, phase5_7_validation.rs: 25, two_node_live_replication.rs: 8, two_node_physical_pilot.rs: 14) and omitting real suites (phase4_1, phase4_2, phase4_3, phase5_1). The rows summed to 335 while the summary row stated 350. The file validator verify_fsp_evidence.py checked only the disk report file (which had been generated programmatically) and did not inspect terminal responses or have mutation test coverage.",
+      "mathematical_reconciliation": "335 (table rows) + 95 (omitted active suites) - 87 (phantom draft targets) + 7 (unit adjustments) = 350 real tests",
+      "corrective_action": "Strict pipeline validator implemented (tools/test_evidence_validator.py). Added 20 mandatory negative mutation tests ensuring any table with row sum != total row != canonical JSON fails with non-zero exit. All future report tables and chat outputs must be produced directly by generate_markdown_table_from_canonical().",
+      "remaining_uncertainty": "None. Mutation suite enforces programmatic generation."
+    }
+  ]
+}

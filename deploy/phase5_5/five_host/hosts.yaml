@@ -1,0 +1,28 @@
+# FSP Phase 5.5 Canonical Five-Host Topology Profile
+profile_name: five_host_canonical_5zone
+hosts:
+  storage_host_01:
+    ip: 10.0.10.11
+    zone: zone-a
+    coordinator: coord-0
+    node_ids: [0, 1, 2, 3]
+  storage_host_02:
+    ip: 10.0.10.12
+    zone: zone-b
+    coordinator: coord-1
+    node_ids: [4, 5, 6, 7]
+  storage_host_03:
+    ip: 10.0.10.13
+    zone: zone-c
+    coordinator: coord-2
+    node_ids: [8, 9, 10, 11]
+  storage_host_04:
+    ip: 10.0.10.14
+    zone: zone-d
+    node_ids: [12, 13, 14, 15]
+  storage_host_05:
+    ip: 10.0.10.15
+    zone: zone-e
+    node_ids: [16, 17, 18, 19]
+
+durability_guarantee: "Any 2 entire host failures (8 nodes destroyed) leaves exactly 12 shards alive (= K=12). 100% data recovery guaranteed mathematically and on disk."

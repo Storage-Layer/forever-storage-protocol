@@ -1,0 +1,44 @@
+# FSP Phase 5.7 Two-Host Physical Staging Profile
+profile_name: two_host_lan_pilot
+version: "5.7"
+
+hosts:
+  host_a:
+    hostname: fsp-host-a.lan
+    ip: 192.168.1.10
+    nic: enp3s0
+    coordinator_role: primary
+    coordinator_port: 18000
+    zones:
+      - zone_id: zone-a
+        nodes: [0, 1, 2, 3, 4]
+        base_port: 19000
+      - zone_id: zone-b
+        nodes: [5, 6, 7, 8, 9]
+        base_port: 19005
+  host_b:
+    hostname: fsp-host-b.lan
+    ip: 192.168.1.11
+    nic: enp3s0
+    coordinator_role: standby
+    coordinator_port: 18000
+    zones:
+      - zone_id: zone-c
+        nodes: [10, 11, 12, 13]
+        base_port: 19010
+      - zone_id: zone-d
+        nodes: [14, 15, 16]
+        base_port: 19014
+      - zone_id: zone-e
+        nodes: [17, 18, 19]
+        base_port: 19017
+
+resilience_analysis:
+  coding_scheme: RS(20,12)
+  total_shards: 20
+  k_data_shards: 12
+  m_parity_shards: 8
+  loss_of_one_host_shards_lost: 10
+  surviving_shards: 10
+  quorum_or_reconstruction_satisfied: false
+  operational_scope: "Physical 2-host staging validates remote physical TCP/TLS communication, cross-machine container persistence, and authenticated durability. It does NOT provide single-host loss resilience for RS(20,12) because 10 < 12. 3-host or 5-host topology is strictly required for full physical machine fault tolerance."

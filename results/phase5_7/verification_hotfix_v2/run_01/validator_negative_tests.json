@@ -1,0 +1,142 @@
+[
+  {
+    "test_id": 1,
+    "description": "1. Report says 350; rows sum to 335",
+    "detected_violations_count": 2,
+    "sample_violation": "Rule 1 Violation: Sum of Markdown target rows (335) != summary TOTAL row (350).",
+    "status": "REJECTED_AS_EXPECTED"
+  },
+  {
+    "test_id": 2,
+    "description": "2. Report says 350; rows sum to 425",
+    "detected_violations_count": 2,
+    "sample_violation": "Rule 1 Violation: Sum of Markdown target rows (425) != summary TOTAL row (350).",
+    "status": "REJECTED_AS_EXPECTED"
+  },
+  {
+    "test_id": 3,
+    "description": "3. Correct total but one target omitted",
+    "detected_violations_count": 1,
+    "sample_violation": "Rule 4 Violation: Missing active target from Markdown table: 'unittests src/main.rs'.",
+    "status": "REJECTED_AS_EXPECTED"
+  },
+  {
+    "test_id": 4,
+    "description": "4. Correct total but phantom target added",
+    "detected_violations_count": 2,
+    "sample_violation": "Rule 4 Violation: Phantom target in Markdown table: 'tests/phantom_suite.rs'.",
+    "status": "REJECTED_AS_EXPECTED"
+  },
+  {
+    "test_id": 5,
+    "description": "5. Duplicated target rows",
+    "detected_violations_count": 3,
+    "sample_violation": "Rule 4 Violation: Duplicate target identity in Markdown table: 'unittests src/lib.rs'.",
+    "status": "REJECTED_AS_EXPECTED"
+  },
+  {
+    "test_id": 6,
+    "description": "6. Test source path does not exist",
+    "detected_violations_count": 2,
+    "sample_violation": "Rule 4 Violation: Phantom target in Markdown table: 'tests/phase5_validation.rs'.",
+    "status": "REJECTED_AS_EXPECTED"
+  },
+  {
+    "test_id": 7,
+    "description": "7. Failed Cargo command with passing summary",
+    "detected_violations_count": 1,
+    "sample_violation": "Rule 5 Violation: Canonical Cargo execution failed with exit code 101.",
+    "status": "REJECTED_AS_EXPECTED"
+  },
+  {
+    "test_id": 8,
+    "description": "8. One ignored test counted as passed",
+    "detected_violations_count": 2,
+    "sample_violation": "Rule 3 Violation: Raw Cargo log sum (350) != Canonical JSON (349).",
+    "status": "REJECTED_AS_EXPECTED"
+  },
+  {
+    "test_id": 9,
+    "description": "9. Missing raw execution log",
+    "detected_violations_count": 1,
+    "sample_violation": "Rule 6 Violation: Referenced execution log does not exist: results/nonexistent_log.log",
+    "status": "REJECTED_AS_EXPECTED"
+  },
+  {
+    "test_id": 10,
+    "description": "10. Truncated Cargo output",
+    "detected_violations_count": 1,
+    "sample_violation": "Rule 3 Violation: Raw Cargo log sum (2) != Canonical JSON (350).",
+    "status": "REJECTED_AS_EXPECTED"
+  },
+  {
+    "test_id": 11,
+    "description": "11. Wrong Git revision",
+    "detected_violations_count": 1,
+    "sample_violation": "Rule 7 Violation: Git revision in report (deadbee) != environment (1234567).",
+    "status": "REJECTED_AS_EXPECTED"
+  },
+  {
+    "test_id": 12,
+    "description": "12. JSON differs from Markdown",
+    "detected_violations_count": 2,
+    "sample_violation": "Rule 3 Violation: Raw Cargo log sum (350) != Canonical JSON (360).",
+    "status": "REJECTED_AS_EXPECTED"
+  },
+  {
+    "test_id": 13,
+    "description": "13. Reconciliation equation mathematically incorrect",
+    "detected_violations_count": 1,
+    "sample_violation": "Rule 8 Violation: Reconciliation equation '425 - 117 - 35 + 77 = 400' evaluates to 350, not 400.",
+    "status": "REJECTED_AS_EXPECTED"
+  },
+  {
+    "test_id": 14,
+    "description": "14. Equation correct but category subtotals wrong",
+    "detected_violations_count": 1,
+    "sample_violation": "Rule 8 Violation: Phantom subtotal conflict detected (reconciliation equation uses 108 phantoms while listing inconsistent category items).",
+    "status": "REJECTED_AS_EXPECTED"
+  },
+  {
+    "test_id": 15,
+    "description": "15. Execution duration mislabeled",
+    "detected_violations_count": 1,
+    "sample_violation": "Rule 9 Violation: Per-target duration sum (282.11 s) mislabeled as wall-clock duration.",
+    "status": "REJECTED_AS_EXPECTED"
+  },
+  {
+    "test_id": 16,
+    "description": "16. Historical benchmark presented as fresh/measured",
+    "detected_violations_count": 1,
+    "sample_violation": "Rule 10 Violation: Wire throughput (31.21 MiB/s) reported without explicitly marking 'ACTUAL_WIRE_BYTES: NOT MEASURED'.",
+    "status": "REJECTED_AS_EXPECTED"
+  },
+  {
+    "test_id": 17,
+    "description": "17. Localhost result labeled REAL TWO-HOST",
+    "detected_violations_count": 1,
+    "sample_violation": "Rule 10 Violation: Physical LAN pilot not explicitly marked NOT EXECUTED.",
+    "status": "REJECTED_AS_EXPECTED"
+  },
+  {
+    "test_id": 18,
+    "description": "18. Wire throughput inferred and labeled measured",
+    "detected_violations_count": 2,
+    "sample_violation": "Rule 10 Violation: Wire throughput (31.21 MiB/s) reported without explicitly marking 'ACTUAL_WIRE_BYTES: NOT MEASURED'.",
+    "status": "REJECTED_AS_EXPECTED"
+  },
+  {
+    "test_id": 19,
+    "description": "19. Malformed Markdown table",
+    "detected_violations_count": 1,
+    "sample_violation": "Rule 4 Violation: No target table rows found in Markdown report.",
+    "status": "REJECTED_AS_EXPECTED"
+  },
+  {
+    "test_id": 20,
+    "description": "20. Deliberately altered canonical JSON (failed test)",
+    "detected_violations_count": 1,
+    "sample_violation": "Rule 5 Violation: Canonical JSON records 1 failed tests.",
+    "status": "REJECTED_AS_EXPECTED"
+  }
+]

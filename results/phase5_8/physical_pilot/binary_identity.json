@@ -1,0 +1,17 @@
+{
+  "milestone": "Phase 5.8 Physical Pilot Execution",
+  "audit_timestamp_utc": "2026-11-02T09:22:00Z",
+  "build_profile": "release (opt-level = 3, lto = thin, codegen-units = 1)",
+  "binaries": {
+    "fsp-node": {
+      "path": "target/release/fsp-node",
+      "size_bytes": 2752904,
+      "sha256": "52ff4946c3b86d6054e2ed5d8699a85957bebe9b288153d6b028f94a1b6018b6"
+    },
+    "fsp-sim": {
+      "path": "target/release/fsp-sim",
+      "size_bytes": 3118592,
+      "sha256": "3e02679271d39eb15c0a423b51bff97b22f4fd573827e3853d1d2971b7461a08"
+    }
+  }
+}

@@ -1,0 +1,7 @@
+{
+  "degraded_get_8_nodes_down_ms": 637.0,
+  "degraded_get_correct": true,
+  "repair_failed_attempts": 6,
+  "repair_pass_ms": 5368.1,
+  "repair_shards_repaired": 2
+}

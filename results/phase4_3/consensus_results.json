@@ -1,0 +1,34 @@
+{
+  "phase": "4.3",
+  "consensus_architecture": "3-Member Quorum with Cryptographic Leadership Certificates & Raft-style Replicated Log",
+  "verified_properties": {
+    "election_safety": "PROVEN: at most one leader can acquire majority quorum per term",
+    "vote_authenticity": "Ed25519 QuorumVoteGrant signatures required from >= 2 distinct voters",
+    "majority_commit": "CommitIndex advances only when entries are acknowledged by >= 2 of 3 replicas",
+    "fail_closed_on_partition": "Minority-isolated leaders step down to Fenced role and cannot commit entries"
+  },
+  "quorum_election_scenarios": [
+    {
+      "scenario": "3_node_clean_election",
+      "candidate": "coord_1",
+      "epoch": 1,
+      "votes_granted": ["coord_1", "coord_2"],
+      "quorum_threshold": 2,
+      "leadership_certificate_valid": true,
+      "outcome": "LEADER_ACQUIRED"
+    },
+    {
+      "scenario": "concurrent_competing_elections",
+      "candidate_a": "coord_1",
+      "candidate_b": "coord_2",
+      "voter_c": "coord_3",
+      "outcome": "RESOLVED_SAFELY_AT_MOST_ONE_LEADER"
+    },
+    {
+      "scenario": "unauthorized_forged_vote",
+      "voter": "coord_3",
+      "signer": "rogue_attacker",
+      "outcome": "REJECTED_INVALID_SIGNATURE"
+    }
+  ]
+}

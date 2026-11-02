@@ -1,0 +1,36 @@
+version: "5.3"
+cluster_id: "fsp-cluster-prod"
+incarnation:
+  seq: 1
+  token: "cfca435b546747867086052f5ef2ff409deee6a2ffb4ac5fc48b2ddbf0355f30"
+
+coordinators:
+  - id: "coord-0"
+    listen_addr: "10.100.0.10:9000"
+    domain: "zone-a"
+  - id: "coord-1"
+    listen_addr: "10.100.0.11:9000"
+    domain: "zone-b"
+  - id: "coord-2"
+    listen_addr: "10.100.0.12:9000"
+    domain: "zone-c"
+
+failure_domains:
+  - id: "zone-a"
+    nodes: ["node-0", "node-1", "node-2", "node-3"]
+  - id: "zone-b"
+    nodes: ["node-4", "node-5", "node-6", "node-7"]
+  - id: "zone-c"
+    nodes: ["node-8", "node-9", "node-10", "node-11"]
+  - id: "zone-d"
+    nodes: ["node-12", "node-13", "node-14", "node-15"]
+  - id: "zone-e"
+    nodes: ["node-16", "node-17", "node-18", "node-19"]
+
+storage_nodes:
+  count: 20
+  scheme: "RS(20,12)"
+  data_shards: 12
+  parity_shards: 8
+  min_surviving_shards: 12
+  max_shards_per_domain: 4

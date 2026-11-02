@@ -1,0 +1,57 @@
+# FSP Phase 5.7 Prometheus Monitoring Scrape Configuration
+global:
+  scrape_interval: 5s
+  evaluation_interval: 5s
+
+scrape_configs:
+  - job_name: "fsp_coordinator"
+    metrics_path: "/metrics"
+    scheme: "https"
+    tls_config:
+      ca_file: "/etc/fsp/pki/ca.crt"
+      cert_file: "/etc/fsp/pki/coordinator.crt"
+      key_file: "/etc/fsp/pki/coordinator.key"
+      insecure_skip_verify: false
+    static_configs:
+      - targets:
+          - "192.168.1.10:18000"
+          - "192.168.1.11:18000"
+        labels:
+          cluster: "fsp-two-host-pilot"
+          role: "coordinator"
+
+  - job_name: "fsp_storage_nodes"
+    metrics_path: "/metrics"
+    scheme: "https"
+    tls_config:
+      ca_file: "/etc/fsp/pki/ca.crt"
+      cert_file: "/etc/fsp/pki/coordinator.crt"
+      key_file: "/etc/fsp/pki/coordinator.key"
+      insecure_skip_verify: false
+    static_configs:
+      - targets:
+          # Host A (Nodes 0..9)
+          - "192.168.1.10:19000"
+          - "192.168.1.10:19001"
+          - "192.168.1.10:19002"
+          - "192.168.1.10:19003"
+          - "192.168.1.10:19004"
+          - "192.168.1.10:19005"
+          - "192.168.1.10:19006"
+          - "192.168.1.10:19007"
+          - "192.168.1.10:19008"
+          - "192.168.1.10:19009"
+          # Host B (Nodes 10..19)
+          - "192.168.1.11:19010"
+          - "192.168.1.11:19011"
+          - "192.168.1.11:19012"
+          - "192.168.1.11:19013"
+          - "192.168.1.11:19014"
+          - "192.168.1.11:19015"
+          - "192.168.1.11:19016"
+          - "192.168.1.11:19017"
+          - "192.168.1.11:19018"
+          - "192.168.1.11:19019"
+        labels:
+          cluster: "fsp-two-host-pilot"
+          role: "storage_node"

@@ -1,0 +1,25 @@
+{
+  "test_run_timestamp_utc": "2026-11-01T02:00:00Z",
+  "workspace": "/home/rade/Project/Jobs/fsp",
+  "compiler_version": "rustc 1.99.1 (58cf8f9c3 2026-10-13)",
+  "test_target_threads": 1,
+  "test_suite_breakdown": {
+    "src_lib": { "passed": 2, "failed": 0 },
+    "tests_determinism": { "passed": 3, "failed": 0 },
+    "tests_failure_scenarios": { "passed": 6, "failed": 0 },
+    "tests_phase1_validation": { "passed": 16, "failed": 0 },
+    "tests_phase2_validation": { "passed": 9, "failed": 0 },
+    "tests_phase3_validation": { "passed": 20, "failed": 0 },
+    "tests_phase4_validation": { "passed": 20, "failed": 0 },
+    "tests_phase4_1_validation": { "passed": 25, "failed": 0 },
+    "tests_phase4_2_validation": { "passed": 25, "failed": 0 },
+    "tests_phase4_3_validation": { "passed": 20, "failed": 0 },
+    "tests_phase4_4_validation": { "passed": 25, "failed": 0 },
+    "tests_recoverability": { "passed": 4, "failed": 0 }
+  },
+  "total_passed": 175,
+  "total_failed": 0,
+  "total_ignored": 0,
+  "total_measured": 0,
+  "all_tests_passed": true
+}

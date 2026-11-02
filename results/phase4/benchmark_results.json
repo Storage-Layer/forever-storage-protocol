@@ -1,0 +1,13 @@
+{
+  "results": [
+    {"mode":"local_shard_files_v1","size":"1KiB","put_mib_s":0.000,"get_mib_s":0.490,"shard_files_on_disk":20},
+    {"mode":"local_container_v2","size":"1KiB","put_mib_s":0.008,"get_mib_s":0.561,"shard_files_on_disk":20},
+    {"mode":"local_shard_files_v1","size":"1MiB","put_mib_s":4.795,"get_mib_s":27.203,"shard_files_on_disk":20},
+    {"mode":"local_container_v2","size":"1MiB","put_mib_s":4.145,"get_mib_s":20.167,"shard_files_on_disk":20},
+    {"mode":"local_shard_files_v1","size":"100MiB","put_mib_s":6.711,"get_mib_s":27.284,"shard_files_on_disk":2000},
+    {"mode":"local_container_v2","size":"100MiB","put_mib_s":6.500,"get_mib_s":33.707,"shard_files_on_disk":20},
+    {"mode":"distributed_20node_localhost_mtls","size":"1KiB","put_mib_s":0.015,"get_mib_s":0.038,"network_bytes_sent":7920},
+    {"mode":"distributed_20node_localhost_mtls","size":"1MiB","put_mib_s":10.425,"get_mib_s":12.768,"network_bytes_sent":1753840},
+    {"mode":"distributed_20node_localhost_mtls","size":"100MiB","put_mib_s":14.962,"get_mib_s":11.655,"network_bytes_sent":174877120}
+  ]
+}

@@ -1,0 +1,14 @@
+{
+  "topology_name": "localhost_20_nodes",
+  "coding_scheme": "rs_20_12",
+  "nodes_count": 20,
+  "base_port": 19000,
+  "listen_address": "127.0.0.1",
+  "zones": [
+    {"zone_id": "zone-0", "node_ids": [0, 1, 2, 3]},
+    {"zone_id": "zone-1", "node_ids": [4, 5, 6, 7]},
+    {"zone_id": "zone-2", "node_ids": [8, 9, 10, 11]},
+    {"zone_id": "zone-3", "node_ids": [12, 13, 14, 15]},
+    {"zone_id": "zone-4", "node_ids": [16, 17, 18, 19]}
+  ]
+}

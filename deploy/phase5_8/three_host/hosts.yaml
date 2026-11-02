@@ -1,0 +1,36 @@
+# FSP Phase 5.8 Three-Host Staging Topology
+# Topology Model: 3 Physical Hosts
+# Shards per host: Host 1: 7 shards, Host 2: 7 shards, Host 3: 6 shards
+# Total Shards: 20, Data Shards: 12
+# Survivability: 1 full host failure tolerated (max 7 shards lost, 13 surviving >= 12 required)
+
+cluster_name: fsp-three-host-staging
+coding_scheme:
+  total_shards: 20
+  data_shards: 12
+  parity_shards: 8
+
+hosts:
+  host-1:
+    hostname: host-1.fsp.internal
+    ip: 10.77.77.11
+    storage_nodes: [0, 1, 2, 3, 4, 5, 6]
+    max_shards_lost_on_failure: 7
+    surviving_shards_on_failure: 13
+    can_reconstruct: true
+
+  host-2:
+    hostname: host-2.fsp.internal
+    ip: 10.77.77.12
+    storage_nodes: [7, 8, 9, 10, 11, 12, 13]
+    max_shards_lost_on_failure: 7
+    surviving_shards_on_failure: 13
+    can_reconstruct: true
+
+  host-3:
+    hostname: host-3.fsp.internal
+    ip: 10.77.77.13
+    storage_nodes: [14, 15, 16, 17, 18, 19]
+    max_shards_lost_on_failure: 6
+    surviving_shards_on_failure: 14
+    can_reconstruct: true

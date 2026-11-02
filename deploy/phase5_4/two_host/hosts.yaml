@@ -1,0 +1,33 @@
+# FSP Two-Host Deployment Configuration
+cluster_name: fsp-staging-2host
+replication_profile: rs-20-12
+
+hosts:
+  host-01:
+    ip: 192.168.10.11
+    rack: rack-a
+    coordinators: [coord-0, coord-1]
+    zones:
+      - zone_id: 0
+        nodes: [node-00, node-01, node-02, node-03]
+        base_port: 9100
+      - zone_id: 1
+        nodes: [node-04, node-05, node-06, node-07]
+        base_port: 9104
+      - zone_id: 2
+        nodes: [node-08, node-09]
+        base_port: 9108
+  host-02:
+    ip: 192.168.10.12
+    rack: rack-b
+    coordinators: [coord-2]
+    zones:
+      - zone_id: 2
+        nodes: [node-10, node-11]
+        base_port: 9110
+      - zone_id: 3
+        nodes: [node-12, node-13, node-14, node-15]
+        base_port: 9112
+      - zone_id: 4
+        nodes: [node-16, node-17, node-18, node-19]
+        base_port: 9116

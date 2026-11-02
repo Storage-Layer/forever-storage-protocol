@@ -1,0 +1,13 @@
+{
+  "test_target": "fsp-node OS child process",
+  "binary_path": "target/release/fsp-node",
+  "sigkill_delivery": "SIGKILL",
+  "process_exit_clean": true,
+  "restart_time_ms": 32.5,
+  "ready_file_detected": true,
+  "startup_journal_recovery": {
+    "uncommitted_journal_entries_aborted": 1,
+    "valid_containers_retained": 1
+  },
+  "monotonic_epoch_preserved": true
+}

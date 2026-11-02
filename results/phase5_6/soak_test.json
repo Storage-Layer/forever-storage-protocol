@@ -1,0 +1,17 @@
+{
+  "phase": "5.6",
+  "profiles": {
+    "smoke_5min": "EXECUTED_PASSED",
+    "validation_15min": "EXECUTED_PASSED",
+    "extended_1hour": "NOT EXECUTED",
+    "endurance_24hours": "NOT EXECUTED",
+    "long_endurance_72hours": "NOT EXECUTED"
+  },
+  "resource_stability": {
+    "memory_rss_growth_detected": false,
+    "final_per_node_rss_mib": 16.8,
+    "fd_leak_detected": false,
+    "zombie_processes_leaked": 0
+  },
+  "overall_soak_status": "PARTIAL (Bounded checks passed; multi-day endurance NOT EXECUTED)"
+}

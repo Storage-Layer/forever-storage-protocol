@@ -1,0 +1,9 @@
+{
+  "protocol": "Forever Storage Protocol (FSP) Phase 3",
+  "default_coding_scheme": "RS(20,12) systematic Cauchy over GF(2^8) (poly 0x11d)",
+  "lrc_coding_schemes": ["LRC(20,12,4)", "LRC(22,12,4)"],
+  "integrity_algorithm": "SHA-256 (NIST FIPS 180-4)",
+  "default_stripe_size_bytes": 1048576,
+  "file_sizes_tested_bytes": [0, 1, 4096, 1048576, 104857600],
+  "peak_rss_kb": 11016
+}

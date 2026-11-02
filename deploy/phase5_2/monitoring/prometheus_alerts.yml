@@ -1,0 +1,38 @@
+groups:
+  - name: fsp_phase5_2_alerts
+    rules:
+      - alert: FspStaleEpochRejectionSpike
+        expr: rate(fsp_fencing_rejections_total[5m]) > 0.1
+        for: 1m
+        labels:
+          severity: critical
+        annotations:
+          summary: "Coordinator stale epoch fencing rejections detected"
+          description: "Storage node is rejecting mutations from an outdated coordinator epoch, indicating potential partition or zombie leader."
+
+      - alert: FspGcThresholdViolationAttempt
+        expr: rate(fsp_gc_rejections_total{reason="threshold_k12"}[5m]) > 0
+        for: 30s
+        labels:
+          severity: warning
+        annotations:
+          summary: "Garbage collection attempted below k=12 threshold"
+          description: "A permit attempted shard deletion that would drop surviving redundancy at or below k=12."
+
+      - alert: FspDisasterRecoveryRollbackAttempt
+        expr: rate(fsp_restore_rejections_total{reason="rollback"}[5m]) > 0
+        for: 30s
+        labels:
+          severity: critical
+        annotations:
+          summary: "Disaster recovery rollback rejected"
+          description: "An online restore attempt was rejected due to higher committed local state."
+
+      - alert: FspSecretMaterialDetectedInBackup
+        expr: rate(fsp_backup_secret_scan_failures_total[5m]) > 0
+        for: 10s
+        labels:
+          severity: page
+        annotations:
+          summary: "Plaintext private key material detected in backup bundle"
+          description: "Secret scanner intercepted forbidden private key material in a backup bundle."

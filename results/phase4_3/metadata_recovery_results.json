@@ -1,0 +1,42 @@
+{
+  "phase": "4.3",
+  "metadata_storage_subsystem": "ReplicatedLogManager & DurableRepairJournal",
+  "durability_mechanisms": {
+    "wal_persistence": "Append-only replicated_log.wal with fsync barrier",
+    "journal_persistence": "repair_jobs/*.rec with fsync & directory sync",
+    "monotonic_generation_tracking": "TrustedSignerPolicy persistent *.gen tracking"
+  },
+  "crash_recovery_validation": [
+    {
+      "test": "test_p4_3_09_coordinator_sigkill_reconciles_uncommitted_state",
+      "pre_crash_proposed_entries": 2,
+      "pre_crash_committed_entries": 1,
+      "post_crash_wal_reopened": true,
+      "post_crash_last_log_index": 2,
+      "post_crash_initial_commit_index": 0,
+      "data_loss": false,
+      "state_corruption": false
+    },
+    {
+      "test": "test_p4_3_10_manifest_generation_conflict_rejected",
+      "generation": 1,
+      "attempted_conflicting_put": true,
+      "rejection_status": "REJECTED_REPLAY_OR_CONFLICT",
+      "integrity_preserved": true
+    },
+    {
+      "test": "test_p4_3_11_manifest_rollback_strictly_blocked",
+      "recorded_generation": 5,
+      "attempted_rollback_generation": 4,
+      "rejection_status": "REJECTED_REPLAY_GENERATION",
+      "rollback_prevented": true
+    },
+    {
+      "test": "test_p4_3_16_repair_consistency_during_active_leader_failover",
+      "interrupted_job_state": "Repairing",
+      "post_failover_recovered_state": "Pending",
+      "error_message": "interrupted by coordinator restart",
+      "orphan_cleanup": true
+    }
+  ]
+}

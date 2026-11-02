@@ -1,0 +1,50 @@
+# FSP Phase 5.8 Five-Host Production Topology
+# Topology Model: 5 Physical Hosts / Racks
+# Shards per host: 4 shards per host (20 shards total across 5 hosts)
+# Total Shards: 20, Data Shards: 12
+# Survivability: 2 full host failures tolerated (8 shards lost, 12 surviving == K=12 required)
+
+cluster_name: fsp-five-host-production
+coding_scheme:
+  total_shards: 20
+  data_shards: 12
+  parity_shards: 8
+
+hosts:
+  host-p1:
+    hostname: host-p1.dc1.fsp.internal
+    ip: 10.10.1.11
+    rack: dc1-rack1
+    storage_nodes: [0, 1, 2, 3]
+
+  host-p2:
+    hostname: host-p2.dc1.fsp.internal
+    ip: 10.10.1.12
+    rack: dc1-rack2
+    storage_nodes: [4, 5, 6, 7]
+
+  host-p3:
+    hostname: host-p3.dc1.fsp.internal
+    ip: 10.10.1.13
+    rack: dc1-rack3
+    storage_nodes: [8, 9, 10, 11]
+
+  host-p4:
+    hostname: host-p4.dc1.fsp.internal
+    ip: 10.10.1.14
+    rack: dc1-rack4
+    storage_nodes: [12, 13, 14, 15]
+
+  host-p5:
+    hostname: host-p5.dc1.fsp.internal
+    ip: 10.10.1.15
+    rack: dc1-rack5
+    storage_nodes: [16, 17, 18, 19]
+
+tolerated_host_failures: 2
+total_lost_shards_on_2_host_loss: 8
+surviving_shards_on_2_host_loss: 12
+can_reconstruct_on_2_host_loss: true
+loss_of_3_hosts_surviving_shards: 8
+loss_of_3_hosts_can_reconstruct: false
+loss_of_3_hosts_behavior: fail_closed_integrity_guaranteed

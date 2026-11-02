@@ -1,0 +1,15 @@
+{
+  "test_name": "test_p5_4_03_topology_failure_domain_invariants",
+  "status": "PASSED",
+  "total_zones": 5,
+  "nodes_per_zone": 4,
+  "total_nodes": 20,
+  "codec": "RS(20,12)",
+  "k_threshold": 12,
+  "two_zone_loss_remaining_shards": 12,
+  "two_zone_loss_recoverable": true,
+  "three_zone_loss_remaining_shards": 8,
+  "three_zone_loss_recoverable": false,
+  "three_zone_loss_fail_closed_error": "InsufficientValidShards(8 < 12)",
+  "invariant_guaranteed": true
+}

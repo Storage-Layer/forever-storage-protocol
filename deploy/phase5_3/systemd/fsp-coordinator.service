@@ -1,0 +1,25 @@
+[Unit]
+Description=FSP Consensus Coordinator Service
+After=network.target local-fs.target
+Requires=local-fs.target
+
+[Service]
+Type=simple
+User=fsp
+Group=fsp
+EnvironmentFile=/etc/fsp/fsp-cluster.env
+ExecStart=/usr/local/bin/fsp-sim coordinator \
+    --config /etc/fsp/topology.yaml \
+    --state-dir /var/lib/fsp/coordinator \
+    --tls-cert /etc/fsp/certs/coord-cert.pem \
+    --tls-key /etc/fsp/certs/coord-key.pem \
+    --tls-ca /etc/fsp/certs/ca-cert.pem \
+    --metrics-addr 0.0.0.0:9100
+
+Restart=always
+RestartSec=2s
+LimitNOFILE=65536
+KillMode=process
+
+[Install]
+WantedBy=multi-user.target

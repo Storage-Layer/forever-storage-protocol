@@ -1,0 +1,26 @@
+[Unit]
+Description=FSP Storage Node Service (Instance %i)
+After=network.target local-fs.target
+Requires=local-fs.target
+
+[Service]
+Type=simple
+User=fsp
+Group=fsp
+EnvironmentFile=/etc/fsp/fsp-cluster.env
+ExecStart=/usr/local/bin/fsp-node \
+    --node-id %i \
+    --storage-root /var/lib/fsp/nodes/node-%i \
+    --listen-addr 0.0.0.0:80%i \
+    --tls-cert /etc/fsp/certs/node-%i-cert.pem \
+    --tls-key /etc/fsp/certs/node-%i-key.pem \
+    --tls-ca /etc/fsp/certs/ca-cert.pem \
+    --metrics-addr 0.0.0.0:91%i
+
+Restart=always
+RestartSec=3s
+LimitNOFILE=65536
+KillMode=process
+
+[Install]
+WantedBy=multi-user.target

@@ -1,0 +1,145 @@
+{
+  "phase": "5.7",
+  "units_enforced": "Binary mebibytes per second (MiB/s, 1048576 B/s)",
+  "trials_per_workload": 5,
+  "results": [
+    {
+      "workload_name": "10 MiB Buffered Write (write_all)",
+      "layer": "buffered_filesystem_write",
+      "payload_bytes": 10485760,
+      "payload_mib": 10.00,
+      "min_duration_seconds": 0.007739,
+      "median_duration_seconds": 0.007823,
+      "max_duration_seconds": 0.011762,
+      "mean_duration_seconds": 0.008755,
+      "stddev_duration_seconds": 0.001539,
+      "min_throughput_mib_s": 850.205,
+      "median_throughput_mib_s": 1278.294,
+      "max_throughput_mib_s": 1292.080,
+      "mean_throughput_mib_s": 1171.650,
+      "stddev_throughput_mib_s": 167.981,
+      "trials": [
+      {"trial": 1, "duration_seconds": 0.011762, "throughput_mib_s": 850.205},
+      {"trial": 2, "duration_seconds": 0.007814, "throughput_mib_s": 1279.792},
+      {"trial": 3, "duration_seconds": 0.007823, "throughput_mib_s": 1278.294},
+      {"trial": 4, "duration_seconds": 0.007739, "throughput_mib_s": 1292.080},
+      {"trial": 5, "duration_seconds": 0.008636, "throughput_mib_s": 1157.877}
+      ]
+    },
+    {
+      "workload_name": "10 MiB Synchronized Write (write_all + sync_all)",
+      "layer": "synchronized_filesystem_write",
+      "payload_bytes": 10485760,
+      "payload_mib": 10.00,
+      "min_duration_seconds": 0.060030,
+      "median_duration_seconds": 0.066664,
+      "max_duration_seconds": 0.096965,
+      "mean_duration_seconds": 0.072734,
+      "stddev_duration_seconds": 0.012937,
+      "min_throughput_mib_s": 103.130,
+      "median_throughput_mib_s": 150.006,
+      "max_throughput_mib_s": 166.583,
+      "mean_throughput_mib_s": 141.297,
+      "stddev_throughput_mib_s": 21.607,
+      "trials": [
+      {"trial": 1, "duration_seconds": 0.060030, "throughput_mib_s": 166.583},
+      {"trial": 2, "duration_seconds": 0.074285, "throughput_mib_s": 134.617},
+      {"trial": 3, "duration_seconds": 0.065726, "throughput_mib_s": 152.147},
+      {"trial": 4, "duration_seconds": 0.096965, "throughput_mib_s": 103.130},
+      {"trial": 5, "duration_seconds": 0.066664, "throughput_mib_s": 150.006}
+      ]
+    },
+    {
+      "workload_name": "100 MiB RS(20,12) Codec Encoding",
+      "layer": "rs_codec_encode_only",
+      "payload_bytes": 104857600,
+      "payload_mib": 100.00,
+      "min_duration_seconds": 0.985953,
+      "median_duration_seconds": 1.128224,
+      "max_duration_seconds": 1.153022,
+      "mean_duration_seconds": 1.098113,
+      "stddev_duration_seconds": 0.059696,
+      "min_throughput_mib_s": 86.729,
+      "median_throughput_mib_s": 88.635,
+      "max_throughput_mib_s": 101.425,
+      "mean_throughput_mib_s": 91.353,
+      "stddev_throughput_mib_s": 5.294,
+      "trials": [
+      {"trial": 1, "duration_seconds": 1.089910, "throughput_mib_s": 91.751},
+      {"trial": 2, "duration_seconds": 1.133456, "throughput_mib_s": 88.226},
+      {"trial": 3, "duration_seconds": 1.153022, "throughput_mib_s": 86.729},
+      {"trial": 4, "duration_seconds": 1.128224, "throughput_mib_s": 88.635},
+      {"trial": 5, "duration_seconds": 0.985953, "throughput_mib_s": 101.425}
+      ]
+    },
+    {
+      "workload_name": "100 MiB RS(20,12) 8-Shard Degraded Reconstruction",
+      "layer": "rs_codec_decode_only",
+      "payload_bytes": 104857600,
+      "payload_mib": 100.00,
+      "min_duration_seconds": 0.909105,
+      "median_duration_seconds": 0.925404,
+      "max_duration_seconds": 0.958233,
+      "mean_duration_seconds": 0.928729,
+      "stddev_duration_seconds": 0.017536,
+      "min_throughput_mib_s": 104.359,
+      "median_throughput_mib_s": 108.061,
+      "max_throughput_mib_s": 109.998,
+      "mean_throughput_mib_s": 107.712,
+      "stddev_throughput_mib_s": 2.013,
+      "trials": [
+      {"trial": 1, "duration_seconds": 0.909105, "throughput_mib_s": 109.998},
+      {"trial": 2, "duration_seconds": 0.914282, "throughput_mib_s": 109.375},
+      {"trial": 3, "duration_seconds": 0.958233, "throughput_mib_s": 104.359},
+      {"trial": 4, "duration_seconds": 0.925404, "throughput_mib_s": 108.061},
+      {"trial": 5, "duration_seconds": 0.936622, "throughput_mib_s": 106.767}
+      ]
+    },
+    {
+      "workload_name": "100 MiB Distributed PUT (20 Nodes, Recoverable)",
+      "layer": "distributed_put_end_to_end",
+      "payload_bytes": 104857600,
+      "payload_mib": 100.00,
+      "min_duration_seconds": 5.258168,
+      "median_duration_seconds": 5.340996,
+      "max_duration_seconds": 5.533552,
+      "mean_duration_seconds": 5.365645,
+      "stddev_duration_seconds": 0.104485,
+      "min_throughput_mib_s": 18.072,
+      "median_throughput_mib_s": 18.723,
+      "max_throughput_mib_s": 19.018,
+      "mean_throughput_mib_s": 18.644,
+      "stddev_throughput_mib_s": 0.360,
+      "trials": [
+      {"trial": 1, "duration_seconds": 5.533552, "throughput_mib_s": 18.072},
+      {"trial": 2, "duration_seconds": 5.265311, "throughput_mib_s": 18.992},
+      {"trial": 3, "duration_seconds": 5.258168, "throughput_mib_s": 19.018},
+      {"trial": 4, "duration_seconds": 5.340996, "throughput_mib_s": 18.723},
+      {"trial": 5, "duration_seconds": 5.430197, "throughput_mib_s": 18.416}
+      ]
+    },
+    {
+      "workload_name": "100 MiB Distributed GET (Exact SHA-256 match)",
+      "layer": "distributed_get_end_to_end",
+      "payload_bytes": 104857600,
+      "payload_mib": 100.00,
+      "min_duration_seconds": 8.991095,
+      "median_duration_seconds": 10.129124,
+      "max_duration_seconds": 10.247245,
+      "mean_duration_seconds": 9.843378,
+      "stddev_duration_seconds": 0.469251,
+      "min_throughput_mib_s": 9.759,
+      "median_throughput_mib_s": 9.873,
+      "max_throughput_mib_s": 11.122,
+      "mean_throughput_mib_s": 10.183,
+      "stddev_throughput_mib_s": 0.510,
+      "trials": [
+      {"trial": 1, "duration_seconds": 9.683251, "throughput_mib_s": 10.327},
+      {"trial": 2, "duration_seconds": 10.247245, "throughput_mib_s": 9.759},
+      {"trial": 3, "duration_seconds": 8.991095, "throughput_mib_s": 11.122},
+      {"trial": 4, "duration_seconds": 10.166173, "throughput_mib_s": 9.837},
+      {"trial": 5, "duration_seconds": 10.129124, "throughput_mib_s": 9.873}
+      ]
+    }
+  ]
+}

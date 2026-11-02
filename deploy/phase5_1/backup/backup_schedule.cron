@@ -1,0 +1,3 @@
+# FSP Automated Coordinator Metadata Backup Schedule
+# Executes atomic snapshot and WAL journal bundle export every 15 minutes
+*/15 * * * * fsp-backup /opt/fsp/bin/backup_metadata.sh >> /var/log/fsp/metadata_backup.log 2>&1

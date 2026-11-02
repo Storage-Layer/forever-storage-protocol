@@ -1,0 +1,18 @@
+{
+  "environment": "single host, 22 localhost daemons (in-process) + real fsp-node child processes in test_p4_09; physical multi-host NOT EXECUTED",
+  "scenarios": {
+    "20_node_put_get": "pass (test_p4_08)",
+    "8_nodes_down_recovery": "pass (test_p4_08)",
+    "9_nodes_down_explicit_error": "pass (test_p4_08, InsufficientValidShards 11/12)",
+    "sigkill_restart_rediscovery_idempotent_replay": "pass (test_p4_09, real fsp-node subprocess)",
+    "coordinator_crash_orphan_cleanup": "pass (test_p4_10)",
+    "partition_corrupt_wire_quota": "pass (test_p4_11)",
+    "scrub_adaptive_repair_concurrent_reader": "pass (test_p4_12)",
+    "degraded_commit_policy": "pass (test_p4_13; see limitations: test does not exercise a mid-PUT partial ack)",
+    "lrc_distributed_put_get_repair": "pass (test_p4_14)",
+    "scrub_cursor_persistence": "pass (test_p4_17)",
+    "concurrent_same_object": "pass (test_p4_18)",
+    "metadata_backup_restore": "pass (test_p4_19)",
+    "deterministic_repeat": "pass (test_p4_20)"
+  }
+}

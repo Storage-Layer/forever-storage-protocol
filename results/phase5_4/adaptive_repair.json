@@ -1,0 +1,11 @@
+{
+  "repair_scheme": "AdaptiveRepairV2",
+  "missing_shards_repaired": 8,
+  "participating_surviving_shards": 12,
+  "reconstructed_shards_verified": 8,
+  "post_repair_healthy_shards": 20,
+  "independent_scrub_digest_audit": "MATCH_ALL_20_SHARDS",
+  "disk_read_amplification": 1.5,
+  "repair_journal_persisted": true,
+  "crash_recovery_resumption_verified": true
+}

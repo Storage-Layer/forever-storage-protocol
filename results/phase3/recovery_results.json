@@ -1,0 +1,17 @@
+{
+  "mandatory_100mib_experiment": {
+    "object_size_bytes": 104857600,
+    "original_sha256": "2258e1d173caaacbff15c68c2ff7fac974211631bd49f95c8f0628dfc5dcc17c",
+    "stripes_count": 100,
+    "total_shards_stored": 2000,
+    "deleted_shards_count": 800,
+    "degraded_reconstructed_sha256": "2258e1d173caaacbff15c68c2ff7fac974211631bd49f95c8f0628dfc5dcc17c",
+    "degraded_digest_matched": true,
+    "repaired_shards_count": 800,
+    "repair_disk_bytes_read": 104860800,
+    "repair_disk_bytes_written": 69907200,
+    "post_restart_subprocess_sha256": "2258e1d173caaacbff15c68c2ff7fac974211631bd49f95c8f0628dfc5dcc17c",
+    "post_restart_byte_for_byte_equal": true,
+    "corrupted_and_truncated_shards_repaired": 200
+  }
+}

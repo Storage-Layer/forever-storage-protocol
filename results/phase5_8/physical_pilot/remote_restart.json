@@ -1,0 +1,19 @@
+{
+  "scenario": "Remote Storage Daemon Restart & Container Index Recovery",
+  "status": "BLOCKED",
+  "reason": "NO_AUTHORIZED_SECOND_PHYSICAL_HOST",
+  "actual_environment": "Linux Mint 22.3 (kernel 6.14.0-37-generic x86_64)",
+  "physical_host_count": 1,
+  "source_snapshot_sha256": "b626d226a3cba95e700e354abc2c9cd11af32e12ef1eff93f74518eca54a187d",
+  "binary_sha256": "52ff4946c3b86d6054e2ed5d8699a85957bebe9b288153d6b028f94a1b6018b6",
+  "local_engineering_reference": {
+    "test_case": "tests/phase5_8_validation.rs::test_p5_8_10_remote_daemon_restart_and_index_recovery",
+    "verified_restart_properties": [
+      "Container headers re-scanned from <storage_root>/objects/",
+      "Uncommitted staging .tmp files purged",
+      "Valid container index restored without data loss"
+    ]
+  },
+  "remote_restart_status": "BLOCKED — Requires remote process management access on Host B.",
+  "evidence_log_path": "results/phase5_8/physical_pilot/host_b_preflight.json"
+}

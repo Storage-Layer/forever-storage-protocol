@@ -1,0 +1,32 @@
+{
+  "contract_definition": "DurabilityLevel",
+  "levels": [
+    {
+      "level": "Received",
+      "semantics": "Bytes arrived in process memory over TCP/TLS socket. Not written to disk.",
+      "crash_survivability": "None (lost on SIGKILL)"
+    },
+    {
+      "level": "Buffered",
+      "semantics": "Written to OS page cache via write_all(). Not fsync'd.",
+      "crash_survivability": "Survives process crash; lost on OS kernel panic or power loss"
+    },
+    {
+      "level": "LocallyDurable",
+      "semantics": "Container file written, flushed, fsync'd via sync_all(), atomically renamed, and parent directory fsync'd.",
+      "crash_survivability": "Survives process crash and unexpected machine power loss on barrier-compliant filesystems"
+    },
+    {
+      "level": "QuorumCommitted",
+      "semantics": "Metadata WAL entry appended, fsync'd, and committed by majority coordinator quorum.",
+      "crash_survivability": "Survives any single coordinator crash without split-brain"
+    },
+    {
+      "level": "Recoverable",
+      "semantics": "At least K=12 independent failure domains confirmed LocallyDurable + metadata QuorumCommitted.",
+      "crash_survivability": "Guaranteed full reconstruction even if up to 8 storage nodes or 2 entire failure zones are destroyed"
+    }
+  ],
+  "verification_test": "test_p5_5_01_durable_put_acknowledgement_contract_levels",
+  "status": "PASS"
+}

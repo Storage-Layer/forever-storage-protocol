@@ -1,0 +1,27 @@
+{
+  "system": "FSP Metadata Backup Subsystem v1",
+  "implementation": "src/recovery/disaster_recovery.rs",
+  "bundle_format": "DisasterRecoveryBackupBundle v1",
+  "cryptographic_scheme": {
+    "signature": "Ed25519",
+    "domain_tag": "FSP-DR-BACKUP-V1",
+    "bundle_digest": "SHA-256"
+  },
+  "tests": [
+    {
+      "test_name": "test_15_metadata_backup_bundle_creation_and_signature",
+      "operator_id": "dr_operator",
+      "coordinator_term": 3,
+      "commit_index": 101,
+      "snapshot_index": 100,
+      "wal_entries_count": 1,
+      "signature_verification": "VALID"
+    },
+    {
+      "test_name": "test_16_metadata_backup_bundle_tamper_detection",
+      "tampered_attribute": "commit_index",
+      "signature_verification": "FAILED_DIGEST_MISMATCH"
+    }
+  ],
+  "durability_guarantees": "Atomic bundle serialization encompassing snapshot state, un-compacted committed WAL entries, and manifest signer public keys"
+}

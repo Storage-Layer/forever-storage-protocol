@@ -1,0 +1,40 @@
+{
+  "phase": "5.7",
+  "audit_module": "src/coordinator/transactions.rs",
+  "durability_contract": {
+    "report_structure": "DurabilityContractReport",
+    "enforced_invariants": [
+      {
+        "invariant": "ack_node_identity_binding",
+        "description": "Validates that ack.node_id matches the intended target storage node, preventing cross-node impersonation.",
+        "enforced_at_line": "src/coordinator/transactions.rs:727"
+      },
+      {
+        "invariant": "ack_shard_identity_binding",
+        "description": "Validates that ack.shard_id matches the planned shard assigned to that node.",
+        "enforced_at_line": "src/coordinator/transactions.rs:736"
+      },
+      {
+        "invariant": "durability_level_boundary",
+        "description": "Rejects ACKs with durability_level < LocallyDurable (rejecting volatile/in-flight/buffered writes).",
+        "enforced_at_line": "src/coordinator/transactions.rs:745"
+      },
+      {
+        "invariant": "deduplication_via_btreeset",
+        "description": "Records distinct shard IDs in BTreeSet<usize>. Duplicate ACKs for the same shard cannot inflate the durable_shard_count.",
+        "enforced_at_line": "src/coordinator/transactions.rs:757"
+      },
+      {
+        "invariant": "quorum_commit_threshold",
+        "description": "Commit requires distinct durable shards >= commit_policy.required_shards (K=12 for degraded commit; 20 for StrictAllShards).",
+        "enforced_at_line": "src/coordinator/transactions.rs:764"
+      }
+    ],
+    "unit_test_verification": [
+      "test_p5_6_04_durable_shard_ack_with_distinct_indices_and_hashes",
+      "test_p5_6_08_duplicate_shard_ack_does_not_inflate_durable_count",
+      "test_p5_6_09_mismatched_shard_or_node_identity_rejection"
+    ]
+  },
+  "status": "PASS"
+}

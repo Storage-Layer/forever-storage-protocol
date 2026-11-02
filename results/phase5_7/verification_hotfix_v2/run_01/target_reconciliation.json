@@ -1,0 +1,219 @@
+{
+  "reconciliation_status": "VERIFIED_EXACT_MATCH",
+  "total_targets": 21,
+  "total_tests": 350,
+  "active_suites": 19,
+  "zero_test_binaries": 2,
+  "targets": [
+    {
+      "target": "unittests src/lib.rs",
+      "discovered": 2,
+      "executed": 2,
+      "passed": 2,
+      "failed": 0,
+      "ignored": 0,
+      "duration_seconds": 0.01,
+      "status": "EXACT_PARITY"
+    },
+    {
+      "target": "unittests src/bin/fsp_node.rs",
+      "discovered": 0,
+      "executed": 0,
+      "passed": 0,
+      "failed": 0,
+      "ignored": 0,
+      "duration_seconds": 0.0,
+      "status": "EXACT_PARITY"
+    },
+    {
+      "target": "unittests src/main.rs",
+      "discovered": 0,
+      "executed": 0,
+      "passed": 0,
+      "failed": 0,
+      "ignored": 0,
+      "duration_seconds": 0.0,
+      "status": "EXACT_PARITY"
+    },
+    {
+      "target": "tests/determinism.rs",
+      "discovered": 3,
+      "executed": 3,
+      "passed": 3,
+      "failed": 0,
+      "ignored": 0,
+      "duration_seconds": 0.27,
+      "status": "EXACT_PARITY"
+    },
+    {
+      "target": "tests/failure_scenarios.rs",
+      "discovered": 6,
+      "executed": 6,
+      "passed": 6,
+      "failed": 0,
+      "ignored": 0,
+      "duration_seconds": 0.05,
+      "status": "EXACT_PARITY"
+    },
+    {
+      "target": "tests/phase1_validation.rs",
+      "discovered": 16,
+      "executed": 16,
+      "passed": 16,
+      "failed": 0,
+      "ignored": 0,
+      "duration_seconds": 2.19,
+      "status": "EXACT_PARITY"
+    },
+    {
+      "target": "tests/phase2_validation.rs",
+      "discovered": 9,
+      "executed": 9,
+      "passed": 9,
+      "failed": 0,
+      "ignored": 0,
+      "duration_seconds": 0.04,
+      "status": "EXACT_PARITY"
+    },
+    {
+      "target": "tests/phase3_validation.rs",
+      "discovered": 20,
+      "executed": 20,
+      "passed": 20,
+      "failed": 0,
+      "ignored": 0,
+      "duration_seconds": 10.35,
+      "status": "EXACT_PARITY"
+    },
+    {
+      "target": "tests/phase4_1_validation.rs",
+      "discovered": 25,
+      "executed": 25,
+      "passed": 25,
+      "failed": 0,
+      "ignored": 0,
+      "duration_seconds": 36.87,
+      "status": "EXACT_PARITY"
+    },
+    {
+      "target": "tests/phase4_2_validation.rs",
+      "discovered": 25,
+      "executed": 25,
+      "passed": 25,
+      "failed": 0,
+      "ignored": 0,
+      "duration_seconds": 6.46,
+      "status": "EXACT_PARITY"
+    },
+    {
+      "target": "tests/phase4_3_validation.rs",
+      "discovered": 20,
+      "executed": 20,
+      "passed": 20,
+      "failed": 0,
+      "ignored": 0,
+      "duration_seconds": 2.24,
+      "status": "EXACT_PARITY"
+    },
+    {
+      "target": "tests/phase4_4_validation.rs",
+      "discovered": 25,
+      "executed": 25,
+      "passed": 25,
+      "failed": 0,
+      "ignored": 0,
+      "duration_seconds": 4.64,
+      "status": "EXACT_PARITY"
+    },
+    {
+      "target": "tests/phase4_validation.rs",
+      "discovered": 20,
+      "executed": 20,
+      "passed": 20,
+      "failed": 0,
+      "ignored": 0,
+      "duration_seconds": 39.06,
+      "status": "EXACT_PARITY"
+    },
+    {
+      "target": "tests/phase5_1_validation.rs",
+      "discovered": 25,
+      "executed": 25,
+      "passed": 25,
+      "failed": 0,
+      "ignored": 0,
+      "duration_seconds": 1.96,
+      "status": "EXACT_PARITY"
+    },
+    {
+      "target": "tests/phase5_2_validation.rs",
+      "discovered": 25,
+      "executed": 25,
+      "passed": 25,
+      "failed": 0,
+      "ignored": 0,
+      "duration_seconds": 0.96,
+      "status": "EXACT_PARITY"
+    },
+    {
+      "target": "tests/phase5_3_validation.rs",
+      "discovered": 25,
+      "executed": 25,
+      "passed": 25,
+      "failed": 0,
+      "ignored": 0,
+      "duration_seconds": 10.49,
+      "status": "EXACT_PARITY"
+    },
+    {
+      "target": "tests/phase5_4_validation.rs",
+      "discovered": 25,
+      "executed": 25,
+      "passed": 25,
+      "failed": 0,
+      "ignored": 0,
+      "duration_seconds": 20.34,
+      "status": "EXACT_PARITY"
+    },
+    {
+      "target": "tests/phase5_5_validation.rs",
+      "discovered": 25,
+      "executed": 25,
+      "passed": 25,
+      "failed": 0,
+      "ignored": 0,
+      "duration_seconds": 132.85,
+      "status": "EXACT_PARITY"
+    },
+    {
+      "target": "tests/phase5_6_validation.rs",
+      "discovered": 25,
+      "executed": 25,
+      "passed": 25,
+      "failed": 0,
+      "ignored": 0,
+      "duration_seconds": 0.81,
+      "status": "EXACT_PARITY"
+    },
+    {
+      "target": "tests/phase5_validation.rs",
+      "discovered": 25,
+      "executed": 25,
+      "passed": 25,
+      "failed": 0,
+      "ignored": 0,
+      "duration_seconds": 7.34,
+      "status": "EXACT_PARITY"
+    },
+    {
+      "target": "tests/recoverability.rs",
+      "discovered": 4,
+      "executed": 4,
+      "passed": 4,
+      "failed": 0,
+      "ignored": 0,
+      "duration_seconds": 0.02,
+      "status": "EXACT_PARITY"
+    }
+  ]
+}

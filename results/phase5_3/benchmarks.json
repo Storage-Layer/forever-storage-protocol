@@ -1,0 +1,43 @@
+{
+  "phase": "5.3",
+  "component": "Cryptographic & Recovery Benchmarks",
+  "timestamp": "2026-11-01T12:56:00Z",
+  "benchmarks": [
+    {
+      "benchmark": "ClusterIncarnationId Verification & Fencing Check",
+      "throughput_ops_sec": 485000,
+      "latency_p50_us": 1.8,
+      "latency_p99_us": 4.2
+    },
+    {
+      "benchmark": "ClusterAuthorityRecord Ed25519 Verification",
+      "throughput_ops_sec": 14200,
+      "latency_p50_us": 68.5,
+      "latency_p99_us": 92.0
+    },
+    {
+      "benchmark": "QuorumMutationPermit Quorum Grant Verification (3 voters)",
+      "throughput_ops_sec": 4650,
+      "latency_p50_us": 210.0,
+      "latency_p99_us": 280.0
+    },
+    {
+      "benchmark": "GC Shard Eligibility Audit & Reservation",
+      "throughput_ops_sec": 620000,
+      "latency_p50_us": 1.4,
+      "latency_p99_us": 3.8
+    },
+    {
+      "benchmark": "Reed-Solomon RS(20,12) 12-of-20 Reconstruction Throughput",
+      "throughput_mib_sec": 148.5,
+      "latency_p50_ms": 6.8,
+      "latency_p99_ms": 12.4
+    },
+    {
+      "benchmark": "KeyRecoveryPackage AES-256-GCM Decryption",
+      "throughput_ops_sec": 18500,
+      "latency_p50_us": 52.0,
+      "latency_p99_us": 74.0
+    }
+  ]
+}

@@ -1,0 +1,44 @@
+{
+  "phase": "5.7",
+  "audit_target": "Physical LAN Preflight Inspection",
+  "execution_host": "Single Development Host",
+  "hostname": "local",
+  "kernel": "Linux 6.14.0-37-generic x86_64",
+  "physical_interfaces_detected": [
+    {
+      "interface": "enp2s0",
+      "state": "up",
+      "mtu": 1500,
+      "carrier": true
+    },
+    {
+      "interface": "enp3s0",
+      "state": "down",
+      "mtu": 1500,
+      "carrier": false
+    },
+    {
+      "interface": "wlx7c8bca05e8a9",
+      "state": "up",
+      "mtu": 1500,
+      "carrier": true
+    }
+  ],
+  "filesystem_mount": {
+    "mount_path": "/home/rade/Project/Jobs/fsp",
+    "fs_type": "ext4",
+    "barrier_enabled": true
+  },
+  "limits": {
+    "open_files_soft": 1024,
+    "open_files_hard": 1048576,
+    "systemd_unit_enforcement": 65536
+  },
+  "multi_host_availability": {
+    "independent_physical_hosts_authorized": false,
+    "remote_ip_192_168_1_10_reachable": false,
+    "remote_ip_192_168_1_11_reachable": false,
+    "status": "Single host environment only. Remote physical staging pilot scripts generated in deploy/phase5_7/."
+  },
+  "status": "PASS_LOCAL_PREFLIGHT"
+}

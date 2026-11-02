@@ -1,0 +1,23 @@
+{
+  "milestone": "Phase 5.8",
+  "audit_timestamp": "2026-11-02T04:00:00Z",
+  "category": "fault_injection",
+  "tested_scenarios": {
+    "connection_reset": {
+      "mechanism": "Simulated abrupt TCP RST during active RPC streaming",
+      "behavior": "Daemon isolates state cleanly; peer connection dropped without leaking memory or uncommitted disk state",
+      "status": "PASSED"
+    },
+    "client_timeout_and_backoff": {
+      "mechanism": "Bounded exponential backoff with full jitter (Decorrelated)",
+      "behavior": "Avoids thundering herd; client backs off within deterministic min/max bounds",
+      "status": "PASSED"
+    },
+    "idempotent_put_replay": {
+      "mechanism": "Resending identical PUT transaction payload after network interruption",
+      "behavior": "Durable idempotency store returns cached commit confirmation; duplicate shard storage avoided",
+      "status": "PASSED"
+    }
+  },
+  "physical_netem_wire_status": "NOT EXECUTED — BLOCKED: No authorized independent physical host available"
+}

@@ -1,0 +1,22 @@
+{
+  "phase": "5.0",
+  "evaluated_timestamp_utc": "2026-11-01T02:45:00Z",
+  "codec": "Systematic Cauchy Reed-Solomon RS(20,12)",
+  "field": "GF(2^8) with reduction polynomial 0x11D (x^8 + x^4 + x^3 + x^2 + 1)",
+  "generator_matrix_construction": {
+    "dimensions": "20 rows x 12 columns",
+    "top_submatrix": "I_12 (Systematic 12x12 Identity)",
+    "bottom_submatrix": "Cauchy C_{p,j} = 1 / (x_p ^ y_j) where x_p = p, y_j = m + j",
+    "mds_property_verified": true,
+    "all_k_by_k_submatrices_invertible": true
+  },
+  "nomenclatural_resolution": {
+    "historical_discrepancy": "Phase 4.4 documentation occasionally referenced Vandermonde submatrices, whereas the underlying source in src/coding/reed_solomon.rs has always systematically constructed a Cauchy generator matrix.",
+    "resolution": "Cauchy matrices strictly guarantee the MDS property over GF(2^8), whereas standard Vandermonde matrices frequently contain singular square submatrices. The Cauchy implementation is sound, durable, and preserved without breaking changes."
+  },
+  "differential_validation_tests": {
+    "all_4845_four_shard_erasures": "100% RECOVERED",
+    "1000_stratified_eight_shard_erasures": "100% RECOVERED",
+    "cross_version_bit_compatibility": "PASS"
+  }
+}

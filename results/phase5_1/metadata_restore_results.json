@@ -1,0 +1,38 @@
+{
+  "system": "FSP Metadata Disaster Recovery Restore Workflow",
+  "implementation": "src/recovery/disaster_recovery.rs",
+  "workflow_steps": [
+    "Verify operator Ed25519 signature over FSP-DR-BACKUP-V1 bundle",
+    "Verify SHA-256 bundle digest and snapshot integrity",
+    "Enforce anti-rollback protection against existing local coordinator commit index",
+    "Atomically restore snapshot.rec",
+    "Atomically restore metadata_replication.wal",
+    "Reconstruct monotonic generation watermark files (*.gen)",
+    "Replay state machine and verify ReplicatedLogManager starts cleanly"
+  ],
+  "validation_scenarios": [
+    {
+      "test_name": "test_17_disaster_recovery_restore_success",
+      "target": "clean_target_directory",
+      "restored_term": 2,
+      "restored_commit_index": 20,
+      "restored_objects_count": 1,
+      "outcome": "Success"
+    },
+    {
+      "test_name": "test_18_disaster_recovery_restore_stale_rollback_rejected",
+      "existing_commit_index": 50,
+      "bundle_commit_index": 30,
+      "force_flag": false,
+      "outcome": "RollbackRejected"
+    },
+    {
+      "test_name": "test_19_disaster_recovery_restore_force_override",
+      "existing_commit_index": 50,
+      "bundle_commit_index": 30,
+      "force_flag": true,
+      "outcome": "Success"
+    }
+  ],
+  "safety_status": "VERIFIED_SAFE"
+}

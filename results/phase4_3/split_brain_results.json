@@ -1,0 +1,71 @@
+{
+  "phase": "4.3",
+  "partition_model": "3-member cluster partitioned into {C1} vs {C2, C3}",
+  "experiments": [
+    {
+      "id": "EXP-A",
+      "name": "Isolated Leader Proposal in Minority Partition",
+      "partition": "C1 (isolated) vs {C2, C3}",
+      "proposal_node": "C1",
+      "quorum_acks_obtained": 1,
+      "quorum_threshold_required": 2,
+      "commit_index_advanced": false,
+      "split_brain_prevented": true
+    },
+    {
+      "id": "EXP-B",
+      "name": "Majority Partition Elects New Term Leader",
+      "partition": "C1 (isolated) vs {C2, C3}",
+      "candidate": "C2",
+      "quorum_grants": ["C2", "C3"],
+      "new_term": 2,
+      "leadership_acquired": true,
+      "split_brain_prevented": true
+    },
+    {
+      "id": "EXP-C",
+      "name": "Stale C1 Mutation Attempt on Storage Node Post-Failover",
+      "stale_epoch": 1,
+      "node_watermark": 2,
+      "mutation_accepted": false,
+      "error": "RpcError::Fenced",
+      "split_brain_prevented": true
+    },
+    {
+      "id": "EXP-D",
+      "name": "Delayed RPC Replay Across Partition Healing",
+      "replayed_request_term": 1,
+      "replayed_request_status": "REJECTED_STALE_FENCING_TOKEN",
+      "split_brain_prevented": true
+    },
+    {
+      "id": "EXP-E",
+      "name": "Concurrent Elections in Equal Partitions (1-1-1)",
+      "candidates": ["C1", "C2", "C3"],
+      "result": "SPLIT_VOTE_NO_LEADER_ELECTED",
+      "split_brain_prevented": true
+    },
+    {
+      "id": "EXP-F",
+      "name": "Rapid Successive Failovers (Term 1 -> 2 -> 3)",
+      "intermediate_mutations_fenced": true,
+      "log_matching_preserved": true,
+      "split_brain_prevented": true
+    },
+    {
+      "id": "EXP-G",
+      "name": "Crash-Partition Interleaved Recovery",
+      "crashed_node": "C2",
+      "surviving_nodes": ["C1", "C3"],
+      "new_leader": "C3",
+      "split_brain_prevented": true
+    },
+    {
+      "id": "EXP-H",
+      "name": "Full Asymmetric Partitioning with Message Drops",
+      "drop_probability": 0.35,
+      "safety_invariants_held": true,
+      "split_brain_prevented": true
+    }
+  ]
+}

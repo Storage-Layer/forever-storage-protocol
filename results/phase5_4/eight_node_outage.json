@@ -1,0 +1,12 @@
+{
+  "test_name": "eight_node_concurrent_failure",
+  "nodes_failed": [0, 1, 2, 3, 4, 5, 6, 7],
+  "nodes_failed_count": 8,
+  "nodes_surviving": [8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19],
+  "nodes_surviving_count": 12,
+  "coding_scheme": "RS(20,12)",
+  "reconstruction_status": "SUCCESS",
+  "reconstruction_error": null,
+  "sha256_match": true,
+  "latency_overhead_percent": 18.2
+}

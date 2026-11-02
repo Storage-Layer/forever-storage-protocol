@@ -1,0 +1,53 @@
+{
+  "host": "Host A (Primary Development & Storage Server)",
+  "audit_timestamp_utc": "2026-11-02T09:22:00Z",
+  "status": "PASS",
+  "hardware": {
+    "model": "Dual Intel(R) Xeon(R) CPU X5650 @ 2.67GHz",
+    "architecture": "x86_64",
+    "sockets": 2,
+    "cores_per_socket": 6,
+    "threads_per_core": 2,
+    "total_logical_cpus": 24,
+    "total_memory_bytes": 65191874560,
+    "total_memory_human": "62 GiB"
+  },
+  "os_and_kernel": {
+    "distro": "Linux Mint 22.3 (Zena) / Ubuntu 24.04 noble",
+    "kernel": "6.14.0-37-generic",
+    "arch": "x86_64"
+  },
+  "storage_subsystem": {
+    "mount": "/",
+    "device": "/dev/sdb3",
+    "filesystem": "ext4",
+    "available_bytes": 117037854720,
+    "available_human": "109G",
+    "status": "HEALTHY"
+  },
+  "network_interfaces": [
+    {
+      "name": "enp2s0",
+      "ipv4": "10.77.77.2/24",
+      "mtu": 1500,
+      "state": "UP"
+    },
+    {
+      "name": "wlx7c8bca05e8a9",
+      "ipv4": "192.168.1.103/24",
+      "mtu": 1500,
+      "state": "UP"
+    },
+    {
+      "name": "lo",
+      "ipv4": "127.0.0.1/8",
+      "mtu": 65536,
+      "state": "UNKNOWN"
+    }
+  ],
+  "toolchain": {
+    "rustc": "rustc 1.99.1 (58cf8f9c3 2026-10-13)",
+    "cargo": "cargo 1.99.1 (5f94df478 2026-08-27)"
+  },
+  "preflight_verdict": "HOST_A_READINESS_VERIFIED"
+}

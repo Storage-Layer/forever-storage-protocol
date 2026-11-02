@@ -1,0 +1,8 @@
+{
+  "cluster_id": "fsp-cluster-prod",
+  "genesis_incarnation": "fsp-cluster-prod:1:0",
+  "advanced_incarnation": "fsp-cluster-prod:2:1700000000",
+  "stale_permit_rejection": "REJECTED_STALE_INCARNATION",
+  "active_permit_acceptance": "ACCEPTED_MATCHING_INCARNATION",
+  "gc_repair_mutex_enforced": true
+}

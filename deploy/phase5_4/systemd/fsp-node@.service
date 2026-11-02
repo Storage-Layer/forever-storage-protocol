@@ -1,0 +1,26 @@
+[Unit]
+Description=FSP Storage Node Daemon Instance %i
+After=network.target
+
+[Service]
+Type=simple
+User=fsp
+Group=fsp
+WorkingDirectory=/var/lib/fsp/nodes/node-%i
+ExecStart=/usr/local/bin/fsp-node \
+  --node-id %i \
+  --listen 0.0.0.0:190%i \
+  --storage-root /var/lib/fsp/nodes/node-%i \
+  --ca-cert /etc/fsp/pki/ca.crt \
+  --node-cert /etc/fsp/pki/node-%i.crt \
+  --node-key /etc/fsp/pki/node-%i.key \
+  --coord-cert /etc/fsp/pki/coordinator.crt \
+  --capacity-bytes 107374182400 \
+  --ready-file /var/run/fsp/node-%i.ready
+Restart=on-failure
+RestartSec=5s
+LimitNOFILE=65536
+LimitMEMLOCK=infinity
+
+[Install]
+WantedBy=multi-user.target

@@ -1,0 +1,17 @@
+{
+  "phase": "4.1",
+  "experiment": "D_coordinator_crash_during_repair",
+  "status": "PASSED",
+  "fault_injection": {
+    "interrupted_stage": "Repairing",
+    "kill_mechanism": "immediate_process_drop",
+    "journal_storage_path": "<coord_root>/repair_jobs/<job_id>.rec"
+  },
+  "recovery_metrics": {
+    "pre_crash_job_state": "Repairing",
+    "post_restart_reconciled_state": "Pending",
+    "interrupted_error_marker_present": true,
+    "resumed_and_completed": true,
+    "manifest_generation_monotonicity_preserved": true
+  }
+}

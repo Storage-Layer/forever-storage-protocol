@@ -1,0 +1,14 @@
+{
+  "milestone": "Phase 5.8",
+  "audit_timestamp": "2026-11-02T04:00:00Z",
+  "contract": "FSP Durable Acknowledgement Specification",
+  "guarantee": "An ACK is only returned after both payload file and directory entries are durably committed via fsync/fdatasync.",
+  "quorum_verification": {
+    "total_shards": 20,
+    "required_acks": 12,
+    "distinct_shard_indices_enforced": true,
+    "duplicate_ack_protection": "Duplicate ACKs for the same shard index do not increment quorum count.",
+    "hash_binding": "Every durable ACK contains the cryptographic SHA-256 digest of the stored shard bytes, validated against manifest."
+  },
+  "verification_status": "PASSED (Suite: tests/phase5_8_validation.rs::test_p5_8_08_remote_durable_ack_distinct_indices_and_hashes)"
+}

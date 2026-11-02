@@ -1,0 +1,150 @@
+{
+  "Baseline (0ms)": {
+    "trials": [
+      {
+        "trial": 1,
+        "put_duration_ms": 427.62,
+        "get_duration_ms": 502.81,
+        "get_throughput_mb_s": 1.99
+      },
+      {
+        "trial": 2,
+        "put_duration_ms": 390.5,
+        "get_duration_ms": 539.94,
+        "get_throughput_mb_s": 1.85
+      },
+      {
+        "trial": 3,
+        "put_duration_ms": 364.79,
+        "get_duration_ms": 529.14,
+        "get_throughput_mb_s": 1.89
+      },
+      {
+        "trial": 4,
+        "put_duration_ms": 364.58,
+        "get_duration_ms": 532.12,
+        "get_throughput_mb_s": 1.88
+      },
+      {
+        "trial": 5,
+        "put_duration_ms": 362.97,
+        "get_duration_ms": 555.18,
+        "get_throughput_mb_s": 1.8
+      }
+    ],
+    "average_put_ms": 382.09,
+    "average_get_ms": 531.84,
+    "average_throughput_mb_s": 1.88
+  },
+  "LAN (0.5ms)": {
+    "trials": [
+      {
+        "trial": 1,
+        "put_duration_ms": 388.68,
+        "get_duration_ms": 911.43,
+        "get_throughput_mb_s": 1.1
+      },
+      {
+        "trial": 2,
+        "put_duration_ms": 372.88,
+        "get_duration_ms": 973.6,
+        "get_throughput_mb_s": 1.03
+      },
+      {
+        "trial": 3,
+        "put_duration_ms": 372.98,
+        "get_duration_ms": 945.0,
+        "get_throughput_mb_s": 1.06
+      },
+      {
+        "trial": 4,
+        "put_duration_ms": 370.47,
+        "get_duration_ms": 950.17,
+        "get_throughput_mb_s": 1.05
+      },
+      {
+        "trial": 5,
+        "put_duration_ms": 372.31,
+        "get_duration_ms": 928.45,
+        "get_throughput_mb_s": 1.08
+      }
+    ],
+    "average_put_ms": 375.46,
+    "average_get_ms": 941.73,
+    "average_throughput_mb_s": 1.06
+  },
+  "WAN (20ms)": {
+    "trials": [
+      {
+        "trial": 1,
+        "put_duration_ms": 524.68,
+        "get_duration_ms": 8488.29,
+        "get_throughput_mb_s": 0.12
+      },
+      {
+        "trial": 2,
+        "put_duration_ms": 532.42,
+        "get_duration_ms": 8531.63,
+        "get_throughput_mb_s": 0.12
+      },
+      {
+        "trial": 3,
+        "put_duration_ms": 528.53,
+        "get_duration_ms": 8480.36,
+        "get_throughput_mb_s": 0.12
+      },
+      {
+        "trial": 4,
+        "put_duration_ms": 524.5,
+        "get_duration_ms": 8503.36,
+        "get_throughput_mb_s": 0.12
+      },
+      {
+        "trial": 5,
+        "put_duration_ms": 530.77,
+        "get_duration_ms": 8499.43,
+        "get_throughput_mb_s": 0.12
+      }
+    ],
+    "average_put_ms": 528.18,
+    "average_get_ms": 8500.61,
+    "average_throughput_mb_s": 0.12
+  },
+  "Degraded WAN (35ms, 5ms jitter, 0.5% loss)": {
+    "trials": [
+      {
+        "trial": 1,
+        "put_duration_ms": 1113.92,
+        "get_duration_ms": 15596.15,
+        "get_throughput_mb_s": 0.06
+      },
+      {
+        "trial": 2,
+        "put_duration_ms": 921.77,
+        "get_duration_ms": 14693.53,
+        "get_throughput_mb_s": 0.07
+      },
+      {
+        "trial": 3,
+        "put_duration_ms": 915.28,
+        "get_duration_ms": 14634.42,
+        "get_throughput_mb_s": 0.07
+      },
+      {
+        "trial": 4,
+        "put_duration_ms": 1895.98,
+        "get_duration_ms": 15604.42,
+        "get_throughput_mb_s": 0.06
+      },
+      {
+        "trial": 5,
+        "put_duration_ms": 845.04,
+        "get_duration_ms": 15627.94,
+        "get_throughput_mb_s": 0.06
+      }
+    ],
+    "average_put_ms": 1138.4,
+    "average_get_ms": 15231.29,
+    "average_throughput_mb_s": 0.06
+  }
+}

@@ -1,0 +1,20 @@
+{
+  "topology": "5-Host Physical Failure Domain Architecture",
+  "config_file": "deploy/phase5_1/staging/cluster_staging.toml",
+  "validation_report": {
+    "total_nodes": 20,
+    "distinct_physical_hosts": 5,
+    "nodes_per_host": 4,
+    "max_shards_per_host_limit": 4,
+    "max_shards_per_rack_limit": 8,
+    "coding_scheme": "RS(20,12)",
+    "preflight_status": "PASSED_CLEANLY",
+    "failure_domain_invariants": {
+      "host_loss_tolerance": 2,
+      "shards_lost_per_host": 4,
+      "max_shards_lost_on_2_hosts": 8,
+      "remaining_shards_on_3_hosts": 12,
+      "decodability_guarantee": "100% data reconstructible without loss"
+    }
+  }
+}

@@ -1,0 +1,18 @@
+{
+  "scenario": "Cross-Host TLS 1.3 Mutual Authentication",
+  "status": "BLOCKED",
+  "reason": "NO_AUTHORIZED_SECOND_PHYSICAL_HOST",
+  "actual_environment": "Linux Mint 22.3 (kernel 6.14.0-37-generic x86_64)",
+  "physical_host_count": 1,
+  "source_snapshot_sha256": "b626d226a3cba95e700e354abc2c9cd11af32e12ef1eff93f74518eca54a187d",
+  "binary_sha256": "52ff4946c3b86d6054e2ed5d8699a85957bebe9b288153d6b028f94a1b6018b6",
+  "tested_primitives": {
+    "protocol": "TLS 1.3",
+    "cipher_suites": ["TLS_AES_256_GCM_SHA384", "TLS_CHACHA20_POLY1305_SHA256"],
+    "key_exchange": "ECDHE P-256 / X25519",
+    "ip_san_support": "Verified in tests/phase5_8_validation.rs::test_p5_8_04_remote_tls_certificate_identity_with_custom_sans",
+    "node_id_binding": "Verified in tests/phase5_8_validation.rs::test_p5_8_05_remote_node_id_to_certificate_fingerprint_binding"
+  },
+  "cross_host_socket_status": "BLOCKED — Host B network endpoint not authorized.",
+  "evidence_log_path": "results/phase5_8/physical_pilot/host_b_preflight.json"
+}

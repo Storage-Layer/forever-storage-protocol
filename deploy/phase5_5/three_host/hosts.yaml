@@ -1,0 +1,20 @@
+# FSP Phase 5.5 Three-Host Topology Profile
+profile_name: three_host_cluster
+hosts:
+  host_a:
+    ip: 10.0.1.101
+    coordinator: coord-0
+    shard_count: 7
+    node_ids: [0, 1, 2, 3, 4, 5, 6]
+  host_b:
+    ip: 10.0.1.102
+    coordinator: coord-1
+    shard_count: 7
+    node_ids: [7, 8, 9, 10, 11, 12, 13]
+  host_c:
+    ip: 10.0.1.103
+    coordinator: coord-2
+    shard_count: 6
+    node_ids: [14, 15, 16, 17, 18, 19]
+
+durability_guarantee: "Losing any single host removes at most 7 shards, leaving 13 surviving shards (>= K=12). 100% data recovery guaranteed."

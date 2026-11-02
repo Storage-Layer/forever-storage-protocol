@@ -1,0 +1,11 @@
+{
+  "experiment": "Coordinator Leader Crash & Standby Promotion",
+  "primary_crashed": "coordinator-primary",
+  "standby_promoted": "coordinator-standby",
+  "standby_namespace": "fsp-c02",
+  "standby_ip": "10.240.58.12",
+  "probed_nodes_online": 20,
+  "epoch_fencing": "Storage nodes reject mutations from lower epochs",
+  "failover_status": "SUCCESS",
+  "verdict": "PASSED"
+}

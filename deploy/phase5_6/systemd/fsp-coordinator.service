@@ -1,0 +1,19 @@
+[Unit]
+Description=FSP Consensus Coordinator Service
+After=network.target local-fs.target
+Wants=network.target
+
+[Service]
+Type=simple
+User=fsp
+Group=fsp
+LimitNOFILE=65536
+EnvironmentFile=/etc/fsp/cluster.env
+ExecStart=/usr/local/bin/fsp-node --mode coordinator --coordinator-id 0 --coordinator-bind 0.0.0.0:9000 --coordinator-peers 10.0.10.11:9000,10.0.10.12:9000,10.0.10.13:9000 --data-dir /var/lib/fsp/coord_0
+Restart=on-failure
+RestartSec=2s
+KillMode=process
+TimeoutStopSec=10s
+
+[Install]
+WantedBy=multi-user.target

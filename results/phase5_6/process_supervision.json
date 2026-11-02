@@ -1,0 +1,16 @@
+{
+  "phase": "5.6",
+  "supervision_tracking_file": ".fsp_cluster/cluster.pids",
+  "pid_reuse_safeguard": {
+    "cmdline_check_enabled": true,
+    "unrelated_process_protected": true,
+    "verified_fsp_daemons_terminated": true
+  },
+  "sweeper_script": "deploy/phase5_6/supervisor/orphan_sweeper.sh",
+  "supervision_limitations": [
+    "PR_SET_PDEATHSIG only applies to direct children, not grandchildren",
+    "SIGKILL on launcher leaves orphan window until kernel reaps or sweeper runs",
+    "Requires /proc filesystem mounted on Linux"
+  ],
+  "status": "PASS"
+}

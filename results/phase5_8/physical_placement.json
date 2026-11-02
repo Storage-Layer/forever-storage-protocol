@@ -1,0 +1,40 @@
+{
+  "milestone": "Phase 5.8",
+  "audit_timestamp": "2026-11-02T04:00:00Z",
+  "coding_parameters": {
+    "scheme": "Reed-Solomon Systematic Cauchy",
+    "total_shards_n": 20,
+    "data_shards_k": 12,
+    "parity_shards_m": 8,
+    "minimum_quorum_shards": 12
+  },
+  "topologies": {
+    "two_host_pilot": {
+      "host_count": 2,
+      "shards_per_host": [10, 10],
+      "single_host_loss_lost_shards": 10,
+      "single_host_loss_surviving_shards": 10,
+      "quorum_met_on_single_host_loss": false,
+      "survivability_verdict": "FAIL_CLOSED — 10 surviving shards < 12 required. Reconstruction safely rejected with QuorumUnsatisfied."
+    },
+    "three_host_staging": {
+      "host_count": 3,
+      "shards_per_host": [7, 7, 6],
+      "single_host_loss_lost_shards": 7,
+      "single_host_loss_surviving_shards": 13,
+      "quorum_met_on_single_host_loss": true,
+      "survivability_verdict": "TOLERATES_1_HOST_FAILURE — 13 surviving shards >= 12 required. Byte-exact reconstruction guaranteed."
+    },
+    "five_host_production": {
+      "host_count": 5,
+      "shards_per_host": [4, 4, 4, 4, 4],
+      "two_host_loss_lost_shards": 8,
+      "two_host_loss_surviving_shards": 12,
+      "quorum_met_on_two_host_loss": true,
+      "three_host_loss_lost_shards": 12,
+      "three_host_loss_surviving_shards": 8,
+      "quorum_met_on_three_host_loss": false,
+      "survivability_verdict": "TOLERATES_2_HOST_FAILURES — Exactly 12 surviving shards == K=12. 3-host loss safely fails closed."
+    }
+  }
+}

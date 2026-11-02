@@ -1,0 +1,37 @@
+{
+  "audit_timestamp_utc": "2026-11-02T00:55:00Z",
+  "host_hardware": {
+    "architecture": "x86_64",
+    "processor": "x86_64",
+    "cpu_model": "Intel(R) Xeon(R) CPU X5650 @ 2.67GHz",
+    "logical_cpus": 24,
+    "physical_sockets": 2,
+    "cores_per_socket": 6,
+    "threads_per_core": 2,
+    "ram_total_bytes": 65191874560,
+    "ram_total_human": "62 GiB"
+  },
+  "operating_system": {
+    "system": "Linux",
+    "kernel_release": "6.14.0-37-generic",
+    "kernel_version": "#37~24.04.1-Ubuntu SMP PREEMPT_DYNAMIC Thu Nov 20 10:25:38 UTC 2",
+    "os_distribution": "Linux Mint 22.3 (Zena) / Ubuntu 24.04 noble",
+    "root_filesystem": "ext4 on /dev/sdb3"
+  },
+  "toolchain": {
+    "rustc": "rustc 1.99.1 (58cf8f9c3 2026-10-13)",
+    "cargo": "cargo 1.99.1 (5f94df478 2026-08-27)"
+  },
+  "workspace_identity": {
+    "path": "/home/rade/Project/Jobs/fsp",
+    "git_present": false,
+    "git_status": "NOT_A_GIT_REPOSITORY",
+    "source_snapshot_digest": "18f7425f68ae6a9d4bb6f04ba9b6fa420425a25fcd5430e927cb2321ca91a724"
+  },
+  "discrepancy_investigation": {
+    "reported_in_earlier_docs": "Linux x86_64, 24 cores, 62 GiB RAM",
+    "reported_in_previous_audit_text": "Linux 6.6.137+rpt-rpi-2712 aarch64 (Debian 12)",
+    "actual_physical_reality": "Linux 6.14.0-37-generic x86_64, 24 cores, 62 GiB RAM",
+    "root_cause": "Reporting defect. The underlying host has continuously been an Intel Xeon x86_64 workstation with 24 cores and 62 GiB RAM. The Raspberry Pi string in the previous narrative was accidentally copied from an external project template. Machine-captured environment.json confirmed Linux-6.14.0-37-generic-x86_64 with 24 CPUs."
+  }
+}

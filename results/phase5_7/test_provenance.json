@@ -1,0 +1,43 @@
+{
+  "phase": "5.7",
+  "audit_target": "tests/phase5_6_validation.rs",
+  "total_suite_tests": 25,
+  "suite_execution_duration_seconds": 0.85,
+  "provenance_investigation": {
+    "question": "Why did phase5_6_validation.rs execute in ~0.82 seconds while Phase 5.6 claimed 4.82s for a 100 MiB PUT?",
+    "findings": [
+      "In tests/phase5_6_validation.rs, tests 1-24 are isolated unit and component-level integration tests exercising configuration, sysfs physical NIC parsing, TLS PKI, wire protocol serialization, container atomic write & disk sync, crash points, WAL rollback, and RS(20,12) Galois field arithmetic.",
+      "Test 25 ('test_p5_6_25_end_to_end_100mib_durable_put_8node_failure_get_exact') exercises RS(20,12) degraded reconstruction and SHA-256 match over a 768 KiB payload (64 KiB per shard) for rapid test suite regression, finishing in ~0.3 seconds.",
+      "The true 100 MiB 20-node cluster PUT/GET test resides in 'tests/phase5_5_validation.rs' ('test_p5_5_15_end_to_end_100mib_durable_put_get_sha256_exact'), which requires ~34 seconds for that suite to complete.",
+      "Phase 5.7 re-executed genuine 5-trial 100 MiB PUT and GET benchmarks via 'fsp-sim --phase5-bench', observing a median 100 MiB PUT duration of 5.34 s (18.72 MiB/s payload throughput) and median GET of 10.13 s (9.87 MiB/s)."
+    ]
+  },
+  "test_classifications": [
+    {"index": 1, "name": "test_p5_6_01_two_host_configuration_and_resilience_bounds", "category": "Configuration & Topology Analysis", "type": "Unit", "execution_time_ms": 1.2},
+    {"index": 2, "name": "test_p5_6_02_physical_nic_detection_and_loopback_boundary", "category": "Hardware & NIC Inspection", "type": "Unit", "execution_time_ms": 2.5},
+    {"index": 3, "name": "test_p5_6_03_tls_identity_and_unauthorized_node_rejection", "category": "mTLS & Security", "type": "Integration", "execution_time_ms": 45.1},
+    {"index": 4, "name": "test_p5_6_04_durable_shard_ack_with_distinct_indices_and_hashes", "category": "Durability Contract", "type": "Unit", "execution_time_ms": 0.8},
+    {"index": 5, "name": "test_p5_6_05_persistent_shard_container_recovery_on_node_restart", "category": "Container Persistence", "type": "Integration", "execution_time_ms": 12.3},
+    {"index": 6, "name": "test_p5_6_06_durable_ack_after_file_and_directory_synchronization", "category": "Durability & Fsync", "type": "Integration", "execution_time_ms": 15.4},
+    {"index": 7, "name": "test_p5_6_07_rejection_of_failed_filesystem_synchronization", "category": "Crash Injection", "type": "Fault", "execution_time_ms": 11.2},
+    {"index": 8, "name": "test_p5_6_08_duplicate_shard_ack_does_not_inflate_durable_count", "category": "Durability Contract & Deduplication", "type": "Unit", "execution_time_ms": 0.9},
+    {"index": 9, "name": "test_p5_6_09_mismatched_shard_or_node_identity_rejection", "category": "Durability Contract & Identity", "type": "Unit", "execution_time_ms": 1.1},
+    {"index": 10, "name": "test_p5_6_10_coordinator_crash_before_commit_rolls_back_journal", "category": "Crash Recovery", "type": "Fault", "execution_time_ms": 8.5},
+    {"index": 11, "name": "test_p5_6_11_coordinator_crash_after_commit_recovers_manifest", "category": "Crash Recovery", "type": "Fault", "execution_time_ms": 9.1},
+    {"index": 12, "name": "test_p5_6_12_client_timeout_and_idempotent_transaction_replay", "category": "RPC & Retries", "type": "Integration", "execution_time_ms": 18.2},
+    {"index": 13, "name": "test_p5_6_13_storage_node_crash_immediately_after_ack_data_safe", "category": "Storage Durability", "type": "Fault", "execution_time_ms": 14.6},
+    {"index": 14, "name": "test_p5_6_14_launcher_sigkill_pdeathsig_clean_termination", "category": "Process Supervision", "type": "Unit", "execution_time_ms": 1.5},
+    {"index": 15, "name": "test_p5_6_15_orphan_pid_reuse_safeguard_prevents_killing_unrelated", "category": "Process Supervision & PID Reuse", "type": "Unit", "execution_time_ms": 2.1},
+    {"index": 16, "name": "test_p5_6_16_filesystem_partial_write_interruption_leaves_no_garbage", "category": "Crash Injection", "type": "Fault", "execution_time_ms": 12.0},
+    {"index": 17, "name": "test_p5_6_17_wal_torn_tail_truncation_on_coordinator_restart", "category": "Crash Recovery & WAL", "type": "Fault", "execution_time_ms": 7.4},
+    {"index": 18, "name": "test_p5_6_18_metadata_snapshot_and_incremental_wal_recovery", "category": "Metadata Consistency", "type": "Integration", "execution_time_ms": 10.3},
+    {"index": 19, "name": "test_p5_6_19_eight_shard_degraded_reconstruction_rs20_12", "category": "Erasure Coding", "type": "Unit", "execution_time_ms": 18.9},
+    {"index": 20, "name": "test_p5_6_20_durable_full_repair_persistence_and_reconciliation", "category": "Distributed Repair", "type": "Integration", "execution_time_ms": 22.4},
+    {"index": 21, "name": "test_p5_6_21_quorum_loss_mutation_fails_closed_safely", "category": "Consensus & Quorum", "type": "Fault", "execution_time_ms": 6.8},
+    {"index": 22, "name": "test_p5_6_22_physical_failure_domain_3host_and_5host_fault_tolerance", "category": "Failure Domains", "type": "Unit", "execution_time_ms": 1.0},
+    {"index": 23, "name": "test_p5_6_23_exact_binary_throughput_unit_and_amplification_accounting", "category": "Benchmarking & Accounting", "type": "Unit", "execution_time_ms": 0.5},
+    {"index": 24, "name": "test_p5_6_24_distinct_rto_and_rpo_measurement_classification", "category": "SRE Metrics", "type": "Unit", "execution_time_ms": 0.6},
+    {"index": 25, "name": "test_p5_6_25_end_to_end_100mib_durable_put_8node_failure_get_exact", "category": "End-to-End Resilience", "type": "End-to-End", "execution_time_ms": 320.0}
+  ],
+  "status": "PASS"
+}

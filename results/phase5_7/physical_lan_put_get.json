@@ -1,0 +1,17 @@
+{
+  "phase": "5.7",
+  "experiment": "Real Two-Host Physical LAN Pilot (Host A to Host B)",
+  "status": "NOT EXECUTED",
+  "reason": "Execution environment is a single Linux machine. No independent secondary physical host is reachable or authorized for live bare-metal deployment. Automated preflight correctly verified that 192.168.1.10 and 192.168.1.11 are not reachable on the physical network.",
+  "prerequisite_artifacts_generated": [
+    "deploy/phase5_7/two_host/hosts.yaml",
+    "deploy/phase5_7/two_host/cluster.env",
+    "deploy/phase5_7/inventory/hosts.ini",
+    "deploy/phase5_7/certificates/generate_pki.sh",
+    "deploy/phase5_7/systemd/fsp-node@.service",
+    "deploy/phase5_7/systemd/fsp-coordinator.service",
+    "deploy/phase5_7/scripts/deploy_two_host.sh",
+    "deploy/phase5_7/scripts/preflight.sh"
+  ],
+  "durability_boundary_note": "A 2-host topology assigns 10 shards to Host A and 10 shards to Host B. Total loss of either physical host causes 10 shard losses, leaving 10 < K=12 surviving shards. RS(20,12) requires >= 3 physical hosts (or 5 hosts) to guarantee data survivability upon losing an entire physical machine."
+}

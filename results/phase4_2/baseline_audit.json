@@ -1,0 +1,40 @@
+{
+  "phase": "4.2",
+  "audit_date": "2026-10-31",
+  "toolchain": {
+    "rustc": "1.99.1",
+    "cargo": "1.99.1",
+    "os": "linux-x86_64",
+    "kernel": "6.6.137+rpt-rpi-2712",
+    "filesystem": "ext4"
+  },
+  "test_reconciliation": {
+    "prior_report_claimed": 104,
+    "actual_executed_count": 105,
+    "discrepancy_explanation": "Prior report arithmetic error: individual suite breakdown summed to 105 (3+6+4+16+9+20+20+25+2) but header stated 104. All 105 tests pass.",
+    "suite_breakdown": {
+      "unittests_src_lib": 2,
+      "tests_determinism": 3,
+      "tests_failure_scenarios": 6,
+      "tests_recoverability": 4,
+      "tests_phase1_validation": 16,
+      "tests_phase2_validation": 9,
+      "tests_phase3_validation": 20,
+      "tests_phase4_validation": 20,
+      "tests_phase4_1_validation": 25
+    }
+  },
+  "process_crash_audit": {
+    "storage_node_sigkill": "TESTED_IN_P4_TEST_09_SUBPROCESS",
+    "coordinator_crash": "IN_PROCESS_OBJECT_DROP_ONLY",
+    "coordinator_sigkill_tested": false,
+    "mandate_for_p4_2": "Implement true OS subprocess SIGKILL for coordinator HA failover"
+  },
+  "benchmark_provenance_audit": {
+    "p4_1_eight_shard_repair_duration_s": 1.34,
+    "payload_size_bytes": 32768,
+    "stripes": 1,
+    "total_io_kib": 54.6,
+    "bottleneck_source": "Filesystem fsync and TLS handshakes, not raw bandwidth"
+  }
+}

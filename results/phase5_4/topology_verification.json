@@ -1,0 +1,25 @@
+{
+  "topology_type": "5_zones_20_nodes",
+  "zones": ["zone-a", "zone-b", "zone-c", "zone-d", "zone-e"],
+  "zone_capacity_nodes": 4,
+  "max_shards_per_zone": 4,
+  "coding_scheme": "ReedSolomon_20_12",
+  "data_shards_k": 12,
+  "parity_shards_m": 8,
+  "single_zone_loss_survival": {
+    "nodes_lost": 4,
+    "nodes_alive": 16,
+    "can_reconstruct": true
+  },
+  "two_zone_loss_survival": {
+    "nodes_lost": 8,
+    "nodes_alive": 12,
+    "can_reconstruct": true
+  },
+  "three_zone_loss_survival": {
+    "nodes_lost": 12,
+    "nodes_alive": 8,
+    "can_reconstruct": false,
+    "fail_closed_guaranteed": true
+  }
+}

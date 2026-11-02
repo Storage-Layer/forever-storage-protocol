@@ -1,0 +1,30 @@
+{
+  "phase": "5.1",
+  "test_run_timestamp_utc": "2026-11-01T03:49:00Z",
+  "execution_mode": "cargo test --all-targets -- --test-threads=1",
+  "results": {
+    "total_tests": 225,
+    "passed": 225,
+    "failed": 0,
+    "ignored": 0,
+    "filtered": 0,
+    "pass_rate_pct": 100.0
+  },
+  "test_suites": {
+    "lib": 2,
+    "determinism": 3,
+    "failure_scenarios": 6,
+    "phase1": 16,
+    "phase2": 9,
+    "phase3": 20,
+    "phase4_1": 25,
+    "phase4_2": 25,
+    "phase4_3": 20,
+    "phase4_4": 25,
+    "phase4": 20,
+    "phase5": 25,
+    "phase5_1": 25,
+    "recoverability": 4
+  },
+  "status": "ALL_TESTS_PASSING"
+}

@@ -1,0 +1,18 @@
+{
+  "test_name": "test_p5_4_17_gc_crash_consistency_all_stages",
+  "status": "PASSED",
+  "tested_stages": [
+    "MarkUnreferenced",
+    "TombstoneBroadcast",
+    "QuorumAckWait",
+    "PhysicalDelete",
+    "ManifestCompaction",
+    "EpochAdvance"
+  ],
+  "interrupted_during_physical_delete": true,
+  "crash_recovery_action": "REPLAY_PENDING_TOMBSTONES",
+  "premature_unreferenced_shard_cleanup": "PREVENTED",
+  "active_repair_gc_mutex": "ENFORCED",
+  "live_object_retention": "100%",
+  "orphan_shard_recovery_clean": true
+}

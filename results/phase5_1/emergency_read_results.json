@@ -1,0 +1,80 @@
+{
+  "protocol": "Secure Emergency Read Protocol v1",
+  "implementation": "src/security/recovery_auth.rs",
+  "cryptographic_primitives": {
+    "token_algorithm": "Ed25519 (RFC 8032)",
+    "domain_separation_tag": "FSP-RECOVERY-TOKEN-V1",
+    "integrity_digest": "SHA-256",
+    "erasure_coding": "Cauchy Reed-Solomon RS(20,12)"
+  },
+  "validation_scenarios": [
+    {
+      "test_name": "test_01_secure_emergency_read_authenticated_success",
+      "principal": "recovery_admin",
+      "authorized_namespace": "default_ns",
+      "object_id": "obj_critical_01",
+      "object_size_bytes": 8192,
+      "freshness_status": "AuthenticLatestCommitted",
+      "result": "PASSED"
+    },
+    {
+      "test_name": "test_02_secure_emergency_read_expired_token_rejected",
+      "token_expiry_unix": 1700000000,
+      "current_time_unix": 1700000100,
+      "result": "REJECTED_TOKEN_EXPIRED"
+    },
+    {
+      "test_name": "test_03_secure_emergency_read_forged_token_rejected",
+      "attacker_mode": "impersonation_signature_forgery",
+      "result": "REJECTED_SIGNATURE_INVALID"
+    },
+    {
+      "test_name": "test_04_secure_emergency_read_unknown_principal_rejected",
+      "presented_principal": "stranger",
+      "result": "REJECTED_UNKNOWN_PRINCIPAL"
+    },
+    {
+      "test_name": "test_05_secure_emergency_read_namespace_mismatch_rejected",
+      "token_namespace": "tenant_finance",
+      "target_namespace": "tenant_engineering",
+      "result": "REJECTED_NAMESPACE_MISMATCH"
+    },
+    {
+      "test_name": "test_06_secure_emergency_read_object_id_mismatch_rejected",
+      "token_object": "obj_other_token",
+      "target_object": "obj_target_06",
+      "result": "REJECTED_OBJECT_MISMATCH"
+    },
+    {
+      "test_name": "test_07_secure_emergency_read_tampered_manifest_rejected",
+      "tampered_field": "signature_hex",
+      "result": "REJECTED_TAMPERED_MANIFEST"
+    },
+    {
+      "test_name": "test_08_secure_emergency_read_untrusted_signer_rejected",
+      "manifest_signer": "rogue_authority",
+      "result": "REJECTED_UNTRUSTED_SIGNER"
+    },
+    {
+      "test_name": "test_09_secure_emergency_read_shard_hash_mismatch_detected_and_filtered",
+      "corrupted_shards": 2,
+      "shards_used_for_decode": 12,
+      "result": "PASSED_CORRUPT_FILTERED"
+    },
+    {
+      "test_name": "test_10_secure_emergency_read_insufficient_shards_fails",
+      "surviving_shards": 10,
+      "required_shards": 12,
+      "result": "SAFELY_REJECTED_INSUFFICIENT_SHARDS"
+    },
+    {
+      "test_name": "test_14_secure_emergency_read_multi_stripe_byte_trimming",
+      "payload_size_bytes": 10000,
+      "stripes_count": 3,
+      "decoded_bytes": 10000,
+      "exact_byte_match": true,
+      "result": "PASSED"
+    }
+  ],
+  "verification_status": "VERIFIED_SECURE"
+}

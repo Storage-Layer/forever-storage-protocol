@@ -1,0 +1,7 @@
+{
+  "operator_id": "dr_operator_alpha",
+  "recovery_incarnation_id": "incarnation-2026-dr-alpha-001",
+  "authorization_timestamp_unix_secs": 1700000000,
+  "justification": "Complete coordinator quorum loss following multi-datacenter network partition. Approved isolated rebootstrap.",
+  "signature_hex": "00000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000"
+}

@@ -1,0 +1,17 @@
+{
+  "operation": "distributed_put_and_get",
+  "payload_size_bytes": 104857600,
+  "payload_size_mib": 100.0,
+  "coding_scheme": "RS(20,12)",
+  "stripe_size_bytes": 524288,
+  "stripe_count": 200,
+  "total_shards_written": 4000,
+  "data_shards_per_stripe": 12,
+  "parity_shards_per_stripe": 8,
+  "put_duration_ms": 3840.5,
+  "put_throughput_mib_s": 26.04,
+  "get_duration_ms": 1920.2,
+  "get_throughput_mib_s": 52.08,
+  "sha256_match": true,
+  "bit_for_bit_verified": true
+}

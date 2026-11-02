@@ -1,0 +1,209 @@
+# FSP 5-Host Staging Cluster Configuration
+# Systematic RS(20,12) with 2-Host Fault Tolerance (8 Shards Lost, 12 Survive >= k=12)
+
+[coordinator]
+coordinator_id = "coordinator-1"
+metadata_root = "/var/lib/fsp/coordinator"
+placement_policy = "FailureDomainStrict"
+max_shards_per_host = 4
+max_shards_per_rack = 10
+default_coding_scheme = "RS(20,12)"
+default_stripe_size_bytes = 4194304
+degraded_commit_policy = "TolerateMaxErasures"
+
+[security]
+trust_environment_mode = "ProductionStrict"
+ca_cert_pem = "/etc/fsp/pki/ca.crt"
+coordinator_cert_pem = "/etc/fsp/pki/coordinator.crt"
+coordinator_key_pem = "/etc/fsp/pki/coordinator.key"
+ed25519_manifest_signer_key_file = "/etc/fsp/pki/manifest_signer.key"
+
+[repair_and_scrub]
+heartbeat_interval_secs = 2
+scrub_max_verifications_per_cycle = 100
+effective_repair_bandwidth_bps = 104857600
+
+# Host Alpha (Nodes 1..4)
+[[nodes]]
+node_id = 1
+identity_id = "node-alpha-1"
+listen_addr = "10.0.1.11:19401"
+host_domain = "host-alpha"
+disk_domain = "disk-01"
+rack_domain = "rack-1"
+region_domain = "region-eu-1"
+
+[[nodes]]
+node_id = 2
+identity_id = "node-alpha-2"
+listen_addr = "10.0.1.11:19402"
+host_domain = "host-alpha"
+disk_domain = "disk-02"
+rack_domain = "rack-1"
+region_domain = "region-eu-1"
+
+[[nodes]]
+node_id = 3
+identity_id = "node-alpha-3"
+listen_addr = "10.0.1.11:19403"
+host_domain = "host-alpha"
+disk_domain = "disk-03"
+rack_domain = "rack-1"
+region_domain = "region-eu-1"
+
+[[nodes]]
+node_id = 4
+identity_id = "node-alpha-4"
+listen_addr = "10.0.1.11:19404"
+host_domain = "host-alpha"
+disk_domain = "disk-04"
+rack_domain = "rack-1"
+region_domain = "region-eu-1"
+
+# Host Bravo (Nodes 5..8)
+[[nodes]]
+node_id = 5
+identity_id = "node-bravo-1"
+listen_addr = "10.0.1.12:19401"
+host_domain = "host-bravo"
+disk_domain = "disk-01"
+rack_domain = "rack-1"
+region_domain = "region-eu-1"
+
+[[nodes]]
+node_id = 6
+identity_id = "node-bravo-2"
+listen_addr = "10.0.1.12:19402"
+host_domain = "host-bravo"
+disk_domain = "disk-02"
+rack_domain = "rack-1"
+region_domain = "region-eu-1"
+
+[[nodes]]
+node_id = 7
+identity_id = "node-bravo-3"
+listen_addr = "10.0.1.12:19403"
+host_domain = "host-bravo"
+disk_domain = "disk-03"
+rack_domain = "rack-1"
+region_domain = "region-eu-1"
+
+[[nodes]]
+node_id = 8
+identity_id = "node-bravo-4"
+listen_addr = "10.0.1.12:19404"
+host_domain = "host-bravo"
+disk_domain = "disk-04"
+rack_domain = "rack-1"
+region_domain = "region-eu-1"
+
+# Host Charlie (Nodes 9..12)
+[[nodes]]
+node_id = 9
+identity_id = "node-charlie-1"
+listen_addr = "10.0.1.13:19401"
+host_domain = "host-charlie"
+disk_domain = "disk-01"
+rack_domain = "rack-1"
+region_domain = "region-eu-1"
+
+[[nodes]]
+node_id = 10
+identity_id = "node-charlie-2"
+listen_addr = "10.0.1.13:19402"
+host_domain = "host-charlie"
+disk_domain = "disk-02"
+rack_domain = "rack-1"
+region_domain = "region-eu-1"
+
+[[nodes]]
+node_id = 11
+identity_id = "node-charlie-3"
+listen_addr = "10.0.1.13:19403"
+host_domain = "host-charlie"
+disk_domain = "disk-03"
+rack_domain = "rack-1"
+region_domain = "region-eu-1"
+
+[[nodes]]
+node_id = 12
+identity_id = "node-charlie-4"
+listen_addr = "10.0.1.13:19404"
+host_domain = "host-charlie"
+disk_domain = "disk-04"
+rack_domain = "rack-1"
+region_domain = "region-eu-1"
+
+# Host Delta (Nodes 13..16)
+[[nodes]]
+node_id = 13
+identity_id = "node-delta-1"
+listen_addr = "10.0.1.14:19401"
+host_domain = "host-delta"
+disk_domain = "disk-01"
+rack_domain = "rack-2"
+region_domain = "region-eu-1"
+
+[[nodes]]
+node_id = 14
+identity_id = "node-delta-2"
+listen_addr = "10.0.1.14:19402"
+host_domain = "host-delta"
+disk_domain = "disk-02"
+rack_domain = "rack-2"
+region_domain = "region-eu-1"
+
+[[nodes]]
+node_id = 15
+identity_id = "node-delta-3"
+listen_addr = "10.0.1.14:19403"
+host_domain = "host-delta"
+disk_domain = "disk-03"
+rack_domain = "rack-2"
+region_domain = "region-eu-1"
+
+[[nodes]]
+node_id = 16
+identity_id = "node-delta-4"
+listen_addr = "10.0.1.14:19404"
+host_domain = "host-delta"
+disk_domain = "disk-04"
+rack_domain = "rack-2"
+region_domain = "region-eu-1"
+
+# Host Echo (Nodes 17..20)
+[[nodes]]
+node_id = 17
+identity_id = "node-echo-1"
+listen_addr = "10.0.1.15:19401"
+host_domain = "host-echo"
+disk_domain = "disk-01"
+rack_domain = "rack-2"
+region_domain = "region-eu-1"
+
+[[nodes]]
+node_id = 18
+identity_id = "node-echo-2"
+listen_addr = "10.0.1.15:19402"
+host_domain = "host-echo"
+disk_domain = "disk-02"
+rack_domain = "rack-2"
+region_domain = "region-eu-1"
+
+[[nodes]]
+node_id = 19
+identity_id = "node-echo-3"
+listen_addr = "10.0.1.15:19403"
+host_domain = "host-echo"
+disk_domain = "disk-03"
+rack_domain = "rack-2"
+region_domain = "region-eu-1"
+
+[[nodes]]
+node_id = 20
+identity_id = "node-echo-4"
+listen_addr = "10.0.1.15:19404"
+host_domain = "host-echo"
+disk_domain = "disk-04"
+rack_domain = "rack-2"
+region_domain = "region-eu-1"

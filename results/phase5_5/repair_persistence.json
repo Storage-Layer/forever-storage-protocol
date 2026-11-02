@@ -1,0 +1,8 @@
+{
+  "test_name": "test_p5_5_17_full_repair_persistence_and_journal_commitment",
+  "repair_journal_type": "DurableRepairJournal",
+  "states_persisted": ["Pending", "Repairing", "Completed"],
+  "atomic_sync_applied": true,
+  "restart_reconciliation": "Clean; completed repair archived and verified",
+  "status": "PASS"
+}

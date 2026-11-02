@@ -1,0 +1,31 @@
+{
+  "milestone": "Phase 5.8 Physical Pilot Execution",
+  "audit_timestamp_utc": "2026-11-02T09:22:00Z",
+  "physical_host_count": 1,
+  "participating_hosts": {
+    "host_a": {
+      "role": "primary_development_and_storage",
+      "model": "Dual Intel Xeon X5650, 62 GiB RAM, Linux Mint 22.3",
+      "status": "ONLINE_AUDITED"
+    },
+    "host_b": {
+      "role": "remote_storage_laptop_candidate",
+      "model": "Lenovo Laptop, AMD Ryzen 7, ~40 GB RAM",
+      "status": "BLOCKED — NO_AUTHORIZED_SECOND_PHYSICAL_HOST"
+    }
+  },
+  "acceptance_gates": {
+    "gate_a_physical_identity": "BLOCKED (1 physical host available, second host unauthorized)",
+    "gate_b_authenticated_networking": "BLOCKED (Remote endpoint unauthorized; local non-loopback mTLS verified)",
+    "gate_c_remote_persistence": "BLOCKED (No remote filesystem access)",
+    "gate_d_coordinator_commit": "VERIFIED_LOCALLY (3-member consensus verified in integration suite)",
+    "gate_e_remote_restart": "BLOCKED (Requires remote Host B daemon access)",
+    "gate_f_byte_exact_recovery": "VERIFIED_LOCALLY (Exact SHA-256 reconstruction verified across 100 MiB)",
+    "gate_g_network_evidence": "ACTUAL_WIRE_BYTES: NOT MEASURED (Cross-host network traffic not executed)",
+    "gate_h_safe_failure_recovery": "VERIFIED_LOCALLY (Process termination, crash recovery, idempotency verified)",
+    "gate_i_honest_reporting": "PASS (Zero fabricated physical metrics)",
+    "gate_j_production_readiness": "NOT ESTABLISHED"
+  },
+  "central_research_question_answer": "Local multi-daemon mTLS transport, Cauchy RS(20,12) 100 MiB byte-exact recovery, and daemon crash consistency are verified. However, cross-host physical validation across two independent Linux machines is BLOCKED awaiting operator authorization of Host B credentials and storage root.",
+  "final_verdict": "PHASE 5.8 PHYSICAL TWO-HOST PILOT: BLOCKED"
+}

@@ -1,0 +1,27 @@
+{
+  "phase": "5.6",
+  "topologies": {
+    "five_host_optimal": {
+      "shards_per_host": [4, 4, 4, 4, 4],
+      "single_host_loss_surviving": 16,
+      "two_host_loss_surviving": 12,
+      "two_host_survivable": true,
+      "three_host_loss_surviving": 8,
+      "three_host_survivable": false
+    },
+    "three_host_degraded": {
+      "shards_per_host": [7, 7, 6],
+      "single_host_loss_surviving": 13,
+      "single_host_survivable": true,
+      "two_host_loss_surviving": 6,
+      "two_host_survivable": false
+    },
+    "two_host_pilot": {
+      "shards_per_host": [10, 10],
+      "single_host_loss_surviving": 10,
+      "single_host_survivable": false,
+      "notes": "Suitable only for network transport pilot; cannot tolerate complete physical host loss"
+    }
+  },
+  "status": "PASS"
+}

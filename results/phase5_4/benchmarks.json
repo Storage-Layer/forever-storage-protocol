@@ -1,0 +1,20 @@
+{
+  "benchmark_suite": "phase5_4_cluster_staging",
+  "throughput": {
+    "rs_20_12_put_mib_s": 26.04,
+    "rs_20_12_get_mib_s": 52.08,
+    "lrc_local_repair_mib_s": 118.4,
+    "global_rs_repair_mib_s": 38.6
+  },
+  "latency_p99_ms": {
+    "mtls_handshake_ms": 1.8,
+    "node_status_query_ms": 0.9,
+    "shard_put_ms": 4.2,
+    "degraded_read_ms": 12.4
+  },
+  "resource_utilization": {
+    "node_process_rss_mb": 18.2,
+    "coordinator_rss_mb": 24.5,
+    "cpu_pct_per_node": 1.4
+  }
+}

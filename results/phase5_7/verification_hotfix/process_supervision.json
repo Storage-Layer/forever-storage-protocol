@@ -1,0 +1,30 @@
+{
+  "phase": "5.7",
+  "audit": "Verification Hotfix Process Supervision & PID Reuse Elimination",
+  "timestamp": "2026-11-01T20:54:12Z",
+  "experiments": [
+    {
+      "id": "EXPERIMENT_E1",
+      "title": "Launcher SIGKILL with PR_SET_PDEATHSIG Automatic Kernel Cleanup",
+      "mechanism": "prctl(PR_SET_PDEATHSIG, SIGKILL)",
+      "duration_seconds": 0.0708,
+      "status": "PASS"
+    },
+    {
+      "id": "EXPERIMENT_E2",
+      "title": "TOCTOU PID Reuse Defense via Linux pidfd and Start-Time Validation",
+      "syscalls_used": [
+        "SYS_pidfd_open (434)",
+        "SYS_pidfd_send_signal (424)"
+      ],
+      "procfs_validation": "/proc/{pid}/stat field 22 starttime matching",
+      "duration_seconds": 0.0701,
+      "status": "PASS"
+    }
+  ],
+  "invariants_verified": [
+    "Child daemons terminate when parent dies abnormally",
+    "Signals delivered via pidfd cannot be intercepted by recycled PIDs",
+    "Unrelated processes are never flagged or terminated during orphan sweeps"
+  ]
+}

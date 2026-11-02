@@ -1,0 +1,11 @@
+{
+  "canonical_payload_sha256": "bf17539774a7fab5802d0e4a5fccc4df33736ea0d48d101592ad88589818fea9",
+  "durable_put_sha256": "bf17539774a7fab5802d0e4a5fccc4df33736ea0d48d101592ad88589818fea9",
+  "baseline_get_sha256": "bf17539774a7fab5802d0e4a5fccc4df33736ea0d48d101592ad88589818fea9",
+  "eight_node_failure_get_sha256": "bf17539774a7fab5802d0e4a5fccc4df33736ea0d48d101592ad88589818fea9",
+  "two_zone_failure_get_sha256": "bf17539774a7fab5802d0e4a5fccc4df33736ea0d48d101592ad88589818fea9",
+  "post_crash_restart_get_sha256": "bf17539774a7fab5802d0e4a5fccc4df33736ea0d48d101592ad88589818fea9",
+  "repaired_shard_get_sha256": "bf17539774a7fab5802d0e4a5fccc4df33736ea0d48d101592ad88589818fea9",
+  "all_match": true,
+  "cryptographic_integrity": "100% BYTE-EXACT"
+}

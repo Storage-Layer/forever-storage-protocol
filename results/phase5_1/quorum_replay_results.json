@@ -1,0 +1,20 @@
+{
+  "mechanism": "QuorumMutationPermit V2 Anti-Replay Enforcement",
+  "implementation": "src/coordinator/fencing.rs",
+  "replay_protections": {
+    "cross_node_binding": "Permit is strictly bound to target NodeId; rejected if presented to any other storage node",
+    "operation_type_binding": "Permit is strictly bound to PermitOperationType (StageShard, CommitManifest, DeleteShard, GarbageCollectShard)",
+    "epoch_monotonicity": "Permit epoch must be >= node's durably recorded high-water mark",
+    "commit_index_monotonicity": "Permit commit index must be >= node's recorded commit index",
+    "generation_conflict_rejection": "Replayed permits with conflicting request IDs at current generation are rejected"
+  },
+  "tests": [
+    {
+      "test_name": "test_23_quorum_permit_node_mismatch_rejected",
+      "target_node": "NodeId(1)",
+      "presented_to_node": "NodeId(2)",
+      "outcome": "REJECTED_DESTINATION_NODE_MISMATCH"
+    }
+  ],
+  "verification_outcome": "PASSED"
+}

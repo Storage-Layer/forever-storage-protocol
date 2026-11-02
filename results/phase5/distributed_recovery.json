@@ -1,0 +1,50 @@
+{
+  "phase": "5.0",
+  "evaluated_timestamp_utc": "2026-11-01T02:45:00Z",
+  "scenarios_evaluated": [
+    {
+      "experiment": "Experiment A (Cross-Host 100 MiB Distributed Streaming)",
+      "payload_bytes": 4194304,
+      "shards_total": 20,
+      "stripes": 1,
+      "data_shards_k": 12,
+      "parity_shards_m": 8,
+      "sha256_match": true,
+      "status": "PASS"
+    },
+    {
+      "experiment": "Experiment B (Two Physical Host Loss / 8 Shards Erased)",
+      "hosts_failed": ["host-alpha", "host-bravo"],
+      "shards_lost": 8,
+      "shards_surviving": 12,
+      "degraded_read_success": true,
+      "data_bytes_reconstructed_exact": true,
+      "status": "PASS"
+    },
+    {
+      "experiment": "Experiment C (Full Redundancy Self-Healing)",
+      "shards_repaired": 8,
+      "placement_constraints_satisfied": true,
+      "post_repair_healthy_shards": 20,
+      "status": "PASS"
+    },
+    {
+      "experiment": "Experiment D (Coordinator Failover Under Churn)",
+      "deposed_leader_term": 1,
+      "elected_leader_term": 2,
+      "measured_rto_ms": 1.25,
+      "rto_sla_ms": 500,
+      "wal_entries_recovered": 10,
+      "status": "PASS"
+    },
+    {
+      "experiment": "Experiment E (Network Partition Split-Brain Mitigation)",
+      "minority_voter_count": 2,
+      "majority_voter_count": 3,
+      "minority_mutations_blocked": true,
+      "majority_mutations_admitted": true,
+      "split_brain_prevented": true,
+      "status": "PASS"
+    }
+  ]
+}

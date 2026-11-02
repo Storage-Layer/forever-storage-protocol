@@ -1,0 +1,27 @@
+{
+  "phase": "4.3",
+  "component": "TlsConnectionPool",
+  "audit_finding": "Phase 4.2 reported estimated handshake reductions; Phase 4.3 instruments per-peer monotonic hardware microsecond timing and exact counters.",
+  "benchmarks": {
+    "fresh_tls_handshake_avg_micros": 1845.2,
+    "pooled_tls_reuse_avg_micros": 4.8,
+    "speedup_factor": 384.4,
+    "reuse_efficiency_percentage": 97.4,
+    "idle_connection_timeout_secs": 30,
+    "per_peer_max_idle": 4,
+    "per_peer_max_total": 8
+  },
+  "accounting_verification": {
+    "metrics_snapshot_implemented": true,
+    "atomic_counters_monitored": [
+      "handshakes_performed",
+      "connections_reused",
+      "connections_closed_idle",
+      "connections_closed_error",
+      "total_rpc_executions",
+      "total_handshake_duration_micros",
+      "total_reuse_duration_micros"
+    ],
+    "test_reference": "tests/phase4_3_validation.rs::test_p4_3_14_tls_connection_pooling_accurate_per_peer_handshake_accounting"
+  }
+}

@@ -1,0 +1,47 @@
+{
+  "milestone": "Phase 5.8",
+  "verification_timestamp_utc": "2026-11-02T08:36:00Z",
+  "source_provenance": {
+    "workspace_type": "STANDALONE_WORKSPACE (NOT_A_GIT_REPOSITORY)",
+    "tracked_files": 237,
+    "source_snapshot_sha256": "18f7425f68ae6a9d4bb6f04ba9b6fa420425a25fcd5430e927cb2321ca91a724"
+  },
+  "binary_identities": {
+    "fsp_node_sha256": "52ff4946c3b86d6054e2ed5d8699a85957bebe9b288153d6b028f94a1b6018b6",
+    "fsp_sim_sha256": "3e02679271d39eb15c0a423b51bff97b22f4fd573827e3853d1d2971b7461a08"
+  },
+  "test_execution_summary": {
+    "total_targets_executed": 22,
+    "active_test_suites": 20,
+    "zero_test_binaries": 2,
+    "total_passed": 370,
+    "total_failed": 0,
+    "total_ignored": 0,
+    "total_measured": 0,
+    "target_execution_duration_seconds": 289.51,
+    "wall_clock_duration_seconds": 290.61,
+    "command_exit_status": 0
+  },
+  "code_quality_gates": {
+    "cargo_fmt": "PASSED (0 diffs)",
+    "cargo_clippy": "PASSED (0 warnings with -D warnings)"
+  },
+  "physical_hardware_audited": {
+    "model": "Intel(R) Xeon(R) CPU X5650 @ 2.67GHz (2 sockets, 12 cores, 24 logical threads)",
+    "ram_bytes": 65191874560,
+    "ram_human": "62 GiB",
+    "os": "Linux Mint 22.3 (Zena) / kernel 6.14.0-37-generic x86_64",
+    "filesystem": "ext4 on /dev/sdb3",
+    "primary_nics": [
+      {"name": "enp2s0", "ip": "10.77.77.2/24"},
+      {"name": "wlx7c8bca05e8a9", "ip": "192.168.1.103/24"}
+    ]
+  },
+  "operational_gates": {
+    "secondary_physical_host": "BLOCKED: No authorized independent physical host available",
+    "wire_throughput_mbps": "ACTUAL_WIRE_BYTES: NOT MEASURED",
+    "power_loss_durability": "Class A (Process SIGKILL) verified; Class B/C NOT EXECUTED",
+    "production_readiness": "NOT ESTABLISHED"
+  },
+  "milestone_verdict": "PHASE 5.8 LOCAL ENGINEERING COMPLETE — PHYSICAL PILOT NOT EXECUTED"
+}

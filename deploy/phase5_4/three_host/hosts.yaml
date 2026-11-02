@@ -1,0 +1,31 @@
+# FSP Three-Host Deployment Configuration (1 Coordinator per host)
+cluster_name: fsp-staging-3host
+replication_profile: rs-20-12
+
+hosts:
+  host-01:
+    ip: 10.0.1.101
+    coordinator: coord-0 (port 9000)
+    zones:
+      - zone_id: 0
+        nodes: [node-00, node-01, node-02, node-03]
+      - zone_id: 1
+        nodes: [node-04, node-05, node-06]
+  host-02:
+    ip: 10.0.1.102
+    coordinator: coord-1 (port 9000)
+    zones:
+      - zone_id: 1
+        nodes: [node-07]
+      - zone_id: 2
+        nodes: [node-08, node-09, node-10, node-11]
+      - zone_id: 3
+        nodes: [node-12, node-13]
+  host-03:
+    ip: 10.0.1.103
+    coordinator: coord-2 (port 9000)
+    zones:
+      - zone_id: 3
+        nodes: [node-14, node-15]
+      - zone_id: 4
+        nodes: [node-16, node-17, node-18, node-19]

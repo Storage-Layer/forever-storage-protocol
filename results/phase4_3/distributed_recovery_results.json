@@ -1,0 +1,36 @@
+{
+  "phase": "4.3",
+  "erasure_coding_scheme": "RS(20,12) systematic Cauchy Reed-Solomon",
+  "data_shards": 12,
+  "parity_shards": 8,
+  "total_shards": 20,
+  "recovery_experiments": [
+    {
+      "test": "test_p4_3_19_distributed_rs20_12_put_get_with_certified_fencing",
+      "payload_size_bytes": 122880,
+      "shard_size_bytes": 10240,
+      "shards_encoded": 20,
+      "sha256_verified": true,
+      "fencing_authority_verified": true
+    },
+    {
+      "test": "test_p4_3_20_eight_shard_failure_and_self_healing_under_quorum_authority",
+      "payload_size_bytes": 49152,
+      "shard_size_bytes": 4096,
+      "failed_shards_count": 8,
+      "failed_shard_indices": [0, 1, 2, 3, 4, 5, 6, 7],
+      "surviving_shards_count": 12,
+      "surviving_shard_indices": [8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19],
+      "reconstruction_status": "BIT_FOR_BIT_EXACT_MATCH",
+      "sha256_match": true
+    }
+  ],
+  "physical_staging_topology": {
+    "hosts": 5,
+    "racks": 5,
+    "shards_per_host": 4,
+    "tolerated_host_failures": 2,
+    "surviving_shards_after_2_host_loss": 12,
+    "mathematical_recoverability": "100% (12 >= k=12)"
+  }
+}

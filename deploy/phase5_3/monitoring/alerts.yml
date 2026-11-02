@@ -1,0 +1,38 @@
+groups:
+  - name: fsp_reliability_alerts
+    rules:
+      - alert: FSPClusterIncarnationSplitBrain
+        expr: count(count by (fsp_cluster_incarnation_seq) (fsp_node_incarnation_seq)) > 1
+        for: 5s
+        labels:
+          severity: critical
+        annotations:
+          summary: "Multiple active cluster incarnations detected across nodes"
+          description: "Storage nodes report different incarnation sequences, indicating potential split-brain or partial rebootstrap."
+
+      - alert: FSPOldQuorumCoexistenceWarning
+        expr: fsp_node_coexistence_warning_active == 1
+        for: 1s
+        labels:
+          severity: critical
+        annotations:
+          summary: "Storage node has activated fail-closed coexistence protection"
+          description: "Operational isolation or old-quorum fencing was not attested in the adopted authority record."
+
+      - alert: FSPObjectRedundancyDegraded
+        expr: fsp_object_surviving_shards < 16
+        for: 10s
+        labels:
+          severity: warning
+        annotations:
+          summary: "Object redundancy dropped below 16 shards"
+          description: "Object {{ $labels.object_id }} has {{ $value }} surviving shards (threshold: 16)."
+
+      - alert: FSPObjectNearUnrecoverability
+        expr: fsp_object_surviving_shards <= 12
+        for: 1s
+        labels:
+          severity: disaster
+        annotations:
+          summary: "Object at minimum reconstruction threshold (k=12)"
+          description: "Object {{ $labels.object_id }} has {{ $value }} surviving shards. Any further loss will cause permanent data loss."

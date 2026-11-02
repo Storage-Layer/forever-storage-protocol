@@ -1,0 +1,37 @@
+{
+  "topology_name": "Physical 5-Host Staging Cluster",
+  "verification_timestamp_utc": "2026-11-01T02:00:00Z",
+  "deployment_execution_status": "NOT EXECUTED (Simulation and local multi-process validated; physical bare-metal hardware staging unprovisioned)",
+  "coding_scheme": "Systematic Reed-Solomon RS(20,12)",
+  "sharding_parameters": {
+    "total_shards_n": 20,
+    "data_shards_k": 12,
+    "parity_shards_m": 8,
+    "redundancy_ratio": 1.6667
+  },
+  "physical_failure_domains": {
+    "host_count": 5,
+    "hosts": [
+      { "host": "host-alpha", "rack": "rack-1", "node_ids": [1, 2, 3, 4], "max_shards": 4 },
+      { "host": "host-bravo", "rack": "rack-1", "node_ids": [5, 6, 7, 8], "max_shards": 4 },
+      { "host": "host-charlie", "rack": "rack-1", "node_ids": [9, 10, 11, 12], "max_shards": 4 },
+      { "host": "host-delta", "rack": "rack-2", "node_ids": [13, 14, 15, 16], "max_shards": 4 },
+      { "host": "host-echo", "rack": "rack-2", "node_ids": [17, 18, 19, 20], "max_shards": 4 }
+    ],
+    "rack_count": 2,
+    "region_count": 1
+  },
+  "fault_tolerance_analysis": {
+    "tolerated_host_failures": 2,
+    "shards_lost_under_2_host_loss": 8,
+    "surviving_shards_under_2_host_loss": 12,
+    "recoverability_condition": "surviving (12) >= k (12)",
+    "data_recoverability_status": "GUARANTEED_100_PERCENT",
+    "preflight_validation_passed": true
+  },
+  "systemd_integration": {
+    "coordinator_service": "deploy/systemd/fsp-coordinator.service (validated)",
+    "node_template_service": "deploy/systemd/fsp-node@.service (validated)",
+    "cluster_configuration_file": "deploy/configs/cluster_5host.toml (validated)"
+  }
+}

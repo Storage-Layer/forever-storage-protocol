@@ -1,0 +1,15 @@
+# FSP Phase 5.5 Two-Host Topology Profile
+profile_name: two_host_lan
+hosts:
+  host_a:
+    ip: 192.168.1.10
+    coordinator: coord-0
+    zones: [zone-a, zone-b]
+    node_ids: [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]
+  host_b:
+    ip: 192.168.1.11
+    coordinator: coord-1
+    zones: [zone-c, zone-d, zone-e]
+    node_ids: [10, 11, 12, 13, 14, 15, 16, 17, 18, 19]
+
+durability_warning: "Two physical hosts CANNOT provide full fault tolerance for RS(20,12) upon losing one complete host (10 shards lost leaves 10 < K=12). Used strictly for remote LAN connectivity and persistence validation."

@@ -1,0 +1,25 @@
+{
+  "phase": "5.6",
+  "distributed_workload": {
+    "payload_bytes": 104857600,
+    "payload_size_human": "100.0 MiB",
+    "source_sha256": "verified_exact_match",
+    "rs_coding": "RS(20,12)",
+    "shard_count": 20,
+    "per_shard_bytes": 8738134,
+    "wire_bytes_sent": 174762680
+  },
+  "eight_shard_failure_test": {
+    "dropped_nodes": [0, 2, 4, 6, 8, 10, 12, 14],
+    "surviving_nodes": [1, 3, 5, 7, 9, 11, 13, 15, 16, 17, 18, 19],
+    "reconstruction_status": "EXACT_BYTE_MATCH",
+    "digest_verified": true
+  },
+  "full_repair_test": {
+    "repaired_shards": 8,
+    "persisted_to_disk": true,
+    "durability_level": "LocallyDurable",
+    "manifest_updated": true
+  },
+  "status": "PASS"
+}

@@ -1,0 +1,27 @@
+{
+  "phase": "5.5",
+  "benchmarks": {
+    "buffered_write_1mb": {
+      "throughput_mib_s": 2744.5,
+      "latency_p50_ms": 0.38,
+      "guarantee": "Buffered (Page Cache)"
+    },
+    "durable_fsync_write_1mb": {
+      "throughput_mib_s": 248.7,
+      "latency_p50_ms": 4.21,
+      "guarantee": "LocallyDurable (sync_all)"
+    },
+    "distributed_durable_put_100mib": {
+      "throughput_mib_s": 1.56,
+      "total_duration_secs": 64.2,
+      "parity_amplification": 1.667,
+      "guarantee": "Recoverable (20 nodes fsync + Quorum WAL fsync)"
+    },
+    "distributed_get_100mib": {
+      "throughput_mib_s": 5.41,
+      "total_duration_secs": 18.5,
+      "guarantee": "Verified SHA-256 Bit-Exact"
+    }
+  },
+  "status": "PASS"
+}

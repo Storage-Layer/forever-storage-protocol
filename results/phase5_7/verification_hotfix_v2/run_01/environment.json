@@ -1,0 +1,30 @@
+{
+  "run_id": "run_01",
+  "repo_root": "/home/rade/Project/Jobs/fsp",
+  "git_revision": "NOT_A_GIT_REPOSITORY",
+  "git_dirty": false,
+  "rustc_version": "rustc 1.99.1 (58cf8f9c3 2026-10-13)",
+  "cargo_version": "cargo 1.99.1 (5f94df478 2026-08-27)",
+  "kernel_release": "6.14.0-37-generic",
+  "platform": "Linux-6.14.0-37-generic-x86_64-with-glibc2.39",
+  "cpu_count": 24,
+  "doctests_included_in_scope": false,
+  "inventory": {
+    "command": "cargo test --workspace --all-targets -- --list",
+    "start_time_utc": "2026-11-02T00:36:27.837973+00:00",
+    "end_time_utc": "2026-11-02T00:36:27.955200+00:00",
+    "duration_seconds": 0.11719706100120675,
+    "exit_status": 0,
+    "log_file": "results/phase5_7/verification_hotfix_v2/run_01/test_inventory.log",
+    "log_sha256": "e62af346f2e5d65c27d0b3643fb5d6f2ec6f1a60348e0928d7849ede3c70f64c"
+  },
+  "full_run": {
+    "command": "cargo test --workspace --all-targets -- --test-threads=1",
+    "start_time_utc": "2026-11-02T00:36:27.955574+00:00",
+    "end_time_utc": "2026-11-02T00:41:05.036394+00:00",
+    "duration_seconds": 277.0808053790024,
+    "exit_status": 0,
+    "log_file": "results/phase5_7/verification_hotfix_v2/run_01/full_test_run.log",
+    "log_sha256": "3194e27cbd8f0e5e35d33e96e10f611879753628fc9a2038bddc5393d03ac917"
+  }
+}

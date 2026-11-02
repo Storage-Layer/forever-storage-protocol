@@ -1,0 +1,9 @@
+{
+  "mtls_tls13": "pass: valid coordinator OK; rogue-CA client rejected; node identity mismatch rejected; expired cert rejected (simulated clock); rotation + revocation of old cert (test_p4_06)",
+  "rbac": "pass: ReadOnlyObserver Heartbeat OK, DeleteShard rejected (test_p4_06)",
+  "signed_manifests": "pass: tampered size, tampered placement, unknown signer, wrong pubkey, generation replay all rejected (test_p4_05)",
+  "wire_protocol": "pass: version mismatch, oversized meta/payload frame rejected before allocation (test_p4_07, test_p4_15)",
+  "filesystem": "pass: O_NOFOLLOW symlink rejection (test_p4_16)",
+  "production_strict_mode": "pass: test-only identities rejected (test_p4_16)",
+  "not_tested": ["Byzantine nodes", "DoS/rate limiting", "real CA/CRL/OCSP", "timing side channels", "independent security audit"]
+}

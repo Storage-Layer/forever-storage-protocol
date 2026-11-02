@@ -1,0 +1,41 @@
+{
+  "experiment": "Two Failure Domains Offline (Zone A + Zone B)",
+  "offline_zones": [
+    "zone-a",
+    "zone-b"
+  ],
+  "failed_nodes": [
+    0,
+    1,
+    2,
+    3,
+    4,
+    5,
+    6,
+    7
+  ],
+  "surviving_zones": [
+    "zone-c",
+    "zone-d",
+    "zone-e"
+  ],
+  "surviving_nodes": [
+    8,
+    9,
+    10,
+    11,
+    12,
+    13,
+    14,
+    15,
+    16,
+    17,
+    18,
+    19
+  ],
+  "surviving_count": 12,
+  "reconstruction_status": "SUCCESS",
+  "reconstructed_sha256": "bf17539774a7fab5802d0e4a5fccc4df33736ea0d48d101592ad88589818fea9",
+  "sha256_match": true,
+  "verdict": "PASSED"
+}

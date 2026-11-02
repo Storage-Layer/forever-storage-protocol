@@ -1,0 +1,31 @@
+global:
+  scrape_interval: 5s
+  evaluation_interval: 5s
+
+scrape_configs:
+  - job_name: "fsp_nodes"
+    static_configs:
+      - targets:
+          - "localhost:19000"
+          - "localhost:19001"
+          - "localhost:19002"
+          - "localhost:19003"
+          - "localhost:19004"
+          - "localhost:19005"
+          - "localhost:19006"
+          - "localhost:19007"
+          - "localhost:19008"
+          - "localhost:19009"
+          - "localhost:19010"
+          - "localhost:19011"
+          - "localhost:19012"
+          - "localhost:19013"
+          - "localhost:19014"
+          - "localhost:19015"
+          - "localhost:19016"
+          - "localhost:19017"
+          - "localhost:19018"
+          - "localhost:19019"
+  - job_name: "fsp_coordinator"
+    static_configs:
+      - targets: ["localhost:18080"]

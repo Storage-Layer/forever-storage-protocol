@@ -1,0 +1,45 @@
+{
+  "phase": "4.2",
+  "experiment": "coordinator_ha_failover",
+  "status": "PASSED",
+  "quorum_configuration": {
+    "total_members": 3,
+    "members": [
+      "coordinator-primary",
+      "coordinator-standby",
+      "witness-01"
+    ],
+    "majority_threshold": 2
+  },
+  "scenarios": [
+    {
+      "name": "graceful_failover",
+      "trigger": "scheduled_resignation",
+      "votes_granted": 2,
+      "epoch_transition": {
+        "from": 1,
+        "to": 2
+      },
+      "failover_duration_ms": 2,
+      "write_unavailability_ms": 2,
+      "journal_reconciliation": "CLEAN",
+      "data_loss": false
+    },
+    {
+      "name": "abrupt_sigkill_failover",
+      "trigger": "kernel_sigkill_on_primary",
+      "exit_code": "SIGKILL_NON_ZERO",
+      "detection_and_election_ms": 14,
+      "reconciled_repair_jobs": 1,
+      "reconciled_state": "Pending",
+      "split_brain_prevented": true
+    },
+    {
+      "name": "quorum_loss_partition",
+      "trigger": "isolated_from_2_of_3_peers",
+      "result": "FAIL_CLOSED",
+      "mutations_blocked": true,
+      "committed_data_preserved": true
+    }
+  ]
+}

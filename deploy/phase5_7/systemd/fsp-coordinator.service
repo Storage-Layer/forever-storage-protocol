@@ -1,0 +1,33 @@
+[Unit]
+Description=FSP Distributed Coordinator Service
+After=network-online.target local-fs.target
+Wants=network-online.target
+Documentation=https://github.com/forever-storage-protocol/fsp
+
+[Service]
+Type=simple
+User=fsp
+Group=fsp
+LimitNOFILE=65536
+LimitMEMLOCK=infinity
+TasksMax=infinity
+LimitCORE=infinity
+KillMode=control-group
+Restart=always
+RestartSec=2s
+TimeoutStopSec=15s
+
+EnvironmentFile=/etc/fsp/cluster.env
+ExecStart=/usr/local/bin/fsp-coordinator \
+    --listen 0.0.0.0:18000 \
+    --state-root /var/lib/fsp/coordinator \
+    --ca-cert /etc/fsp/pki/ca.crt \
+    --coord-cert /etc/fsp/pki/coordinator.crt \
+    --coord-key /etc/fsp/pki/coordinator.key \
+    --topology /etc/fsp/topology.json
+
+StandardOutput=journal
+StandardError=journal
+
+[Install]
+WantedBy=multi-user.target

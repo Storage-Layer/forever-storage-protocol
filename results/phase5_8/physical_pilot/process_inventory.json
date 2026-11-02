@@ -1,0 +1,16 @@
+{
+  "scenario": "Host Process Inventory & Supervision",
+  "audit_timestamp_utc": "2026-11-02T09:22:00Z",
+  "status": "PASS",
+  "actual_environment": "Linux Mint 22.3 (kernel 6.14.0-37-generic x86_64)",
+  "physical_host_count": 1,
+  "source_snapshot_sha256": "b626d226a3cba95e700e354abc2c9cd11af32e12ef1eff93f74518eca54a187d",
+  "binary_sha256": "52ff4946c3b86d6054e2ed5d8699a85957bebe9b288153d6b028f94a1b6018b6",
+  "host_a_active_processes": {
+    "fsp_node_instances": 0,
+    "fsp_coordinator_instances": 0,
+    "supervision_status": "Clean, zero orphan processes running"
+  },
+  "host_b_process_status": "NOT_EXECUTED (Host B not provisioned)",
+  "process_supervision_contract": "prctl(PR_SET_PDEATHSIG, SIGKILL) and pidfd signaling verified in tests/phase5_8_validation.rs::test_p5_8_20_process_supervision_and_clean_termination"
+}

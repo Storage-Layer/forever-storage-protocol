@@ -1,0 +1,26 @@
+{
+  "milestone": "Phase 5.7 Hotfix v2",
+  "verified_timestamp_utc": "2026-11-02T00:41:53Z",
+  "kernel_syscall_support": {
+    "pidfd_open_syscall_nr": 434,
+    "pidfd_send_signal_syscall_nr": 424,
+    "linux_kernel_min_supported": "5.3",
+    "host_kernel_release": "6.14.0-37-generic"
+  },
+  "process_supervision_experiments": [
+    {
+      "name": "Experiment E1: Launcher SIGKILL & PR_SET_PDEATHSIG",
+      "suite": "tests/phase5_6_validation.rs::test_p5_6_14_launcher_sigkill_pdeathsig_clean_termination",
+      "mechanism": "prctl(PR_SET_PDEATHSIG, SIGKILL)",
+      "orphan_daemons_reaped": true,
+      "status": "PASS"
+    },
+    {
+      "name": "Experiment E2: TOCTOU PID Reuse Safeguard",
+      "suite": "tests/phase5_6_validation.rs::test_p5_6_15_orphan_pid_reuse_safeguard_prevents_killing_unrelated",
+      "mechanism": "pidfd_open(pid, 0) + /proc/<pid>/stat start_time verification",
+      "recycled_pid_targeted": false,
+      "status": "PASS"
+    }
+  ]
+}

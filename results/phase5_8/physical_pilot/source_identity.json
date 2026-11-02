@@ -1,0 +1,13 @@
+{
+  "milestone": "Phase 5.8 Physical Pilot Execution",
+  "audit_timestamp_utc": "2026-11-02T09:22:00Z",
+  "workspace_type": "STANDALONE_WORKSPACE (NOT_A_GIT_REPOSITORY)",
+  "workspace_root": "/home/rade/Project/Jobs/fsp",
+  "tracked_files": 256,
+  "source_snapshot_sha256": "b626d226a3cba95e700e354abc2c9cd11af32e12ef1eff93f74518eca54a187d",
+  "cargo_lock_sha256": "ef2335d3311e9fbec31832f592785d5127b52786d931c998690b38de3888b21f",
+  "rustc_version": "rustc 1.99.1 (58cf8f9c3 2026-10-13)",
+  "cargo_version": "cargo 1.99.1 (5f94df478 2026-08-27)",
+  "os": "Linux Mint 22.3 (kernel 6.14.0-37-generic x86_64)",
+  "cpu_arch": "x86_64"
+}

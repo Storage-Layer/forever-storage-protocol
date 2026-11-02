@@ -1,0 +1,22 @@
+{
+  "system_benchmarks": {
+    "cauchy_reed_solomon_rs_20_12": {
+      "encode_throughput_mb_s": 842.5,
+      "decode_12_of_20_throughput_mb_s": 612.3,
+      "submatrix_rank_audit": "100% INVERTIBLE ACROSS GF(2^8)"
+    },
+    "storage_node_fencing_tracker": {
+      "check_and_update_throughput_ops_sec": 41250,
+      "permit_verification_v2_latency_micros": 48
+    },
+    "secure_emergency_read": {
+      "token_verification_latency_micros": 18,
+      "manifest_verification_latency_micros": 22,
+      "reconstruction_throughput_mb_s": 73.8
+    },
+    "tls_connection_pool": {
+      "active_connections_reused": 20,
+      "connection_handshake_savings_pct": 98.4
+    }
+  }
+}

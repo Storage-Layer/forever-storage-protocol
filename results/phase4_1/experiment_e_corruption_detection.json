@@ -1,0 +1,26 @@
+{
+  "phase": "4.1",
+  "experiment": "E_tamper_corruption_detection",
+  "status": "PASSED",
+  "scrubber_mode": "coordinator_independent_verification",
+  "tamper_scenarios": [
+    {
+      "type": "single_bit_flip_in_shard_body",
+      "target_node": 0,
+      "detected": true,
+      "repaired": true
+    },
+    {
+      "type": "missing_shard_container_file",
+      "target_node": 1,
+      "detected": true,
+      "repaired": true
+    },
+    {
+      "type": "fraudulent_node_claim_of_health",
+      "actual_state": "corrupted",
+      "self_reported_healthy": true,
+      "coordinator_independent_check_result": "FRAUD_REJECTED_AND_CORRUPTION_DETECTED"
+    }
+  ]
+}

@@ -1,0 +1,42 @@
+# FSP Phase 5.7 Three-Host Topology Profile
+profile_name: three_host_cluster
+version: "5.7"
+
+hosts:
+  host_1:
+    hostname: fsp-host-1.lan
+    ip: 192.168.1.21
+    nic: enp3s0
+    coordinator_role: primary
+    coordinator_port: 18000
+    zones:
+      - zone_id: zone-1
+        nodes: [0, 1, 2, 3, 4, 5, 6]
+        base_port: 19000
+  host_2:
+    hostname: fsp-host-2.lan
+    ip: 192.168.1.22
+    nic: enp3s0
+    coordinator_role: standby
+    coordinator_port: 18000
+    zones:
+      - zone_id: zone-2
+        nodes: [7, 8, 9, 10, 11, 12, 13]
+        base_port: 19007
+  host_3:
+    hostname: fsp-host-3.lan
+    ip: 192.168.1.23
+    nic: enp3s0
+    coordinator_role: witness
+    coordinator_port: 18000
+    zones:
+      - zone_id: zone-3
+        nodes: [14, 15, 16, 17, 18, 19]
+        base_port: 19014
+
+resilience_analysis:
+  coding_scheme: RS(20,12)
+  loss_of_one_host_shards_lost: 7
+  surviving_shards: 13
+  reconstruction_satisfied: true
+  operational_scope: "Tolerates complete failure of any 1 physical machine with 13 surviving shards (>= 12 needed for RS(20,12))."

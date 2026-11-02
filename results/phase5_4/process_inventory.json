@@ -1,0 +1,27 @@
+{
+  "cluster_id": "fsp-cluster-54",
+  "generated_at_unix_secs": 1730477000,
+  "node_count": 20,
+  "processes": [
+    {"node_id": 0, "pid": 28101, "binary": "target/release/fsp-node", "port": 19000, "zone": "zone-a", "status": "running"},
+    {"node_id": 1, "pid": 28102, "binary": "target/release/fsp-node", "port": 19001, "zone": "zone-a", "status": "running"},
+    {"node_id": 2, "pid": 28103, "binary": "target/release/fsp-node", "port": 19002, "zone": "zone-a", "status": "running"},
+    {"node_id": 3, "pid": 28104, "binary": "target/release/fsp-node", "port": 19003, "zone": "zone-a", "status": "running"},
+    {"node_id": 4, "pid": 28105, "binary": "target/release/fsp-node", "port": 19004, "zone": "zone-b", "status": "running"},
+    {"node_id": 5, "pid": 28106, "binary": "target/release/fsp-node", "port": 19005, "zone": "zone-b", "status": "running"},
+    {"node_id": 6, "pid": 28107, "binary": "target/release/fsp-node", "port": 19006, "zone": "zone-b", "status": "running"},
+    {"node_id": 7, "pid": 28108, "binary": "target/release/fsp-node", "port": 19007, "zone": "zone-b", "status": "running"},
+    {"node_id": 8, "pid": 28109, "binary": "target/release/fsp-node", "port": 19008, "zone": "zone-c", "status": "running"},
+    {"node_id": 9, "pid": 28110, "binary": "target/release/fsp-node", "port": 19009, "zone": "zone-c", "status": "running"},
+    {"node_id": 10, "pid": 28111, "binary": "target/release/fsp-node", "port": 19010, "zone": "zone-c", "status": "running"},
+    {"node_id": 11, "pid": 28112, "binary": "target/release/fsp-node", "port": 19011, "zone": "zone-c", "status": "running"},
+    {"node_id": 12, "pid": 28113, "binary": "target/release/fsp-node", "port": 19012, "zone": "zone-d", "status": "running"},
+    {"node_id": 13, "pid": 28114, "binary": "target/release/fsp-node", "port": 19013, "zone": "zone-d", "status": "running"},
+    {"node_id": 14, "pid": 28115, "binary": "target/release/fsp-node", "port": 19014, "zone": "zone-d", "status": "running"},
+    {"node_id": 15, "pid": 28116, "binary": "target/release/fsp-node", "port": 19015, "zone": "zone-d", "status": "running"},
+    {"node_id": 16, "pid": 28117, "binary": "target/release/fsp-node", "port": 19016, "zone": "zone-e", "status": "running"},
+    {"node_id": 17, "pid": 28118, "binary": "target/release/fsp-node", "port": 19017, "zone": "zone-e", "status": "running"},
+    {"node_id": 18, "pid": 28119, "binary": "target/release/fsp-node", "port": 19018, "zone": "zone-e", "status": "running"},
+    {"node_id": 19, "pid": 28120, "binary": "target/release/fsp-node", "port": 19019, "zone": "zone-e", "status": "running"}
+  ]
+}

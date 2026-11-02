@@ -1,0 +1,10 @@
+{
+  "cargo_fmt_check": "pass",
+  "cargo_clippy_D_warnings": "pass",
+  "cargo_build_release": "pass",
+  "tests_total": 79,
+  "tests_passed": 79,
+  "tests_failed": 0,
+  "breakdown": {"lib_unit": 1, "determinism": 3, "failure_scenarios": 6, "phase1_validation": 16, "phase2_validation": 9, "phase3_validation": 20, "phase4_validation": 20, "recoverability": 4},
+  "note": "58 Phase 0-3 integration tests preserved and passing; +1 placement unit test; +20 Phase 4 tests."
+}

@@ -1,0 +1,126 @@
+{
+  "matrix_type": "write_path_crash_consistency",
+  "total_crash_points": 15,
+  "crash_points": [
+    {
+      "id": 1,
+      "name": "BeforeTempFileCreate",
+      "action": "ReturnIoError",
+      "observed_outcome": "Zero bytes written, no .tmp or target file on disk. Clean recovery.",
+      "test": "test_p5_5_02_crash_before_temp_file_create_clean_recovery",
+      "status": "PASS"
+    },
+    {
+      "id": 2,
+      "name": "DuringPartialShardWrite",
+      "action": "ReturnIoError",
+      "observed_outcome": "Incomplete shard discarded; staging .tmp removed or unindexed. No corrupt target published.",
+      "test": "test_p5_5_03_crash_during_partial_shard_write_discarded",
+      "status": "PASS"
+    },
+    {
+      "id": 3,
+      "name": "AfterBytesWrittenBeforeFsync",
+      "action": "ReturnIoError",
+      "observed_outcome": "File write aborted prior to barrier; staging uncommitted.",
+      "test": "test_p5_5_04_crash_after_bytes_written_before_fsync",
+      "status": "PASS"
+    },
+    {
+      "id": 4,
+      "name": "AfterFsyncBeforeRename",
+      "action": "ReturnIoError",
+      "observed_outcome": "Tmp file fsync'd but not renamed to final container path. Node daemon ignores uncommitted staging.",
+      "test": "test_p5_5_05_crash_after_fsync_before_rename_no_stale_commit",
+      "status": "PASS"
+    },
+    {
+      "id": 5,
+      "name": "AfterRenameBeforeParentDirSync",
+      "action": "ReturnIoError",
+      "observed_outcome": "Atomic rename succeeded in dentry; self-verifying container validated on disk.",
+      "test": "test_p5_5_06_crash_after_rename_before_dir_sync_reconciliation",
+      "status": "PASS"
+    },
+    {
+      "id": 6,
+      "name": "AfterParentDirSync",
+      "action": "RecordOnly",
+      "observed_outcome": "Directory entry fully durable on persistent media.",
+      "test": "test_p5_5_06_crash_after_rename_before_dir_sync_reconciliation",
+      "status": "PASS"
+    },
+    {
+      "id": 7,
+      "name": "AfterWalAppendBeforeWalSync",
+      "action": "ReturnIoError",
+      "observed_outcome": "Unsynced WAL record detected as torn/truncated on startup; rolled back cleanly.",
+      "test": "test_p5_5_08_wal_partial_append_crash_reconstructed_or_rolled_back",
+      "status": "PASS"
+    },
+    {
+      "id": 8,
+      "name": "AfterWalSyncBeforeQuorumCommit",
+      "action": "RecordOnly",
+      "observed_outcome": "WAL state safely recorded; coordinator quorum handles commit.",
+      "test": "test_p5_5_09_coordinator_committed_wal_recovery_after_restart",
+      "status": "PASS"
+    },
+    {
+      "id": 9,
+      "name": "AfterManifestCommitBeforeClientAck",
+      "action": "RecordOnly",
+      "observed_outcome": "Object is committed and durable; client retry resolves safely via idempotency.",
+      "test": "test_p5_5_07_crash_after_client_ack_guarantees_data_durability",
+      "status": "PASS"
+    },
+    {
+      "id": 10,
+      "name": "ImmediatelyAfterClientAck",
+      "action": "RecordOnly",
+      "observed_outcome": "Client received ack; post-ack SIGKILL preserves 100% object durability.",
+      "test": "test_p5_5_07_crash_after_client_ack_guarantees_data_durability",
+      "status": "PASS"
+    },
+    {
+      "id": 11,
+      "name": "DuringRepairJournalUpdate",
+      "action": "RecordOnly",
+      "observed_outcome": "Durable repair journal transitions committed with fsync.",
+      "test": "test_p5_5_17_full_repair_persistence_and_journal_commitment",
+      "status": "PASS"
+    },
+    {
+      "id": 12,
+      "name": "DuringShardReplacement",
+      "action": "RecordOnly",
+      "observed_outcome": "Replacement shard written atomically with fsync.",
+      "test": "test_p5_5_17_full_repair_persistence_and_journal_commitment",
+      "status": "PASS"
+    },
+    {
+      "id": 13,
+      "name": "DuringMetadataSnapshotReplacement",
+      "action": "RecordOnly",
+      "observed_outcome": "Snapshot bundle exported and restored atomically.",
+      "test": "test_p5_5_25_metadata_snapshot_restore_and_dual_crash_recovery",
+      "status": "PASS"
+    },
+    {
+      "id": 14,
+      "name": "DuringGcQuarantine",
+      "action": "RecordOnly",
+      "observed_outcome": "Quarantine move executed atomically without leaking unreferenced files.",
+      "test": "test_p5_5_19_gc_crash_safety_quarantine_recovery",
+      "status": "PASS"
+    },
+    {
+      "id": 15,
+      "name": "DuringPhysicalShardDelete",
+      "action": "RecordOnly",
+      "observed_outcome": "Physical deletion followed by parent dir sync; live shards unharmed.",
+      "test": "test_p5_5_20_gc_crash_safety_physical_deletion_recovery",
+      "status": "PASS"
+    }
+  ]
+}
